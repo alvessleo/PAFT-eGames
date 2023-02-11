@@ -1,0 +1,74 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
+      [ngClass]="{hidden: !(isHandset$ | async)}"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list class="mobile-menu">
+      <a href="#">Home</a>
+      <a href="#">Comunidade</a>
+      <a href="#">Notícias</a>
+      <a>
+        <img src="../../../assets/create.svg">
+        <p>Criar</p>
+      </a>
+      <div class="user-menu">
+        <div class="div-photo">
+          <a>
+            <img class="user-photo" src="../../../assets/abstract-user-flat-4.webp">
+          </a>
+        </div>
+        <a>
+          <p id="username">Username</p>
+        </a>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="tool-bar">
+      <img class="logo" src="../../../assets/eg-positivo.svg" alt="">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <div class="links-desk">
+        <a href="#">Home</a>
+        <a href="#">Comunidade</a>
+        <a href="#">Notícias</a>
+        <div class="search">
+          <img class="search-icon" src="../../../assets/search.svg">
+          <input type="text">
+        </div>
+      </div>
+      <div class="actions">
+        <div class="create">
+          <a>
+            <img src="../../../assets/create.svg">
+            <p>Criar</p>
+          </a>
+        </div>
+        <a class="router-notifications">
+          <img class="noti" src="../../../assets/notifications.svg">
+        </a>
+        <div class="user-menu">
+          <div class="div-photo">
+            <a>
+              <img class="user-photo" src="../../../assets/abstract-user-flat-4.webp">
+            </a>
+          </div>
+          <a>
+            <p id="username">Username</p>
+          </a>
+        </div>
+      </div>
+
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

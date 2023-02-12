@@ -1,0 +1,25 @@
+.each-user-story {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  margin-right: 10px;
+}
+.each-user-story img {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  border: 1px solid rgb(116, 116, 116);
+  padding: 2px;
+}
+.each-user-story .active {
+  border: 1.5px solid #EB2F93;
+  padding: 3px;
+}
+.each-user-story p {
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 7px;
+}/*# sourceMappingURL=story-user.component.css.map */

@@ -13,11 +13,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { FeedContentComponent } from './components/feed-content/feed-content.component';
+import { StoryUserComponent } from './components/story-user/story-user.component';
+import { PublicationComponent } from './components/publication/publication.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainNavComponent
+    MainNavComponent,
+    FeedContentComponent,
+    StoryUserComponent,
+    PublicationComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,

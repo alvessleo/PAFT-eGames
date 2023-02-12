@@ -1,0 +1,96 @@
+p {
+  margin: 0;
+}
+
+.publication {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "username username" "image image" "footer footer";
+}
+.publication .user-photo-game {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  grid-area: username;
+}
+.publication .user-photo-game .user-photo {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  border: 1px solid rgb(116, 116, 116);
+  padding: 2px;
+  margin-right: 15px;
+}
+.publication .user-photo-game .user-game {
+  display: flex;
+  flex-direction: column;
+}
+.publication .user-photo-game .user-game .username {
+  margin-bottom: 5px;
+}
+.publication .user-photo-game .user-game .game {
+  display: flex;
+  align-items: center;
+}
+.publication .user-photo-game .user-game .game .game-logo {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+.publication .user-photo-game .user-game .game p {
+  font-size: 14px;
+  font-weight: 300;
+  color: #B3B0B8;
+}
+.publication .main-image {
+  width: 100%;
+  max-width: 450px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  grid-area: image;
+}
+.publication .footer-content {
+  grid-area: footer;
+}
+.publication .footer-content .stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+.publication .footer-content .stats .main-stats {
+  display: flex;
+}
+.publication .footer-content .stats .main-stats .like {
+  display: flex;
+  align-items: center;
+}
+.publication .footer-content .stats .main-stats .like img {
+  width: 25px;
+  height: 25px;
+  margin-right: 7px;
+}
+.publication .footer-content .stats .main-stats .comments {
+  display: flex;
+  align-items: center;
+}
+.publication .footer-content .stats .main-stats .comments img {
+  width: 25px;
+  height: 25px;
+  margin-right: 7px;
+  margin-left: 1em;
+}
+.publication .footer-content .stats .main-stats .share-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 7px;
+  margin-left: 1em;
+}
+.publication .footer-content .title {
+  margin: 1.7em 0;
+}
+.publication .footer-content .post-comments p {
+  font-size: 14px;
+  font-weight: 300;
+  color: #7C7A80;
+}/*# sourceMappingURL=publication.component.css.map */

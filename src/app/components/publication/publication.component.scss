@@ -1,0 +1,114 @@
+p{
+    margin: 0;
+}
+
+.publication{
+    width: 100%;
+    display: grid;
+    // grid-template-areas: 
+    //                     'username image'
+    //                     'footer image'
+    //                     'footer image';
+    grid-template-areas: 
+                        'username username'
+                        'image image'
+                        'footer footer';
+    .user-photo-game{
+        display: flex;
+        align-items: center;
+        margin-bottom: 1em;
+        grid-area: username;
+        .user-photo{
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+            border: 1px solid rgb(116, 116, 116);
+            padding: 2px;
+            margin-right: 15px;
+        }
+        .user-game{
+            display: flex;
+            flex-direction: column;
+
+            .username{
+                margin-bottom: 5px;
+            }
+
+            .game{
+                display: flex;
+                align-items: center;
+                .game-logo{
+                    width: 15px;
+                    height: 15px;
+                    margin-right: 10px;
+                }
+
+                p{
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: #B3B0B8;
+                }
+            }
+        }
+    }
+
+    .main-image{
+        width: 100%;
+        max-width: 450px;
+        // width: 350px;
+        // height: 230px;
+        object-fit: cover;
+        grid-area: image;
+    }
+
+    .footer-content{
+        grid-area: footer;
+        .stats{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1em;
+            margin-top: 1em;
+            .main-stats{
+                display: flex;
+                .like{
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 7px;
+                    }
+                }
+                .comments{
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 7px;
+                        margin-left: 1em;
+                    }
+                }
+
+                .share-icon{
+                    width: 25px;
+                    height: 25px; 
+                    margin-right: 7px;
+                    margin-left: 1em;
+                }
+            }
+        }
+
+        .title{
+            margin: 1.7em 0;
+        }
+
+        .post-comments{
+            p{
+                font-size: 14px;
+                font-weight: 300;
+                color: #7C7A80;
+            }
+        }
+    }
+}

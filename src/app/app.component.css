@@ -1,1 +1,5 @@
-/*# sourceMappingURL=app.component.css.map */
+app-main-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}/*# sourceMappingURL=app.component.css.map */

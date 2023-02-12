@@ -5,14 +5,13 @@ p{
 .publication{
     width: 100%;
     display: grid;
-    // grid-template-areas: 
-    //                     'username image'
-    //                     'footer image'
-    //                     'footer image';
+    margin: 0 auto;
     grid-template-areas: 
                         'username username'
                         'image image'
                         'footer footer';
+    margin-bottom: 2em;
+    margin-top: 2em;
     .user-photo-game{
         display: flex;
         align-items: center;
@@ -68,6 +67,14 @@ p{
             justify-content: space-between;
             margin-bottom: 1em;
             margin-top: 1em;
+
+            .time{
+                font-size: 12px;
+                font-weight: 300;
+                color: #B3B0B8;
+                transform: translateY(5px);
+            }
+
             .main-stats{
                 display: flex;
                 .like{
@@ -110,5 +117,42 @@ p{
                 color: #7C7A80;
             }
         }
+    }
+}
+
+@media only screen and (min-width: 425px){
+    .publication{
+        max-width: 370px;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .publication{
+        grid-template-areas: 
+                        'username image'
+                        'footer image'
+                        'footer image';
+        max-width: 800px;
+        width: 100%;
+
+        .main-image{
+            margin-left: 2em;
+            max-width: 370px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1100px){
+    .publication{
+        margin: 2em 0;
+        max-width: 830px;
+        .footer-content{
+            width: 100%;
+            max-width: 350px;
+        }
+    }
+
+    .hr{
+        max-width: 725px;
     }
 }

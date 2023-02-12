@@ -1,0 +1,40 @@
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  min-width: 350px;
+}
+.item .logo-suggest {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+.item .name-category {
+  display: flex;
+  flex-direction: column;
+  margin-right: 8em;
+}
+.item .name-category .category {
+  font-size: 14px;
+  font-weight: 300;
+  color: #B3B0B8;
+}
+
+@media only screen and (min-width: 1100px) {
+  .item {
+    margin-left: 1em;
+  }
+  .hr {
+    max-width: 295px;
+    transform: translateX(70px);
+  }
+}/*# sourceMappingURL=item-suggest.component.css.map */

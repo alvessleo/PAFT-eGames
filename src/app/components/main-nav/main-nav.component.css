@@ -63,6 +63,8 @@
 
 .tool-bar {
   justify-content: space-between;
+  max-width: 1250px;
+  margin: 0 auto;
 }
 .tool-bar .logo {
   width: 200px;

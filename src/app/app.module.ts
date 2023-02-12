@@ -17,6 +17,7 @@ import { FeedContentComponent } from './components/feed-content/feed-content.com
 import { StoryUserComponent } from './components/story-user/story-user.component';
 import { PublicationComponent } from './components/publication/publication.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { ItemSuggestComponent } from './components/item-suggest/item-suggest.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CommentComponent } from './components/comment/comment.component';
     FeedContentComponent,
     StoryUserComponent,
     PublicationComponent,
-    CommentComponent
+    CommentComponent,
+    ItemSuggestComponent
   ],
   imports: [
     BrowserModule,

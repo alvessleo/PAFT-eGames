@@ -169,9 +169,13 @@
 
             .game-image{
                 margin-right: 2em;
+                width: 300px;
+                height: 200px;
+                object-fit: cover;
             }
 
             .info{
+                transform: translateY(-15px);
                 .category{
                     font-weight: 300;
                     font-size: 14px;
@@ -195,6 +199,7 @@
             margin: 0 auto;
             max-width: 350px;
             position: relative;
+            transform: translateY(-15px);
             .options{
                 button{
                     background-color: transparent;

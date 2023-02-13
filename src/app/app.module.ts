@@ -23,6 +23,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { TabsProfileComponent } from './components/tabs-profile/tabs-profile.component';
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ItemGroupComponent } from './components/item-group/item-group.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ItemSuggestComponent,
     ProfileContentComponent,
     TabsProfileComponent,
-    ProfileEditComponent
+    ProfileEditComponent,
+    ItemGroupComponent
   ],
   imports: [
     BrowserModule,

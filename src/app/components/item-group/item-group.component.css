@@ -1,0 +1,55 @@
+.hr {
+  max-width: 600px;
+}
+
+.group-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1em 0;
+}
+.group-item .group-photo {
+  width: 110px;
+  height: 110px;
+  margin-right: 1.7em;
+}
+.group-item .group-info {
+  transform: translateY(-5px);
+}
+.group-item .group-info .title-stat {
+  display: flex;
+  align-items: center;
+}
+.group-item .group-info .title-stat h2 {
+  font-weight: 600;
+  margin-right: 10px;
+}
+.group-item .group-info .title-stat p {
+  transform: translateY(3px);
+  font-weight: 300;
+  color: #B3B0B8;
+  font-size: 14px;
+}
+.group-item .group-info .desc {
+  margin-top: -12px;
+  font-weight: 300;
+}
+.group-item .group-info .members .members-label {
+  font-weight: 300;
+  font-size: 12px;
+  color: #A8A8A8;
+}
+.group-item button {
+  background-color: #403C47;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  height: 40px;
+  padding: 0 20px;
+  font-size: 16px;
+  margin-left: 1em;
+  cursor: pointer;
+}
+.group-item button:hover {
+  background-color: #211f25;
+}/*# sourceMappingURL=item-group.component.css.map */

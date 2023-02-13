@@ -16,6 +16,23 @@ mat-tab-group{
     position: relative;
 }
 
+#create-link{
+    cursor: pointer;
+    .new-group{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 1em;
+        margin-top: 1.2em;
+        margin-bottom: 6em;
+
+        .label-new-group{
+            margin-left: 1em;
+            color: #484848;
+            font-size: 1.1em;
+        }
+    }
+}
 
 .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
     color: #ffffff;

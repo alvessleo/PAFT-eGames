@@ -1,0 +1,174 @@
+.progress-label {
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 25px;
+}
+
+.container {
+  width: 230px;
+  height: 14px;
+  background-color: black;
+  margin-top: -5px;
+  position: relative;
+  border-radius: 10px;
+}
+.container .progress-bar {
+  background: linear-gradient(90deg, #712DE0 0%, #FF0088 100%);
+  border-radius: 10px;
+  height: 5px;
+  width: 100px;
+  transform: translate(5px, 4px);
+}
+
+.profile-content {
+  margin: 1em;
+}
+.profile-content .user-information {
+  display: flex;
+  flex-direction: column;
+}
+.profile-content .user-information h1 {
+  font-weight: 500;
+}
+.profile-content .user-information .user-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-content .user-information .user-card .situation {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  transform: translateX(120px);
+}
+.profile-content .user-information .user-card .situation .ball {
+  background-color: #13F937;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.profile-content .user-information .user-card .photo-name .profile-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid #EB2F93;
+  padding: 5px;
+  margin-top: 3em;
+}
+.profile-content .user-information .user-card .photo-name h2 {
+  font-weight: 500;
+  text-align: center;
+}
+.profile-content .user-information .user-card .photo-name .user {
+  color: #A7A7A7;
+  font-weight: 300;
+  text-align: center;
+  margin-top: -1.2em;
+}
+.profile-content .user-information .user-card .btn {
+  width: 100%;
+  background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+  border-radius: 5px;
+  height: 45px;
+  max-width: 320px;
+  color: white;
+  border: none;
+  font-size: 18px;
+  margin-top: 1em;
+}
+.profile-content .user-information .user-card #edit {
+  width: 100%;
+  background-color: #403C47;
+  border-radius: 5px;
+  height: 45px;
+  max-width: 320px;
+  color: white;
+  border: none;
+  font-size: 18px;
+  margin-top: 10px;
+}
+.profile-content .user-information .user-card .stats {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 1em;
+}
+.profile-content .user-information .user-card .stats .type p {
+  color: #D2D2D2;
+}
+.profile-content .user-information .user-card .stats .numbers p {
+  color: #D2D2D2;
+  font-weight: 300;
+}
+.profile-content .user-information .user-card .about {
+  width: 100%;
+  max-width: 320px;
+}
+.profile-content .user-information .user-card .about p {
+  font-weight: 300;
+  margin-top: -10px;
+}
+.profile-content .main-content .main-game {
+  display: none;
+}
+.profile-content .main-content .game-info {
+  display: none;
+  flex-direction: row;
+}
+.profile-content .main-content .game-info .game-image {
+  margin-right: 2em;
+}
+.profile-content .main-content .game-info .info .category {
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: -10px;
+}
+.profile-content .main-content .game-info .info .more-info {
+  color: #B4B4B4;
+  font-size: 16px;
+  font-weight: 300;
+}
+.profile-content .main-content .game-info .info .more-info svg {
+  margin-left: 10px;
+  transform: translateY(1px);
+}
+.profile-content .main-content .profile-router {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 350px;
+}
+.profile-content .main-content .profile-router .options button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 1em;
+  font-size: 1.1em;
+}
+
+@media only screen and (min-width: 768px) {
+  .profile-content .main-content .profile-router {
+    max-width: none;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .profile-content {
+    display: flex;
+    flex-direction: row;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  .profile-content .main-content {
+    margin-left: 4em;
+    margin-top: 1em;
+  }
+  .profile-content .main-content .main-game {
+    display: block;
+  }
+  .profile-content .main-content .game-info {
+    display: flex;
+  }
+}/*# sourceMappingURL=profile-content.component.css.map */

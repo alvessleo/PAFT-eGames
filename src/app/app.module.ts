@@ -18,6 +18,7 @@ import { StoryUserComponent } from './components/story-user/story-user.component
 import { PublicationComponent } from './components/publication/publication.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { ItemSuggestComponent } from './components/item-suggest/item-suggest.component';
+import { ProfileContentComponent } from './components/profile-content/profile-content.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ItemSuggestComponent } from './components/item-suggest/item-suggest.com
     StoryUserComponent,
     PublicationComponent,
     CommentComponent,
-    ItemSuggestComponent
+    ItemSuggestComponent,
+    ProfileContentComponent
   ],
   imports: [
     BrowserModule,

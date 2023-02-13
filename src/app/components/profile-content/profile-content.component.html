@@ -15,7 +15,7 @@
             </div>
 
             <button type="button" class="btn btn-primary">Seguir</button>
-            <button type="button" id="edit">Enviar Mensagem</button>
+            <button type="button" id="edit" routerLink="/profile-edit">Enviar Mensagem</button>
 
             <div class="stats">
                 <div class="type">
@@ -60,15 +60,10 @@
             </div>
         </div>
 
+
         <div class="profile-router">
-            <div class="options">
-                <button>Post</button>
-                <button>Grupos</button>
-                <button>Jogos</button>
-            </div>
+            <app-tabs-profile></app-tabs-profile>
             <div class="hr"></div>
-            <app-publication></app-publication>
-            <app-publication></app-publication>
         </div>
     </div>
 </div>

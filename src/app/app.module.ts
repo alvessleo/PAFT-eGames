@@ -19,6 +19,11 @@ import { PublicationComponent } from './components/publication/publication.compo
 import { CommentComponent } from './components/comment/comment.component';
 import { ItemSuggestComponent } from './components/item-suggest/item-suggest.component';
 import { ProfileContentComponent } from './components/profile-content/profile-content.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { TabsProfileComponent } from './components/tabs-profile/tabs-profile.component';
+import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +34,9 @@ import { ProfileContentComponent } from './components/profile-content/profile-co
     PublicationComponent,
     CommentComponent,
     ItemSuggestComponent,
-    ProfileContentComponent
+    ProfileContentComponent,
+    TabsProfileComponent,
+    ProfileEditComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,9 @@ import { ProfileContentComponent } from './components/profile-content/profile-co
     MatListModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTabsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

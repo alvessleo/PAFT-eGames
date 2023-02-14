@@ -56,22 +56,9 @@
         <a class="router-notifications">
           <img class="noti" src="../../../assets/notifications.svg">
         </a>
-        <div (click)="toggleProfilePopUp()" class="user-menu">
-          <div class="div-photo">
-            <a>
-              <img class="user-photo" src="../../../assets/abstract-user-flat-4.webp">
-            </a>
-          </div>
-          <a>
-            <p id="username">Username</p>
-          </a>
-          <div *ngIf="showProfilePopUp" class="nav-profile-popup">
-            <a><p><mat-icon>person</mat-icon>Perfil</p></a>
-            <a><p><mat-icon>edit</mat-icon>Editar</p></a>
-            <hr>
-            <a><p><mat-icon>logout</mat-icon>Sair</p></a>
-          </div>
-        </div>
+        <app-user-menu-nav>
+        </app-user-menu-nav>
+        
       </div>
       
 

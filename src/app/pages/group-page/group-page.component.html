@@ -1,0 +1,40 @@
+<app-main-nav>
+    <div class="group-page">
+        <div class="content">
+            <h1>Grupo</h1>
+            <div class="group-apresentation">
+                <img src="../../../assets/loud-example.png" class="logo-group">
+                <div class="info-group">
+                    <h1>GROUP NAME</h1>
+                    <p class="stat">Grupo privado</p>
+                    <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p class="adm">Administradores</p>
+                    <div class="people">
+                        <div class="div-photo">
+                            <img class="user-photo" src="../../../assets/abstract-user-flat-4.webp">
+                        </div>
+                        <div class="div-photo">
+                            <img class="user-photo" src="../../../assets/abstract-user-flat-4.webp">
+                        </div>
+                        <div class="div-photo">
+                            <img class="user-photo" src="../../../assets/abstract-user-flat-4.webp">
+                        </div>
+                        <div class="div-photo">
+                            <img class="user-photo" src="../../../assets/abstract-user-flat-4.webp">
+                        </div>
+                        <div class="div-photo">
+                            <img class="user-photo" src="../../../assets/abstract-user-flat-4.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="btn" *ngIf="joinGroup">Entrar no grupo</button>
+                    <button class="btn" *ngIf="solicitation">Solicitar participação</button>
+                    <button class="btn-exit" *ngIf="exitGroup">Sair do grupo</button>
+                </div>
+            </div>
+        </div>
+        <app-tabs-group></app-tabs-group>
+        
+    </div>
+</app-main-nav>

@@ -1,3 +1,68 @@
+.content-geral .group-name {
+  margin-top: 4em;
+  margin-bottom: 1em;
+}
+.content-geral .group-name h1 {
+  font-weight: 500;
+}
+.content-geral .group-name .situation {
+  display: flex;
+  align-items: center;
+  margin-top: -20px;
+  font-size: 14px;
+}
+.content-geral .group-name .situation .ball {
+  background-color: #13F937;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.content-geral .group-name .situation p {
+  font-size: 300;
+}
+.content-geral .group-name .situation p span {
+  font-size: 300;
+}
+.content-geral .about {
+  color: #BBBBBB;
+  font-size: 18px;
+  margin-bottom: 3em;
+  max-width: 400px;
+}
+.content-geral .members h3 {
+  font-weight: 600;
+}
+.content-geral .members h3 #total-members {
+  font-weight: 300;
+  font-size: 16px;
+  color: #A7A7A7;
+}
+.content-geral .members .dono {
+  color: #A7A7A7;
+  margin-bottom: 10px;
+}
+.content-geral .members .adm {
+  color: #A7A7A7;
+  margin-bottom: 10px;
+  margin-top: 1.5em;
+}
+.content-geral .members .adm-group {
+  display: flex;
+  margin-bottom: 4em;
+}
+
+.discussao-content h1 {
+  font-weight: 500;
+  margin-top: 2em;
+}
+.discussao-content p {
+  color: #BBBBBB;
+  font-size: 18px;
+  margin-bottom: 3em;
+  max-width: 350px;
+}
+
 .hr {
   height: 1.5px;
   width: 100%;
@@ -5,6 +70,25 @@
   background-color: white;
   z-index: 99;
   top: 0;
+}
+
+.div-photo {
+  background: linear-gradient(45deg, #712DE0, #EB2F93);
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  margin: 0 auto;
+  transform: translate(2px, 1.7px);
+  border: 1.4px solid black;
 }
 
 span {
@@ -53,4 +137,18 @@ mat-tab-group {
   z-index: 9999;
   transform: translateY(-3px);
   left: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .content-geral .group-name {
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+  }
+  .content-geral .group-name h1 {
+    margin-right: 20px;
+  }
+  .content-geral .group-name .situation {
+    transform: translateY(8px);
+  }
 }/*# sourceMappingURL=tabs-group.component.css.map */

@@ -1,76 +1,78 @@
-<div class="profile-content">
+<app-main-nav>
+    <div class="profile-content">
 
-    <div class="user-information">
-        <h1>Editando perfil</h1>
-        <div class="user-card">
-            <div class="photo-name">
-                <img src="../../../assets/abstract-user-flat-4.webp" class="profile-image">
-                <h2>Username</h2>
-                <p class="user">@user</p>
-            </div>
-
-            <button type="button" id="back" routerLink="/profile">Voltar ao perfil</button>
-
-            <div class="stats">
-                <div class="type">
-                    <p>Posts</p>
-                    <p>Seguidores</p>
-                    <p>Seguindo</p>
-                    <p>Grupos</p>
+        <div class="user-information">
+            <h1>Editando perfil</h1>
+            <div class="user-card">
+                <div class="photo-name">
+                    <img src="../../../assets/abstract-user-flat-4.webp" class="profile-image">
+                    <h2>Username</h2>
+                    <p class="user">@user</p>
                 </div>
-                <div class="numbers">
-                    <p>000</p>
-                    <p>000</p>
-                    <p>000</p>
-                    <p>000</p>
+    
+                <button type="button" id="back" routerLink="/profile">Voltar ao perfil</button>
+    
+                <div class="stats">
+                    <div class="type">
+                        <p>Posts</p>
+                        <p>Seguidores</p>
+                        <p>Seguindo</p>
+                        <p>Grupos</p>
+                    </div>
+                    <div class="numbers">
+                        <p>000</p>
+                        <p>000</p>
+                        <p>000</p>
+                        <p>000</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="about">
-                <h4>Sobre</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    
+                <div class="about">
+                    <h4>Sobre</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
             </div>
         </div>
+    
+        <div class="main-content">
+            <h3 class="main-topic">Geral</h3>
+            <div class="hr"></div>  
+            <form>
+                <p>
+                    <label for="nome">Nome real</label>
+                    <input type="text" name="nome" placeholder="User's name">
+                </p>
+                <p>
+                    <label for="username">Username</label>
+                    <input type="text" name="nome" placeholder="@user">
+                </p>
+                <p>
+                    <label for="data">Data de nascimento</label>
+                    <input type="date" name="data">
+                </p>
+    
+                <h3>Resumo</h3>
+                <div class="hr"></div>
+                <p>
+                    <label for="bio">Biografia</label>
+                    <input type="text" name="bio" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
+                </p>
+    
+                <h3>Jogo preferido</h3>
+                <div class="hr"></div>
+                <p>
+                    <label for="jogo">Selecione o jogo</label>
+                    <select name="jogo" id="jogo">
+                        <option value="CS:GO">CS:GO</option>
+                    </select>
+                </p>
+                <div class="buttons">
+                    <button type="submit" class="save">Salvar informações</button>
+                    <button class="cancel" routerLink="/profile">Cancelar</button>
+                </div>
+            </form>
+    
+    
+        </div>
     </div>
-
-    <div class="main-content">
-        <h3 class="main-topic">Geral</h3>
-        <div class="hr"></div>  
-        <form>
-            <p>
-                <label for="nome">Nome real</label>
-                <input type="text" name="nome" placeholder="User's name">
-            </p>
-            <p>
-                <label for="username">Username</label>
-                <input type="text" name="nome" placeholder="@user">
-            </p>
-            <p>
-                <label for="data">Data de nascimento</label>
-                <input type="date" name="data">
-            </p>
-
-            <h3>Resumo</h3>
-            <div class="hr"></div>
-            <p>
-                <label for="bio">Biografia</label>
-                <input type="text" name="bio" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
-            </p>
-
-            <h3>Jogo preferido</h3>
-            <div class="hr"></div>
-            <p>
-                <label for="jogo">Selecione o jogo</label>
-                <select name="jogo" id="jogo">
-                    <option value="CS:GO">CS:GO</option>
-                </select>
-            </p>
-            <div class="buttons">
-                <button type="submit" class="save">Salvar informações</button>
-                <button class="cancel" routerLink="/profile">Cancelar</button>
-            </div>
-        </form>
-
-
-    </div>
-</div>
+</app-main-nav>

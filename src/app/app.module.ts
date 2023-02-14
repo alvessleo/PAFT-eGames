@@ -24,6 +24,8 @@ import { TabsProfileComponent } from './components/tabs-profile/tabs-profile.com
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ItemGroupComponent } from './components/item-group/item-group.component';
+import { GroupPageComponent } from './components/group-page/group-page.component';
+import { TabsGroupComponent } from './components/tabs-group/tabs-group.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { ItemGroupComponent } from './components/item-group/item-group.component
     ProfileContentComponent,
     TabsProfileComponent,
     ProfileEditComponent,
-    ItemGroupComponent
+    ItemGroupComponent,
+    GroupPageComponent,
+    TabsGroupComponent
   ],
   imports: [
     BrowserModule,

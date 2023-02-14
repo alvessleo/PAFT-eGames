@@ -1,3 +1,35 @@
+.nav-profile-popup {
+  background-color: #1f1e1e;
+  position: absolute;
+  right: 0;
+  transform: translateY(122px);
+  z-index: 1;
+  padding: 5px 15px;
+  width: 100px;
+}
+.nav-profile-popup a {
+  font-size: 14px;
+  font-weight: 300;
+  padding: none;
+}
+.nav-profile-popup a p {
+  padding: none;
+  display: flex;
+  align-items: center;
+}
+.nav-profile-popup a p mat-icon {
+  font-weight: 300;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.nav-profile-popup hr {
+  border: 0.5px solid white;
+  width: 100%;
+  opacity: 10%;
+}
+
 .mat-drawer-container {
   background-color: #101114;
 }
@@ -18,7 +50,6 @@
 }
 
 .mat-toolbar.mat-primary {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -37,6 +68,7 @@
 .mobile-menu .user-menu {
   display: flex;
   align-items: center;
+  position: relative;
 }
 .mobile-menu .user-menu .div-photo {
   background: linear-gradient(45deg, #712DE0, #EB2F93);
@@ -156,6 +188,7 @@
   justify-content: center;
   align-items: center;
   margin-left: 1.5em;
+  position: relative;
 }
 .actions .user-menu .div-photo {
   background: linear-gradient(45deg, #712DE0, #EB2F93);

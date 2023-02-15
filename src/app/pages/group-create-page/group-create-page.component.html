@@ -1,0 +1,48 @@
+<app-main-nav>
+    <div class="new-group">
+        <h1>Novo grupo</h1>
+        <div class="content">
+            <form>
+                <div class="geral-contaniner">
+                    <h3>Geral</h3>
+                    <div class="hr"></div>
+                    <p>
+                        <label for="group-name">Nome do grupo</label>
+                        <input type="text" name="group-name" placeholder="Insira o nome aqui">
+                    </p>
+                    <p>
+                        <label for="group-desc">Descrição</label>
+                        <input type="text" name="group-desc" placeholder="Insira a descrição do grupo">
+                    </p>
+                </div>
+                <div class="image-container">
+                    <h3>Imagem do grupo</h3>
+                    <div class="hr"></div>
+                    <div class="mock">
+                        <img src="../../../assets/group-image-mock.png" class="image">
+                        <div class="submit-button">
+                            <p>Selecione uma imagem com dimensões minimas de 180px x 180px</p>
+                            <button>Selecionar imagem</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="status-container">
+                    <h3>Status</h3>
+                    <div class="hr"></div>
+                    <p>
+                        <label for="group-type">Selecione o tipo do grupo</label>
+                        <select name="group-type" id="group-type">
+                            <option value="Público">Público</option>
+                            <option value="Privado">Privado</option>
+                        </select>
+                    </p>
+                    <div class="buttons">
+                        <button>Salvar informações</button>
+                        <button>Cancelar</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</app-main-nav>

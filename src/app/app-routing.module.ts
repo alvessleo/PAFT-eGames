@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CadastroPageComponent } from './pages/cadastro-page/cadastro-page.component';
 import { FeedContentComponent } from './pages/feed-content/feed-content.component';
 import { GroupPageComponent } from './pages/group-page/group-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'profile', component: ProfileContentComponent},
   {path: 'profile-edit', component: ProfileEditComponent},
   {path: 'group', component: GroupPageComponent},
-  {path: 'login', component: LoginPageComponent}
+  {path: 'login', component: LoginPageComponent},
+  {path: 'cadastro', component: CadastroPageComponent}
 
 ];
 

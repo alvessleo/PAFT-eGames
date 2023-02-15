@@ -30,6 +30,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { UserMenuNavComponent } from './components/user-menu-nav/user-menu-nav.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { CadastroPageComponent } from './pages/cadastro-page/cadastro-page.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     GroupPageComponent,
     TabsGroupComponent,
     UserMenuNavComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    CadastroPageComponent
   ],
   imports: [
     BrowserModule,

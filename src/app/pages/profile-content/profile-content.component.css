@@ -69,6 +69,11 @@
   border-radius: 50%;
   margin-inline: -5px;
   margin-top: 3em;
+  -webkit-animation: roll infinite 2s ease-in-out;
+          animation: roll infinite 2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .profile-content .user-information .user-card .photo-name .div-photo .profile-image {
   width: 160px;
@@ -79,9 +84,9 @@
      object-fit: cover;
   border-radius: 50%;
   border: #101110 solid 2px;
-  top: 0;
   position: absolute;
-  transform: translate(4.5px, 4.5px);
+  -webkit-animation: antRoll infinite 2s ease-in-out;
+          animation: antRoll infinite 2s ease-in-out;
 }
 .profile-content .user-information .user-card .photo-name h2 {
   font-weight: 500;
@@ -217,5 +222,37 @@
   }
   .profile-content .main-content .game-info {
     display: flex;
+  }
+}
+@-webkit-keyframes roll {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes roll {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+@-webkit-keyframes antRoll {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: -360deg;
+  }
+}
+@keyframes antRoll {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: -360deg;
   }
 }/*# sourceMappingURL=profile-content.component.css.map */

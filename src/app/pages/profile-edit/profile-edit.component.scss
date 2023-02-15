@@ -57,6 +57,10 @@
                     border-radius: 50%;
                     margin-inline: -5px;
                     margin-top: 3em;
+                    animation: roll infinite 2s ease-in-out;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
                     .profile-image{
                         width: 160px;
@@ -66,9 +70,8 @@
                         object-fit: cover;
                         border-radius: 50%;
                         border: #101110 solid 2px;
-                        top: 0;
                         position: absolute;
-                        transform: translate(4.5px, 4.5px);
+                        animation: antRoll infinite 2s ease-in-out;
                     }
                 }
 
@@ -248,5 +251,26 @@
                 }
             }
         }
+    }
+}
+
+@keyframes roll{
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 360deg;
+    }
+}
+
+@keyframes antRoll{
+    0%{
+        rotate: 0deg;
+
+    }
+
+    100%{
+        rotate: -360deg;
+
     }
 }

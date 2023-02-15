@@ -2,8 +2,259 @@ p, h1, h3, a{
     color: white;
 }
 
+
+.blur-effect{
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    height: 100vh;
+    display: none;
+}
+
 .login-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+
     .art-side{
         display: none;
+    }
+    .main-content{
+        background-color: #101114;
+        width: 100%;
+        height: 100%;
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 30px;
+        z-index: 5;
+        .content{
+            width: 320px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h3{
+                font-weight: 300;
+            }
+            form{
+                p{
+                    display: flex;
+                    flex-direction: column;
+
+                    .input{
+                        background-color: #2F2F2F;
+                        border-radius: 5px;
+                        border: none;
+                        height: 45px;
+                        margin: 10px 0;
+                        padding: 0 10px;
+                        color: #B7B7B7;
+    
+                        &:focus{
+                            outline: #e71cc7 solid 2px;
+                        }
+                    }
+                }
+
+                .options{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: -35px;
+
+                    .checkbox{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+
+                        input[type=checkbox]{
+                            background-color: #000000;
+                            border-radius: 5px;
+                            border: none;
+                            height: 17px;
+                            width: 17px;
+                            margin: 10px 0;
+                            color: #000000;
+                            position: relative;
+                            margin-right: 5px;
+                        }
+
+                        label{
+                            color: #C9C9C9;
+                            font-size: 14px;
+                            font-weight: 300;
+                            
+                        }
+                    }
+
+                    a{
+                        color: #C9C9C9;
+                        font-size: 14px;
+                        font-weight: 300;  
+                        cursor: pointer;
+                    }
+                }
+
+                button{
+                    width: 100%;
+                    background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+                    border-radius: 5px;
+                    height: 45px;
+                    max-width: 320px;
+                    color: white;
+                    border: none;
+                    font-size: 18px;
+                    margin-top: 1em;
+                    cursor: pointer;
+                    margin-bottom: 3em;
+    
+                    &:hover{
+                        background: linear-gradient(93.99deg, #411a82 -5.78%, #8b1b57 113.82%);
+                    }
+                }
+            }
+
+            .other-way{
+                display: flex;
+                align-items: center;
+                margin-top: -35px;
+                p{
+                    margin-inline: 10px;
+                    width: 379px;
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: #C9C9C9;
+                }
+            }
+
+            .buttons{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 1em;
+                button{
+                    background-color: #1E1F24;
+                    display: flex;
+                    align-items: center;
+                    border: none;
+                    border-radius: 5px;
+                    height: 45px;
+                    padding: 0 10px;
+                    cursor: pointer;
+                    label{
+                        color: white;
+                    }
+                    img{
+                        margin-right: 10px;
+                    }
+
+                    &:hover{
+                        background-color: #0e0f11;
+                    }
+                }
+            }
+
+            .not-member{
+                font-size: 15px;
+                font-weight: 300;
+                margin-top: 2em;
+                color: #C9C9C9;
+                span{
+                    cursor: pointer;
+                    color: #e71cc7;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .login-page{
+        .main-content{
+            .content{
+                width: 100%;
+                max-width: 470px;
+                form{
+                    button{
+                        max-width: none;
+                    }
+                }
+            }
+
+            .buttons{
+                button{
+                    width: 30%;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .blur-effect{
+        display: block;
+    }
+
+    .login-page{
+        justify-content: flex-end;
+        background-color: #000000;
+
+        .main-content{
+            width: 55%;
+            .content{
+                position: absolute;
+                transform: translateX(120px);
+            }
+        }
+        .art-side{
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            height: 100%;
+            position: relative;
+            .logo{
+                width: 225px;                
+                position: absolute;
+                top: calc(30% - 150px);
+                right: 0;
+                transform: translateX(-200px);
+            }
+            .art{
+                position: absolute;
+                top: calc(30% - 122px);
+                right: 0;
+                transform: translateX(143px);
+                scale: .9;
+                z-index: 9;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1600px){
+    .login-page{
+        .art-side{
+            .logo{
+                width: 225px;                
+                position: absolute;
+                top: calc(35% - 140px);
+                right: 0;
+                transform: translateX(-200px);
+            }
+            .art{
+                position: absolute;
+                top: calc(40% - 122px);
+                right: 0;
+                transform: translateX(143px);
+                scale: .9;
+                z-index: 9;
+            }
+        }
     }
 }

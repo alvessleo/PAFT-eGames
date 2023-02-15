@@ -44,7 +44,7 @@ p, h1, h3, a{
                 p{
                     display: flex;
                     flex-direction: column;
-
+                    position: relative;
                     .input{
                         background-color: #2F2F2F;
                         border-radius: 5px;
@@ -57,6 +57,18 @@ p, h1, h3, a{
                         &:focus{
                             outline: #e71cc7 solid 2px;
                         }
+                    }
+                    span {
+                        color: #f24747;
+                        font-weight: 300;
+                        font-size: 14px;
+                        transform: translateY(-5px);
+                    }
+                    #eye-icon {
+                        position: absolute;
+                        right: 0;
+                        transform: translate(-15px, 40px);
+                        color: #B7B7B7;
                     }
                 }
 
@@ -159,6 +171,7 @@ p, h1, h3, a{
             }
 
             .not-member{
+                text-align: center;
                 font-size: 15px;
                 font-weight: 300;
                 margin-top: 2em;

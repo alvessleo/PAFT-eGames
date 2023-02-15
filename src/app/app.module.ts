@@ -32,6 +32,8 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CadastroPageComponent } from './pages/cadastro-page/cadastro-page.component';
 import { GroupCreatePageComponent } from './pages/group-create-page/group-create-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -70,7 +72,8 @@ import { GroupCreatePageComponent } from './pages/group-create-page/group-create
     MatTabsModule,
     MatFormFieldModule,
     MatMenuModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,14 +5,18 @@
             <h1>Bem vindo de volta!</h1>
             <h3>Entre com suas informações</h3>   
             <div class="hr"></div>
-            <form>
+            <form [formGroup]="dataSource" (ngSubmit)="submitLogin($event)" #formDir="ngForm">
                 <p>
                     <label for="username">Username</label>
-                    <input type="text" name="username" class="input" placeholder="@user">
+                    <input type="text" name="username" class="input" placeholder="Insira seu username" formControlName="username" />
+                    <span *ngIf="username?.errors?.['required'] && formDir.submitted">Você deve inserir um username</span>
+                    <span *ngIf="username?.errors?.['minlength'] && formDir.submitted">O username deve ter pelo menos 4 letras</span>
                 </p>
                 <p>
                     <label for="password">Senha</label>
-                    <input type="password" name="password" class="input" placeholder="Insira sua senha">
+                    <input type={{inputType}} name="password" class="input" placeholder="Insira sua senha" formControlName="password">
+                    <mat-icon (click)="togglePass()" id="eye-icon">{{visibility}}</mat-icon>
+                    <span *ngIf="username?.errors?.['required'] && formDir.submitted">Você deve inserir uma senha</span>
                 </p>
                 <div class="options">
                     <p class="checkbox">
@@ -48,7 +52,7 @@
                     <label>Twitter</label>
                 </button>
             </div>
-            <p class="not-member">Não é um membro ainda? <span>Resgistrar Agora</span></p>
+            <p class="not-member">Não é um membro ainda? <span>Registrar Agora</span></p>
         </div>
         
     </div>

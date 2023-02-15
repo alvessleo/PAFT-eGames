@@ -1,9 +1,9 @@
 <app-main-nav>
     <div class="new-group">
-        <h1>Novo grupo</h1>
         <div class="content">
+            <h1>Novo grupo</h1>
             <form>
-                <div class="geral-contaniner">
+                <div class="geral-container">
                     <h3>Geral</h3>
                     <div class="hr"></div>
                     <p>
@@ -22,7 +22,10 @@
                         <img src="../../../assets/group-image-mock.png" class="image">
                         <div class="submit-button">
                             <p>Selecione uma imagem com dimensões minimas de 180px x 180px</p>
-                            <button>Selecionar imagem</button>
+                            <label for="file">
+                                Upload
+                           </label>
+                           <input type="file" name="file" id="file" style="visibility: hidden;"/>
                         </div>
                     </div>
                 </div>
@@ -37,8 +40,8 @@
                         </select>
                     </p>
                     <div class="buttons">
-                        <button>Salvar informações</button>
-                        <button>Cancelar</button>
+                        <button class="save">Salvar informações</button>
+                        <button class="cancel">Cancelar</button>
                     </div>
                 </div>
             </form>

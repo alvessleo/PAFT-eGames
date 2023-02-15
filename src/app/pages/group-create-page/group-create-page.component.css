@@ -1,1 +1,116 @@
-/*# sourceMappingURL=group-create-page.component.css.map */
+p, h1, h3, a {
+  color: white;
+}
+
+.new-group {
+  display: flex;
+  flex-direction: column;
+}
+.new-group .content {
+  width: 320px;
+  margin: 0 auto;
+}
+.new-group .content h1 {
+  font-weight: 500;
+}
+.new-group .content form .geral-container h3 {
+  font-weight: 400;
+}
+.new-group .content form .geral-container p {
+  display: flex;
+  flex-direction: column;
+}
+.new-group .content form .geral-container p label {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 300;
+}
+.new-group .content form .geral-container p input, .new-group .content form .geral-container p select {
+  background-color: #2F2F2F;
+  border-radius: 5px;
+  border: none;
+  height: 45px;
+  padding: 0 10px;
+  color: #B7B7B7;
+}
+.new-group .content form .geral-container p input:focus, .new-group .content form .geral-container p select:focus {
+  outline: #e71cc7 solid 2px;
+}
+.new-group .content form .image-container .h3 {
+  font-weight: 400;
+}
+.new-group .content form .image-container .hr {
+  margin-bottom: 25px;
+}
+.new-group .content form .image-container .mock .image {
+  display: flex;
+  margin: 0 auto;
+}
+.new-group .content form .image-container .mock .submit-button p {
+  color: #BBBBBB;
+  font-weight: 300;
+  font-size: 20px;
+}
+.new-group .content form .image-container .mock .submit-button label {
+  display: block;
+  width: 100%;
+  padding: 11.5px 0;
+  background-color: #403C47;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+}
+.new-group .content form .status-container p {
+  display: flex;
+  flex-direction: column;
+}
+.new-group .content form .status-container p label {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 300;
+}
+.new-group .content form .status-container p input, .new-group .content form .status-container p select {
+  background-color: #2F2F2F;
+  border-radius: 5px;
+  border: none;
+  height: 45px;
+  margin-top: 10px;
+  padding: 0 10px;
+  color: #B7B7B7;
+}
+.new-group .content form .status-container p input:focus, .new-group .content form .status-container p select:focus {
+  outline: #e71cc7 solid 2px;
+}
+.new-group .content form .status-container .buttons .save {
+  width: 100%;
+  background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+  border-radius: 5px;
+  height: 45px;
+  max-width: 320px;
+  color: white;
+  border: none;
+  font-size: 18px;
+  margin-top: 1em;
+  cursor: pointer;
+}
+.new-group .content form .status-container .buttons .save:hover {
+  background: linear-gradient(93.99deg, #411a82 -5.78%, #8b1b57 113.82%);
+}
+.new-group .content form .status-container .buttons .cancel {
+  width: 100%;
+  background-color: #403C47;
+  border-radius: 5px;
+  height: 45px;
+  max-width: 320px;
+  color: white;
+  border: none;
+  font-size: 18px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.new-group .content form .status-container .buttons .cancel:hover {
+  background-color: #26242b;
+}/*# sourceMappingURL=group-create-page.component.css.map */

@@ -18,6 +18,7 @@ mat-tab-group {
 
 #create-link {
   cursor: pointer;
+  text-decoration: none;
 }
 #create-link .new-group {
   display: flex;

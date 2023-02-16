@@ -75,6 +75,9 @@ p, h1, h3, a{
                             cursor: pointer;
                             text-align: center;
 
+                            &:hover{
+                                background-color: #26242b;
+                            }
                         }
 
 
@@ -140,6 +143,109 @@ p, h1, h3, a{
         
                         &:hover{
                             background-color: #26242b;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .new-group{
+        .content{
+            max-width: 700px;
+            width: 100%;
+            padding: 0 2em;
+            form{
+
+                .geral-container{
+                    grid-area: geral;
+                    max-width: 700px;
+                    width: 100%;
+                }
+
+                .image-container{
+                    grid-area: file;
+                    max-width: 700px;
+                    .mock{
+                        display: flex;
+                        align-items: flex-end;
+                        .image{
+                            margin: 0;
+                        }
+
+                        .submit-button{
+                            max-width: 300px;
+                            margin-left: 1em;
+                            transform: translateY(22px);
+                            p{
+                                transform: translateY(-25px);
+                            }
+                        }
+                    }
+                }
+
+                .status-container{
+                    grid-area: status;
+                    .buttons{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .new-group{
+        .content{
+            max-width: 1140px;
+            width: 100%;
+            padding: 0 2em;
+            form{
+                display: grid;
+                grid-template-areas: 
+                                    'geral file'
+                                    'status file';
+
+                .geral-container{
+                    grid-area: geral;
+                    max-width: 544px;
+                    width: 544px;
+                }
+
+                .image-container{
+                    grid-area: file;
+                    max-width: 550px;
+                    margin-left: 4em;
+                    min-width: none;
+                    .mock{
+                        display: flex;
+                        align-items: flex-end;
+                        .image{
+                            margin: 0;
+                        }
+
+                        .submit-button{
+                            max-width: 300px;
+                            margin-left: 1em;
+                            transform: translateY(22px);
+                            p{
+                                transform: translateY(-25px);
+                            }
+                        }
+                    }
+                }
+
+                .status-container{
+                    grid-area: status;
+                    .buttons{
+                        .cancel{
+                            margin-top: 1em;
+                            margin-left: 1em;
                         }
                     }
                 }

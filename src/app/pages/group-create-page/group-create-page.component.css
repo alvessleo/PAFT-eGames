@@ -63,6 +63,9 @@ p, h1, h3, a {
   cursor: pointer;
   text-align: center;
 }
+.new-group .content form .image-container .mock .submit-button label:hover {
+  background-color: #26242b;
+}
 .new-group .content form .status-container p {
   display: flex;
   flex-direction: column;
@@ -113,4 +116,88 @@ p, h1, h3, a {
 }
 .new-group .content form .status-container .buttons .cancel:hover {
   background-color: #26242b;
+}
+
+@media only screen and (min-width: 768px) {
+  .new-group .content {
+    max-width: 700px;
+    width: 100%;
+    padding: 0 2em;
+  }
+  .new-group .content form .geral-container {
+    grid-area: geral;
+    max-width: 700px;
+    width: 100%;
+  }
+  .new-group .content form .image-container {
+    grid-area: file;
+    max-width: 700px;
+  }
+  .new-group .content form .image-container .mock {
+    display: flex;
+    align-items: flex-end;
+  }
+  .new-group .content form .image-container .mock .image {
+    margin: 0;
+  }
+  .new-group .content form .image-container .mock .submit-button {
+    max-width: 300px;
+    margin-left: 1em;
+    transform: translateY(22px);
+  }
+  .new-group .content form .image-container .mock .submit-button p {
+    transform: translateY(-25px);
+  }
+  .new-group .content form .status-container {
+    grid-area: status;
+  }
+  .new-group .content form .status-container .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .new-group .content {
+    max-width: 1140px;
+    width: 100%;
+    padding: 0 2em;
+  }
+  .new-group .content form {
+    display: grid;
+    grid-template-areas: "geral file" "status file";
+  }
+  .new-group .content form .geral-container {
+    grid-area: geral;
+    max-width: 544px;
+    width: 544px;
+  }
+  .new-group .content form .image-container {
+    grid-area: file;
+    max-width: 550px;
+    margin-left: 4em;
+    min-width: none;
+  }
+  .new-group .content form .image-container .mock {
+    display: flex;
+    align-items: flex-end;
+  }
+  .new-group .content form .image-container .mock .image {
+    margin: 0;
+  }
+  .new-group .content form .image-container .mock .submit-button {
+    max-width: 300px;
+    margin-left: 1em;
+    transform: translateY(22px);
+  }
+  .new-group .content form .image-container .mock .submit-button p {
+    transform: translateY(-25px);
+  }
+  .new-group .content form .status-container {
+    grid-area: status;
+  }
+  .new-group .content form .status-container .buttons .cancel {
+    margin-top: 1em;
+    margin-left: 1em;
+  }
 }/*# sourceMappingURL=group-create-page.component.css.map */

@@ -33,6 +33,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CadastroPageComponent } from './pages/cadastro-page/cadastro-page.component';
 import { GroupCreatePageComponent } from './pages/group-create-page/group-create-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavHomeComponent } from './components/nav-home/nav-home.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 
 
@@ -54,7 +56,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     UserMenuNavComponent,
     LoginPageComponent,
     CadastroPageComponent,
-    GroupCreatePageComponent
+    GroupCreatePageComponent,
+    NavHomeComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

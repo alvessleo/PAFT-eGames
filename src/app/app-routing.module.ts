@@ -4,13 +4,15 @@ import { CadastroPageComponent } from './pages/cadastro-page/cadastro-page.compo
 import { FeedContentComponent } from './pages/feed-content/feed-content.component';
 import { GroupCreatePageComponent } from './pages/group-create-page/group-create-page.component';
 import { GroupPageComponent } from './pages/group-page/group-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ProfileContentComponent } from './pages/profile-content/profile-content.component';
 import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
 
 
 const routes: Routes = [
-  {path: '', component: FeedContentComponent},
+  {path: '', component: HomePageComponent},
+  {path: 'feed', component: FeedContentComponent},
   {path: 'profile', component: ProfileContentComponent},
   {path: 'profile-edit', component: ProfileEditComponent},
   {path: 'group', component: GroupPageComponent},

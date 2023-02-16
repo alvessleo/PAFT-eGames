@@ -1,0 +1,186 @@
+
+.mat-drawer-container{
+    background-color: #101114;
+  }
+  
+  .sidenav-container {
+    height: 100%;
+  }
+  
+  .sidenav {
+    width: 50%;
+    background-color: #101114;
+    box-shadow: 3px 0 10px rgba($color: #000000, $alpha: .5);
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+    color: white;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .mobile-menu{
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0 0 1em;
+    a{
+      color: aliceblue;
+      text-decoration: none;
+      display: flex;
+    }
+    button{
+        height: 38px;
+        border-radius: 5px;
+        border: none;
+        color: white;
+        font-weight: 400;
+        padding: 0 20px;
+        font-size: 17px;
+        cursor: pointer;
+        max-width: 320px;
+    }
+
+    .signin{
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        mat-icon{
+            margin-right: 5px;
+        }
+    }
+
+
+    .signup{
+        background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+        &:hover{
+            background: linear-gradient(93.99deg, #4e1e9b -5.78%, #9c1f61 113.82%);
+        }
+    }
+  }
+  
+  .tool-bar{
+    justify-content: space-between;
+    max-width: 1250px;
+    margin: 0 auto;
+  
+    .logo{
+      width: 200px;
+    }
+  }
+  
+  .hidden{
+    display: none;
+  }
+  
+  .mat-icon{
+    color: white;
+  }
+  
+  .mat-toolbar {
+    background-color: transparent;
+    padding: 3em;
+    a{
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+  
+  
+  
+  .links-desk{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+  
+    a{
+      font-weight: 300;
+      font-size: 16px;
+      margin-right: 2em;
+    }
+ 
+  }
+  
+  .actions{
+    display: none;
+    margin-left: 1em;
+
+    button{
+        height: 38px;
+        border-radius: 5px;
+        border: none;
+        color: white;
+        font-weight: 400;
+        padding: 0 20px;
+        font-size: 17px;
+        cursor: pointer;
+    }
+
+    .signin{
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        mat-icon{
+            margin-right: 5px;
+        }
+    }
+
+
+    .signup{
+        background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+        &:hover{
+            background: linear-gradient(93.99deg, #4e1e9b -5.78%, #9c1f61 113.82%);
+        }
+    }
+
+
+  }
+  
+  @media only screen and (min-width: 600px) {
+  
+    .actions{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .links-desk{
+      display: flex;
+      a{
+        color: white;
+      }
+    }
+  }
+  
+  @media only screen and (min-width: 790px) {
+  
+    .actions{
+      display: none;
+    }
+  
+    .links-desk{
+      display: none;
+    }
+  }
+  
+  @media only screen and (min-width: 960px) {
+    
+    .actions{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .links-desk{
+      display: flex;
+    }
+  }

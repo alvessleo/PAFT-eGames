@@ -461,3 +461,145 @@ app-nav-home{
         }
     }
 }
+
+@media only screen and (min-width: 1024px){
+    .home-container{
+        .hero-section{
+            .main-typo{
+                margin: 0 4em;
+                margin-bottom: -4em;
+                .typo{
+                    h1{
+                        font-size: 40px;
+                        max-width: 437px;
+                        margin-right: 0;
+                    }
+                }
+                .hero-image{
+                    display: flex;
+                    max-width: 450px;
+                    margin: 0;
+                    transform: translateY(-50px);
+                    scale: 1.1;
+                }
+            }
+
+            .integration{
+                margin: 0 4em;
+                .hr{
+                    max-width: 80%;
+                }
+                .company{
+                    margin-top: .7em;
+                    .item{
+                        margin-right: 3em;
+                    }
+                }
+
+            }
+        }
+
+        .egames-number{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 1em 4em;
+        }
+
+        .about-section{
+            .experience{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 2em;
+                margin-left: 2em;
+                margin-right: 2em;
+
+                img{
+                    width: 450px;
+                    margin: 0;
+                }
+
+                .typo{
+                    position: relative;
+                    h2{
+                        max-width: 350px;
+                        font-size: 30px;
+                    }
+                    .icon{
+                        position: absolute;
+                        left: 0;
+                        transform: translateY(-25px);
+                    }
+                }
+            }
+
+            .make-friends{
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 2em;
+                padding-bottom: 130px;
+
+                img{
+                    width: 450px;
+                    margin: 0;
+                }
+
+                .typo{
+                    position: relative;
+                    h2{
+                        max-width: 350px;
+                        font-size: 30px;
+                    }
+                    .icon{
+                        position: absolute;
+                        left: 0;
+                        transform: translateY(-25px);
+                    }
+                }
+            }
+        }
+
+        .grid-section{
+            .bg-effect{
+                display: flex;
+                z-index: -1;
+                transform: translateY(-10px);
+                width: 100vw;
+            }
+        }  
+
+        footer{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 1140px;
+            z-index: 1;
+            padding: 4em;
+            margin-top: 6em;
+
+            .upper{
+                display: flex;
+                justify-content: space-between;
+                .links{
+                    ul{
+                        li{
+                            margin: 4px 0;
+                            font-weight: 300;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            .lower{
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
+        }
+    }
+}

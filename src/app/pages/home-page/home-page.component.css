@@ -394,4 +394,118 @@ app-nav-home {
     justify-content: space-between;
     align-items: flex-end;
   }
+}
+@media only screen and (min-width: 1024px) {
+  .home-container .hero-section .main-typo {
+    margin: 0 4em;
+    margin-bottom: -4em;
+  }
+  .home-container .hero-section .main-typo .typo h1 {
+    font-size: 40px;
+    max-width: 437px;
+    margin-right: 0;
+  }
+  .home-container .hero-section .main-typo .hero-image {
+    display: flex;
+    max-width: 450px;
+    margin: 0;
+    transform: translateY(-50px);
+    scale: 1.1;
+  }
+  .home-container .hero-section .integration {
+    margin: 0 4em;
+  }
+  .home-container .hero-section .integration .hr {
+    max-width: 80%;
+  }
+  .home-container .hero-section .integration .company {
+    margin-top: 0.7em;
+  }
+  .home-container .hero-section .integration .company .item {
+    margin-right: 3em;
+  }
+  .home-container .egames-number {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1em 4em;
+  }
+  .home-container .about-section .experience {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+  .home-container .about-section .experience img {
+    width: 450px;
+    margin: 0;
+  }
+  .home-container .about-section .experience .typo {
+    position: relative;
+  }
+  .home-container .about-section .experience .typo h2 {
+    max-width: 350px;
+    font-size: 30px;
+  }
+  .home-container .about-section .experience .typo .icon {
+    position: absolute;
+    left: 0;
+    transform: translateY(-25px);
+  }
+  .home-container .about-section .make-friends {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2em;
+    padding-bottom: 130px;
+  }
+  .home-container .about-section .make-friends img {
+    width: 450px;
+    margin: 0;
+  }
+  .home-container .about-section .make-friends .typo {
+    position: relative;
+  }
+  .home-container .about-section .make-friends .typo h2 {
+    max-width: 350px;
+    font-size: 30px;
+  }
+  .home-container .about-section .make-friends .typo .icon {
+    position: absolute;
+    left: 0;
+    transform: translateY(-25px);
+  }
+  .home-container .grid-section .bg-effect {
+    display: flex;
+    z-index: -1;
+    transform: translateY(-10px);
+    width: 100vw;
+  }
+  .home-container footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1140px;
+    z-index: 1;
+    padding: 4em;
+    margin-top: 6em;
+  }
+  .home-container footer .upper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .home-container footer .upper .links ul li {
+    margin: 4px 0;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  .home-container footer .lower {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 }/*# sourceMappingURL=home-page.component.css.map */

@@ -5,26 +5,39 @@
             <h1>Realize seu cadastro</h1>
             <h3>Preencha suas informações</h3>   
             <div class="hr"></div>
-            <form>
+            <form [formGroup]="dataSource" #formCadastro="ngForm" (ngSubmit)="submitCadastro()">
                 <p>
                     <label for="real-name">Nome real</label>
-                    <input type="text" name="real-name" class="input" placeholder="Insira seu nome">
+                    <input type="text" name="real-name" class="input" placeholder="Insira seu nome" formControlName="fullname">
+                    <span *ngIf="fullname?.errors?.['required'] && formCadastro.submitted" class="alert-cadastro">Insira seu nome</span>
+                    <span *ngIf="fullname?.errors?.['minlength'] && formCadastro.submitted && !fullname?.errors?.['pattern']" class="alert-cadastro">O nome deve possuir pelo menos 7 letras</span>
+                    <span *ngIf="fullname?.errors?.['pattern'] && formCadastro.submitted" class="alert-cadastro">O nome deve possuir apenas letras</span>
+
                 </p>
                 <p>
                     <label for="username">Username</label>
-                    <input type="text" name="username" class="input" placeholder="@user">
+                    <input type="text" name="username" class="input" placeholder="Inseria seu username" formControlName="username">
+                    <span *ngIf="username?.errors?.['required'] && formCadastro.submitted" class="alert-cadastro">Insira um username</span>
+                    <span *ngIf="username?.errors?.['minlength'] && formCadastro.submitted" class="alert-cadastro">O username deve possuir pelo menos 4 caracteres</span>
                 </p>
                 <p>
                     <label for="date">Data de nascimento</label>
-                    <input type="date" name="date" class="input">
+                    <input type="date" name="date" class="input" formControlName="birthdate">
+                    <span *ngIf="birthdate?.errors?.['required'] && formCadastro.submitted" class="alert-cadastro">Insira sua data de nascimento</span>
                 </p>
                 <p>
                     <label for="password">Senha</label>
-                    <input type="password" name="password" class="input" placeholder="Insira sua senha">
+                    <input type={{inputType}} name="password" class="input" placeholder="Insira sua senha" formControlName="password">
+                    <span *ngIf="password?.errors?.['required'] && formCadastro.submitted" class="alert-cadastro">Insira uma senha</span>
+                    <span *ngIf="password?.errors?.['minlength'] && formCadastro.submitted" class="alert-cadastro">A senha deve possuir pelo menos 8 caracteres</span>
+                    <mat-icon (click)="togglePass()" id="eye-icon">{{visibility}}</mat-icon>
                 </p>
+                
                 <p>
                     <label for="confirm-password">Confirmar senha</label>
-                    <input type="password" name="confirm-password" class="input" placeholder="Insira novamente sua senha">
+                    <input type={{inputType}} name="confirm-password" class="input" placeholder="Insira novamente sua senha" formControlName="confirmPassword">
+                    <span *ngIf="confirmPassword?.errors?.['nomatch'] && formCadastro.submitted" class="alert-cadastro">As senhas devem ser iguais</span>
+                    <mat-icon (click)="togglePass()" id="eye-icon">{{visibility}}</mat-icon>
                 </p>
                 <button type="submit" class="save">Criar conta</button>
             </form>

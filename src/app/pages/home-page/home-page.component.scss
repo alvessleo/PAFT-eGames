@@ -1,0 +1,277 @@
+app-nav-home{
+    position: relative;
+}
+
+.home-container{
+    position: absolute;
+    top: 0;
+    transform: translateY(-25px);
+    max-width: 100vw;
+    z-index: -1;
+    background-color: #090909;
+    .hero-section{
+        position: relative;
+        .bg-effect{
+            position: absolute;
+            object-fit: cover;
+            z-index: -1;
+            top: 0;
+            margin: 0;
+            transform: scaleX(-1);
+            width: 100vw;
+            height: 100%;
+        }
+
+        .main-typo{
+            margin: 0 1em;
+            padding-top: 180px;
+            h1{
+                font-style: normal;
+                font-weight: 700;
+                // font-size: 66px; DESKTPOP
+                font-size: 36px;
+                max-width: 683px;
+            }
+            p{
+                font-weight: 300;
+            }
+            button{
+                width: 100%;
+                background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+                border-radius: 5px;
+                height: 45px;
+                max-width: 250px;
+                color: white;
+                border: none;
+                font-size: 17px;
+                margin-top: 1em;
+                cursor: pointer;
+
+                &:hover{
+                    background: linear-gradient(93.99deg, #411a82 -5.78%, #8b1b57 113.82%);
+                }
+            }
+        }
+
+        .hero-image{
+            width: 100%;
+            max-width: 340px;
+            margin: 0 1em;
+        }
+
+        .integration{
+            margin: 0 1em;
+            p{
+                font-weight: 300;
+                color: #c3c3c3;
+                margin: 0;
+                padding: 2em 0 1em 0;
+            }
+            .company{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                .item{
+                    margin-right: 2em;
+                    padding: 1em 0 2em 0;
+                }
+            }
+        }
+    }
+
+    .egames-number{
+        margin: 1em;
+        h3{
+            font-weight: 700;
+            margin: 2em 0;
+        }
+        .active-users{
+            display: flex;
+            align-items: center;
+            margin-bottom: 2em;
+            .icon{
+                border: .5px solid rgb(81, 81, 81);
+                border-radius: 10px;
+                width: 60px;
+                height: 60px;
+                svg{
+                    width: 30px;   
+                    height: 30px;
+                    padding: 1em;
+                    margin: 0 auto;
+                    transform: translateY(-2px);
+                }
+            }
+
+            .typo{
+                margin-left: 1.5em;
+                h1{
+                    font-size: 28px;
+                    margin: 0;
+                }
+                p{
+                    margin: 0px;
+                    font-weight: 300;
+                    color: #B3B0B8;
+                }
+            }
+        }
+
+        .creators{
+            display: flex;
+            align-items: center;
+            margin-bottom: 2em;
+            .icon{
+                border: .5px solid rgb(81, 81, 81);
+                border-radius: 10px;
+                width: 60px;
+                height: 60px;
+                svg{
+                    width: 30px;   
+                    height: 30px;
+                    padding: 1em;
+                    margin: 0 auto;
+                    transform: translateX(-1px);
+                }
+            }
+
+            .typo{
+                margin-left: 1.5em;
+                h1{
+                    font-size: 28px;
+                    margin: 0;
+                }
+                p{
+                    margin: 0px;
+                    font-weight: 300;
+                    color: #B3B0B8;
+                }
+            }
+        }
+    }
+
+    .about-section{
+        margin: 1em;
+        padding: 50px 0;
+        .experience{
+            padding-bottom: 100px;
+
+            img{
+                width: 350px;
+            }
+            .typo{
+                .icon{
+                    width: 30px;
+                }
+                p{
+                    font-weight: 300;
+                    color: #B3B0B8;
+                }
+            }
+        }
+
+        .make-friends{
+
+            img{
+                width: 350px;
+            }
+            .typo{
+                .icon{
+                    width: 30px;
+                }
+                p{
+                    font-weight: 300;
+                    color: #B3B0B8;
+                }
+            }
+            .fake-button{
+                display: flex;
+                align-items: center;
+                background-color: #212328;
+                width: fit-content;
+                border-radius: 30px;
+                height: 40px;
+                padding: 0 20px;
+                margin-top: 45px;
+                svg{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    footer{
+        background-color: black;
+        .upper{
+            display: flex;
+            .links{
+                ul{
+                    li{
+                        list-style: none;
+                        display: flex;
+                        font-weight: 300;
+                        .jobs{
+                            background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+                            font-size: 11px;
+                            font-weight: 300;
+                            width: fit-content;
+                            padding: 2px 10px;
+                            border-radius: 20px;
+                            margin-left: 4px;
+                        }
+                    }
+                }
+            }
+
+            .about-footer{
+                .logo-footer{
+                    width: 150px;
+
+                }
+                p{
+                    font-weight: 300;
+                    color: #B3B0B8;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .lower{
+            .rights-reserved{
+                p{
+                    font-size: 12px;
+                    font-weight: 300;
+
+                    &:nth-of-type(2){
+                        color: #B3B0B8;
+                        margin-top: -3px;
+                    }
+                }
+            }
+
+            .newsletter{
+                .fake-button{
+                    font-size: 9px;
+                    font-weight: 300;
+                    border: .5px solid rgb(90, 90, 90);
+                    width: fit-content;
+                    border-radius: 20px;
+                    padding: 2px 10px;
+                    margin-bottom: -10px;
+                }
+
+                .assinar{
+                    background-color: #101114;
+                    display: flex;
+                    align-items: center;
+                    height: 45px;
+                    button{
+                        background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+                        border: none;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

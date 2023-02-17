@@ -14,7 +14,7 @@
         justify-content: center;
         padding: 1em 0;
         align-items: center;
-        max-width: 235px;
+        max-width: 245px;
         min-width: 180px;
         img{
             width: 100px;
@@ -58,6 +58,7 @@
     .egames{
         grid-area: egames;
         background: linear-gradient(45.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+        z-index: 99;
         img{
             width: 50px;
             height: 50px;
@@ -107,7 +108,7 @@
     .grid{
         gap: 10px;
         .item{
-            width: 235px;
+            width: 245px;
             padding: 2em 1em 2em 1em;
             min-width: 180px;
 
@@ -153,6 +154,7 @@
         'apex ow fifa valorant'
         'dota pubg egames valorant'
         'dota cs egames roblox';
+
 
         .apex{
             display: flex;

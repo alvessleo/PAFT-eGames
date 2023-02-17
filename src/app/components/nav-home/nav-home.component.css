@@ -1,5 +1,6 @@
 .mat-drawer-container {
   background-color: #101114;
+  width: 100vw;
 }
 
 .sidenav-container {

@@ -1,5 +1,6 @@
 app-nav-home {
   position: relative;
+  width: 100%;
 }
 
 .home-container {
@@ -7,6 +8,7 @@ app-nav-home {
   top: 0;
   transform: translateY(-25px);
   max-width: 100vw;
+  width: 100%;
   z-index: -1;
   background-color: #090909;
 }
@@ -21,7 +23,7 @@ app-nav-home {
   top: 0;
   margin: 0;
   transform: scaleX(-1);
-  width: 100vw;
+  width: 100%;
   height: 100%;
 }
 .home-container .hero-section .main-typo {
@@ -396,6 +398,12 @@ app-nav-home {
   }
 }
 @media only screen and (min-width: 1024px) {
+  .home-container .hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .home-container .hero-section .main-typo {
     margin: 0 4em;
     margin-bottom: -4em;
@@ -414,6 +422,8 @@ app-nav-home {
   }
   .home-container .hero-section .integration {
     margin: 0 4em;
+    width: 90%;
+    max-width: 1140px;
   }
   .home-container .hero-section .integration .hr {
     max-width: 80%;
@@ -428,7 +438,12 @@ app-nav-home {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 1em 4em;
+    padding: 1em 4em;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  .home-container .about-section {
+    max-width: 1210px;
   }
   .home-container .about-section .experience {
     display: flex;
@@ -481,22 +496,26 @@ app-nav-home {
   }
   .home-container .grid-section .bg-effect {
     display: flex;
-    z-index: -1;
-    transform: translateY(-10px);
+    transform: translateY(-5vh);
     width: 100vw;
+    top: 0;
+    position: absolute;
+    height: 640px;
   }
   .home-container footer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 1140px;
     z-index: 1;
     padding: 4em;
-    margin-top: 6em;
+    margin: 0 auto;
+    box-shadow: 0 0 0 100vmax #000;
   }
   .home-container footer .upper {
     display: flex;
     justify-content: space-between;
+    padding-top: 4em;
   }
   .home-container footer .upper .links ul li {
     margin: 4px 0;
@@ -507,5 +526,46 @@ app-nav-home {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .home-container .hero-section .main-typo {
+    margin: 0;
+    max-width: 1140px;
+    width: 100%;
+    padding-top: 170px;
+  }
+  .home-container .hero-section .main-typo .typo h1 {
+    font-size: 56px;
+    max-width: 611px;
+    margin-bottom: 35px;
+  }
+  .home-container .hero-section .main-typo .typo p {
+    max-width: 420px;
+    font-size: 19px;
+  }
+  .home-container .hero-section .main-typo .hero-image {
+    max-width: 510px;
+    margin: 0;
+    transform: translateY(-22px);
+    scale: 1.1;
+  }
+  .home-container .hero-section .integration {
+    transform: translateY(-75px);
+    margin-bottom: -6em;
+  }
+  .home-container .hero-section .integration .hr {
+    max-width: 70%;
+  }
+  .home-container .hero-section .integration p {
+    transform: translateY(-18px);
+  }
+  .home-container .hero-section .integration .company {
+    transform: translateY(-25px);
+  }
+}
+@media only screen and (min-width: 1785px) {
+  .home-container .hero-section .integration {
+    margin-bottom: 4em;
   }
 }/*# sourceMappingURL=home-page.component.css.map */

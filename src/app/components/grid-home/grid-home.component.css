@@ -11,7 +11,7 @@
   justify-content: center;
   padding: 1em 0;
   align-items: center;
-  max-width: 235px;
+  max-width: 245px;
   min-width: 180px;
 }
 .grid .item img {
@@ -47,6 +47,7 @@
 .grid .egames {
   grid-area: egames;
   background: linear-gradient(45.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+  z-index: 99;
 }
 .grid .egames img {
   width: 50px;
@@ -93,7 +94,7 @@
     gap: 10px;
   }
   .grid .item {
-    width: 235px;
+    width: 245px;
     padding: 2em 1em 2em 1em;
     min-width: 180px;
   }

@@ -664,6 +664,60 @@ app-nav-home{
                 }
             }
         }
+
+        .about-section{
+            .experience{
+                img{
+                    width: 500px;
+                }
+            }
+
+            .make-friends{
+                img{
+                    width: 500px;
+                }
+            }
+        }
+
+        footer{
+            .upper{
+                .links{
+                    ul{
+                        li{
+                            font-size: 18px;
+                            .jobs{
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+
+                .about-footer{
+                    .logo-footer{
+                        width: 200px;
+
+                    }
+                    p{
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .lower{
+                .rights-reserved{
+                    p{
+                        font-size: 15px;
+                    }
+                }
+
+                .newsletter{
+                    h2{
+                        font-size: 30px;
+                    }
+                }
+
+            }
+        }
     }
 }
 

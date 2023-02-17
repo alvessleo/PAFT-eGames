@@ -563,6 +563,30 @@ app-nav-home {
   .home-container .hero-section .integration .company {
     transform: translateY(-25px);
   }
+  .home-container .about-section .experience img {
+    width: 500px;
+  }
+  .home-container .about-section .make-friends img {
+    width: 500px;
+  }
+  .home-container footer .upper .links ul li {
+    font-size: 18px;
+  }
+  .home-container footer .upper .links ul li .jobs {
+    font-size: 15px;
+  }
+  .home-container footer .upper .about-footer .logo-footer {
+    width: 200px;
+  }
+  .home-container footer .upper .about-footer p {
+    font-size: 18px;
+  }
+  .home-container footer .lower .rights-reserved p {
+    font-size: 15px;
+  }
+  .home-container footer .lower .newsletter h2 {
+    font-size: 30px;
+  }
 }
 @media only screen and (min-width: 1785px) {
   .home-container .hero-section .integration {

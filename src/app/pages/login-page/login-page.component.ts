@@ -7,6 +7,7 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss']
 })
+
 export class LoginPageComponent {
 
   dataSource!: FormGroup
@@ -28,7 +29,7 @@ export class LoginPageComponent {
 
   submitLogin(event: any) {
     if (this.dataSource.valid) {
-      this.router.navigate(['/']) // EDITE AQUI - Navegar para /feed
+      this.router.navigate(['/feed']) // EDITE AQUI - Navegar para /feed
     } else {
       console.log("nao logou")
     }

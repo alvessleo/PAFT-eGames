@@ -39,6 +39,22 @@
 
     .fifa{
         grid-area: fifa;
+        position: relative;
+        background-image: url(../../../assets/fifa-grid.png);
+        .filter{
+            background-color: #000000;
+            opacity: 80%;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 13px;
+        }
+        img{
+            z-index: 9;
+        }
+        p{
+            z-index: 9;
+        }
     }
 
     .valorant{
@@ -84,8 +100,23 @@
 
     .cs{
         grid-area: cs;
+        background-image: url(../../../assets/cs-grid.png);
+        position: relative;
         .img-cs{
             width: 90px;
+            z-index: 9;
+        }
+
+        .filter{
+            background-color: #000000;
+            opacity: 60%;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 13px;
+        }
+        p{
+            z-index: 9;
         }
     }
 

@@ -28,16 +28,16 @@ app-nav-home {
   margin: 0 1em;
   padding-top: 180px;
 }
-.home-container .hero-section .main-typo h1 {
+.home-container .hero-section .main-typo .typo h1 {
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
   max-width: 683px;
 }
-.home-container .hero-section .main-typo p {
+.home-container .hero-section .main-typo .typo p {
   font-weight: 300;
 }
-.home-container .hero-section .main-typo button {
+.home-container .hero-section .main-typo .typo button {
   width: 100%;
   background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
   border-radius: 5px;
@@ -46,16 +46,18 @@ app-nav-home {
   color: white;
   border: none;
   font-size: 17px;
-  margin-top: 1em;
+  margin-top: 2em;
+  margin-bottom: 3em;
   cursor: pointer;
 }
-.home-container .hero-section .main-typo button:hover {
+.home-container .hero-section .main-typo .typo button:hover {
   background: linear-gradient(93.99deg, #411a82 -5.78%, #8b1b57 113.82%);
 }
-.home-container .hero-section .hero-image {
+.home-container .hero-section .main-typo .hero-image {
   width: 100%;
   max-width: 340px;
   margin: 0 1em;
+  display: none;
 }
 .home-container .hero-section .integration {
   margin: 0 1em;
@@ -67,13 +69,13 @@ app-nav-home {
   padding: 2em 0 1em 0;
 }
 .home-container .hero-section .integration .company {
+  padding-bottom: 2em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 .home-container .hero-section .integration .company .item {
   margin-right: 2em;
-  padding: 1em 0 2em 0;
 }
 .home-container .egames-number {
   margin: 1em;
@@ -81,6 +83,7 @@ app-nav-home {
 .home-container .egames-number h3 {
   font-weight: 700;
   margin: 2em 0;
+  max-width: 270px;
 }
 .home-container .egames-number .active-users {
   display: flex;
@@ -151,6 +154,11 @@ app-nav-home {
 }
 .home-container .about-section .experience img {
   width: 350px;
+  display: flex;
+  margin: 0 auto;
+}
+.home-container .about-section .experience .typo h2 {
+  max-width: 300px;
 }
 .home-container .about-section .experience .typo .icon {
   width: 30px;
@@ -158,15 +166,22 @@ app-nav-home {
 .home-container .about-section .experience .typo p {
   font-weight: 300;
   color: #B3B0B8;
+  max-width: 410px;
 }
 .home-container .about-section .make-friends img {
   width: 350px;
+  margin: 0 auto;
+  display: flex;
+}
+.home-container .about-section .make-friends .typo h2 {
+  max-width: 300px;
 }
 .home-container .about-section .make-friends .typo .icon {
   width: 30px;
 }
 .home-container .about-section .make-friends .typo p {
   font-weight: 300;
+  max-width: 350px;
   color: #B3B0B8;
 }
 .home-container .about-section .make-friends .fake-button {
@@ -181,19 +196,38 @@ app-nav-home {
   padding: 0 20px;
   margin-top: 45px;
 }
+.home-container .about-section .make-friends .fake-button p {
+  color: #fff;
+}
 .home-container .about-section .make-friends .fake-button svg {
-  margin-right: 10px;
+  margin-right: 6px;
+}
+.home-container .grid-section {
+  position: relative;
+  margin: 1em;
+}
+.home-container .grid-section .bg-effect {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  display: none;
 }
 .home-container footer {
   background-color: black;
+  padding: 1em;
+  z-index: 12;
 }
 .home-container footer .upper {
-  display: flex;
+  margin-bottom: 4em;
+}
+.home-container footer .upper .links ul {
+  padding: 0;
 }
 .home-container footer .upper .links ul li {
   list-style: none;
   display: flex;
   font-weight: 300;
+  transition: 0.5s;
 }
 .home-container footer .upper .links ul li .jobs {
   background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
@@ -206,6 +240,10 @@ app-nav-home {
   border-radius: 20px;
   margin-left: 4px;
 }
+.home-container footer .upper .links ul li:hover {
+  margin-left: 5px;
+  cursor: pointer;
+}
 .home-container footer .upper .about-footer .logo-footer {
   width: 150px;
 }
@@ -213,6 +251,7 @@ app-nav-home {
   font-weight: 300;
   color: #B3B0B8;
   font-size: 14px;
+  max-width: 310px;
 }
 .home-container footer .lower .rights-reserved p {
   font-size: 12px;
@@ -236,11 +275,123 @@ app-nav-home {
 .home-container footer .lower .newsletter .assinar {
   background-color: #101114;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 45px;
+  max-width: 350px;
+  border-radius: 10px;
+  margin-top: -10px;
 }
 .home-container footer .lower .newsletter .assinar button {
   background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
   border: none;
   color: #fff;
+  height: 35px;
+  padding: 0 20px;
+  margin-right: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.home-container footer .lower .newsletter .assinar button:hover {
+  background: linear-gradient(93.99deg, #4a1d93 -5.78%, #a9226a 113.82%);
+}
+.home-container footer .lower .newsletter .assinar p {
+  font-weight: 300;
+  margin-left: 30px;
+  font-size: 12px;
+  color: #d1d1d1;
+}
+
+@media only screen and (min-width: 425px) {
+  .home-container .hero-section .main-typo {
+    margin: 0 2em;
+  }
+  .home-container .hero-section .integration {
+    margin: 0 2em;
+  }
+  .home-container .about-section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 2em;
+  }
+  .home-container .egames-number {
+    margin: 1em 2em;
+  }
+  .home-container .grid-section {
+    margin: 1em 2em;
+    display: flex;
+    justify-content: center;
+  }
+  .home-container footer {
+    padding: 2em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .home-container .hero-section .main-typo {
+    display: flex;
+  }
+  .home-container .hero-section .main-typo .hero-image {
+    display: flex;
+  }
+  .home-container .egames-number {
+    display: flex;
+    align-items: center;
+  }
+  .home-container .egames-number h3 {
+    margin-right: 1em;
+  }
+  .home-container .egames-number .active-users {
+    margin-bottom: 0;
+    margin-right: 1em;
+  }
+  .home-container .egames-number .creators {
+    margin-bottom: 0;
+  }
+  .home-container .about-section .experience {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .home-container .about-section .experience .typo {
+    position: relative;
+  }
+  .home-container .about-section .experience .typo .icon {
+    position: absolute;
+    left: 0;
+    transform: translateY(-25px);
+  }
+  .home-container .about-section .make-friends {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  .home-container .about-section .make-friends .typo {
+    position: relative;
+  }
+  .home-container .about-section .make-friends .typo .icon {
+    position: absolute;
+    left: 0;
+    transform: translateY(-25px);
+  }
+  .home-container footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1140px;
+  }
+  .home-container footer .upper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .home-container footer .upper .links ul li {
+    margin: 4px 0;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  .home-container footer .lower {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 }/*# sourceMappingURL=home-page.component.css.map */

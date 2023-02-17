@@ -35,6 +35,8 @@ import { GroupCreatePageComponent } from './pages/group-create-page/group-create
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavHomeComponent } from './components/nav-home/nav-home.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { GridHomeComponent } from './components/grid-home/grid-home.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 
@@ -58,7 +60,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     CadastroPageComponent,
     GroupCreatePageComponent,
     NavHomeComponent,
-    HomePageComponent
+    HomePageComponent,
+    GridHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +80,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     MatFormFieldModule,
     MatMenuModule,
     MatCheckboxModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

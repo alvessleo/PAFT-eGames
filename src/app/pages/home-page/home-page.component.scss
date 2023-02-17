@@ -25,39 +25,45 @@ app-nav-home{
         .main-typo{
             margin: 0 1em;
             padding-top: 180px;
-            h1{
-                font-style: normal;
-                font-weight: 700;
-                // font-size: 66px; DESKTPOP
-                font-size: 36px;
-                max-width: 683px;
-            }
-            p{
-                font-weight: 300;
-            }
-            button{
-                width: 100%;
-                background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
-                border-radius: 5px;
-                height: 45px;
-                max-width: 250px;
-                color: white;
-                border: none;
-                font-size: 17px;
-                margin-top: 1em;
-                cursor: pointer;
-
-                &:hover{
-                    background: linear-gradient(93.99deg, #411a82 -5.78%, #8b1b57 113.82%);
+            .typo{
+                h1{
+                    font-style: normal;
+                    font-weight: 700;
+                    // font-size: 66px; DESKTPOP
+                    // max-width: 724px; DESKTOP
+                    font-size: 36px;
+                    max-width: 683px;
+                }
+                p{
+                    font-weight: 300;
+                }
+                button{
+                    width: 100%;
+                    background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+                    border-radius: 5px;
+                    height: 45px;
+                    max-width: 250px;
+                    color: white;
+                    border: none;
+                    font-size: 17px;
+                    margin-top: 2em;
+                    margin-bottom: 3em;
+                    cursor: pointer;
+    
+                    &:hover{
+                        background: linear-gradient(93.99deg, #411a82 -5.78%, #8b1b57 113.82%);
+                    }
                 }
             }
+            .hero-image{
+                width: 100%;
+                max-width: 340px;
+                margin: 0 1em;
+                display: none;
+            }
         }
 
-        .hero-image{
-            width: 100%;
-            max-width: 340px;
-            margin: 0 1em;
-        }
+
 
         .integration{
             margin: 0 1em;
@@ -68,12 +74,12 @@ app-nav-home{
                 padding: 2em 0 1em 0;
             }
             .company{
+                padding-bottom: 2em;
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
                 .item{
                     margin-right: 2em;
-                    padding: 1em 0 2em 0;
                 }
             }
         }
@@ -84,6 +90,7 @@ app-nav-home{
         h3{
             font-weight: 700;
             margin: 2em 0;
+            max-width: 270px;
         }
         .active-users{
             display: flex;
@@ -158,14 +165,20 @@ app-nav-home{
 
             img{
                 width: 350px;
+                display: flex;
+                margin: 0 auto;
             }
             .typo{
+                h2{
+                    max-width: 300px;
+                }
                 .icon{
                     width: 30px;
                 }
                 p{
                     font-weight: 300;
                     color: #B3B0B8;
+                    max-width: 410px;
                 }
             }
         }
@@ -174,13 +187,19 @@ app-nav-home{
 
             img{
                 width: 350px;
+                margin: 0 auto;
+                display: flex;
             }
             .typo{
+                h2{
+                    max-width: 300px;
+                }
                 .icon{
                     width: 30px;
                 }
                 p{
                     font-weight: 300;
+                    max-width: 350px;
                     color: #B3B0B8;
                 }
             }
@@ -193,23 +212,42 @@ app-nav-home{
                 height: 40px;
                 padding: 0 20px;
                 margin-top: 45px;
+                p{
+                    color: #fff;
+                }
                 svg{
-                    margin-right: 10px;
+                    margin-right: 6px;
                 }
             }
         }
     }
 
+    .grid-section{
+        position: relative;
+        margin: 1em;
+        
+        .bg-effect{
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            display: none;
+        }
+    }
+
     footer{
         background-color: black;
+        padding: 1em;
+        z-index: 12;
         .upper{
-            display: flex;
+            margin-bottom: 4em;
             .links{
                 ul{
+                    padding: 0;
                     li{
                         list-style: none;
                         display: flex;
                         font-weight: 300;
+                        transition: .5s;
                         .jobs{
                             background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
                             font-size: 11px;
@@ -218,6 +256,11 @@ app-nav-home{
                             padding: 2px 10px;
                             border-radius: 20px;
                             margin-left: 4px;
+                        }
+
+                        &:hover{
+                            margin-left: 5px;
+                            cursor: pointer;
                         }
                     }
                 }
@@ -232,6 +275,7 @@ app-nav-home{
                     font-weight: 300;
                     color: #B3B0B8;
                     font-size: 14px;
+                    max-width: 310px;
                 }
             }
         }
@@ -263,14 +307,156 @@ app-nav-home{
                 .assinar{
                     background-color: #101114;
                     display: flex;
+                    justify-content: space-between;
                     align-items: center;
                     height: 45px;
+                    max-width: 350px;
+                    border-radius: 10px;
+                    margin-top: -10px;
                     button{
                         background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
                         border: none;
                         color: #fff;
+                        height: 35px;
+                        padding: 0 20px;
+                        margin-right: 5px;
+                        border-radius: 10px;
+                        cursor: pointer;
+
+
+                        &:hover{
+                            background: linear-gradient(93.99deg, #4a1d93 -5.78%, #a9226a 113.82%);
+                        }
+                    }
+                    p{
+                        font-weight: 300;
+                        margin-left: 30px;
+                        font-size: 12px;
+                        color: #d1d1d1;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 425px){
+    .home-container{
+        .hero-section{
+            .main-typo{
+                margin: 0 2em;
+            }
+
+            .integration{
+                margin: 0 2em;
+            }
+        }
+
+        .about-section{
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            padding: 2em;
+        }
+
+        .egames-number{
+            margin: 1em 2em;
+        }
+
+        .grid-section{
+            margin: 1em 2em;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer{
+            padding: 2em;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .home-container{
+        .hero-section{
+            .main-typo{
+                display: flex;
+                .hero-image{
+                    display: flex;
+                }
+            }
+        }
+
+        .egames-number{
+            display: flex;
+            align-items: center;
+            h3{
+                margin-right: 1em;
+            }
+
+            .active-users{
+                margin-bottom: 0;
+                margin-right: 1em;
+            }
+
+            .creators{
+                margin-bottom: 0;
+            }
+        }
+
+        .about-section{
+            .experience{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .typo{
+                    position: relative;
+                    .icon{
+                        position: absolute;
+                        left: 0;
+                        transform: translateY(-25px);
+                    }
+                }
+            }
+
+            .make-friends{
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                .typo{
+                    position: relative;
+                    .icon{
+                        position: absolute;
+                        left: 0;
+                        transform: translateY(-25px);
+                    }
+                }
+            }
+        }
+
+        footer{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 1140px;
+
+            .upper{
+                display: flex;
+                justify-content: space-between;
+                .links{
+                    ul{
+                        li{
+                            margin: 4px 0;
+                            font-weight: 300;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            .lower{
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
             }
         }
     }

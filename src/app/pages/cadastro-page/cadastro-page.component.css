@@ -52,6 +52,7 @@ p, h1, h3, a {
   display: flex;
   flex-direction: column;
   margin: 0;
+  position: relative;
 }
 .cadastro-page .main-content .content form p .input {
   background-color: #2F2F2F;
@@ -64,6 +65,19 @@ p, h1, h3, a {
 }
 .cadastro-page .main-content .content form p .input:focus {
   outline: #e71cc7 solid 2px;
+}
+.cadastro-page .main-content .content form p span.alert-cadastro {
+  color: #f24747;
+  font-weight: 300;
+  font-size: 14px;
+  transform: translateY(-5px);
+}
+.cadastro-page .main-content .content form p #eye-icon {
+  position: absolute;
+  right: 0;
+  transform: translate(-15px, 40px);
+  color: #B7B7B7;
+  z-index: 99;
 }
 .cadastro-page .main-content .content form button {
   width: 100%;

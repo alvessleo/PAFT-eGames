@@ -1,0 +1,148 @@
+.grid {
+  display: grid;
+  grid-template-areas: "ow fifa" "pubg egames" "cs egames";
+  gap: 5px;
+}
+.grid .item {
+  background-color: #1F1F23;
+  border-radius: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em 0;
+  align-items: center;
+  max-width: 235px;
+  min-width: 180px;
+}
+.grid .item img {
+  width: 100px;
+}
+.grid .item p {
+  text-align: center;
+  font-weight: 300;
+  color: #B3B0B8;
+  font-size: 15px;
+}
+.grid .apex {
+  grid-area: apex;
+  display: none;
+}
+.grid .over {
+  grid-area: ow;
+}
+.grid .fifa {
+  grid-area: fifa;
+}
+.grid .valorant {
+  grid-area: valorant;
+  display: none;
+}
+.grid .dota {
+  grid-area: dota;
+  display: none;
+}
+.grid .pubg {
+  grid-area: pubg;
+}
+.grid .egames {
+  grid-area: egames;
+  background: linear-gradient(45.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+}
+.grid .egames img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1em;
+}
+.grid .egames h2 {
+  text-align: center;
+  font-size: 22px;
+  margin: 0 1em;
+}
+.grid .egames button {
+  background-color: #ff76fd;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 16px;
+  margin-top: 1em;
+}
+.grid .cs {
+  grid-area: cs;
+}
+.grid .cs .img-cs {
+  width: 90px;
+}
+.grid .roblox {
+  grid-area: roblox;
+  display: none;
+}
+
+@media only screen and (min-width: 425px) {
+  .grid {
+    gap: 10px;
+  }
+  .grid .item {
+    padding: 1em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .grid {
+    gap: 10px;
+  }
+  .grid .item {
+    width: 235px;
+    padding: 2em 1em 2em 1em;
+    min-width: 180px;
+  }
+  .grid .item img {
+    width: 150px;
+  }
+  .grid .egames img {
+    width: 50px;
+  }
+}
+@media only screen and (min-width: 930px) {
+  .grid {
+    grid-template-areas: "apex ow fifa" "dota pubg egames" "dota cs egames";
+  }
+  .grid .apex {
+    display: flex;
+  }
+  .grid .apex img {
+    width: 90px;
+  }
+  .grid .dota {
+    display: flex;
+  }
+  .grid .dota img {
+    width: 150px;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .grid {
+    grid-template-areas: "apex ow fifa valorant" "dota pubg egames valorant" "dota cs egames roblox";
+  }
+  .grid .apex {
+    display: flex;
+  }
+  .grid .apex img {
+    width: 90px;
+  }
+  .grid .dota {
+    display: flex;
+  }
+  .grid .dota img {
+    width: 150px;
+  }
+  .grid .valorant {
+    display: flex;
+  }
+  .grid .valorant img {
+    width: 100px;
+  }
+  .grid .roblox {
+    display: flex;
+  }
+}/*# sourceMappingURL=grid-home.component.css.map */

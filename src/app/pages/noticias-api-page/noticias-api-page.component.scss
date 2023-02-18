@@ -1,0 +1,95 @@
+.hr{
+    height: 1.5px;
+    width: 100%;
+    opacity: 10%;
+    background-color: white;
+    z-index: 99;
+    margin-bottom: 2em;
+}
+
+.noticias-container{
+    margin: 1em;
+    .main-typo{
+        h1{
+            font-weight: 500;
+        }
+        h3{
+            font-weight: 300;
+            margin-top: -20px;
+            margin-bottom: 80px;
+        }
+    }
+
+    .most-popular-games{
+        h3{
+            font-weight: 300;
+        }
+        .games{
+            display: flex;
+            overflow-x: scroll;
+        }
+    }
+
+    .secondary{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 4em;
+        .newest{
+            width: 100%;
+            max-width: 350px;
+            margin-bottom: 2em;
+            h3{
+                font-weight: 300;
+            }
+        }
+
+        .soon{
+            width: 100%;
+            max-width: 350px;
+            margin-bottom: 2em;
+            h3{
+                font-weight: 300;
+            }
+        }
+
+        .anticipated{
+            width: 100%;
+            max-width: 350px;
+            margin-bottom: 2em;
+            h3{
+                font-weight: 300;
+            }
+        }
+    }
+
+
+
+}
+
+
+@media only screen and (min-width: 720px){
+    .noticias-container{
+        max-width: 1140px;
+        margin: 0 4em auto;
+        .secondary{
+            .newest{
+                margin-right: 1em;
+            }
+
+            .soon{
+                margin-right: 1em;
+            }
+
+            .anticipated{
+                margin-right: 1em;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1160px){
+    .noticias-container{
+        margin: 0 auto;
+    }
+}

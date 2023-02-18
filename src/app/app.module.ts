@@ -37,6 +37,11 @@ import { NavHomeComponent } from './components/nav-home/nav-home.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { GridHomeComponent } from './components/grid-home/grid-home.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { NoticiasApiPageComponent } from './pages/noticias-api-page/noticias-api-page.component';
+import { PopularItemApiComponent } from './components/popular-item-api/popular-item-api.component';
+import { NewestItemApiComponent } from './components/newest-item-api/newest-item-api.component';
+import { SoonItemApiComponent } from './components/soon-item-api/soon-item-api.component';
+import { AnticipatedItemApiComponent } from './components/anticipated-item-api/anticipated-item-api.component';
 
 
 
@@ -61,7 +66,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
     GroupCreatePageComponent,
     NavHomeComponent,
     HomePageComponent,
-    GridHomeComponent
+    GridHomeComponent,
+    NoticiasApiPageComponent,
+    PopularItemApiComponent,
+    NewestItemApiComponent,
+    SoonItemApiComponent,
+    AnticipatedItemApiComponent
   ],
   imports: [
     BrowserModule,

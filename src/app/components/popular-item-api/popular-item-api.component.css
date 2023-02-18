@@ -1,0 +1,31 @@
+.card-pop {
+  margin-right: 1em;
+}
+.card-pop .img-pop {
+  height: 250px;
+  width: 190px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card-pop .info {
+  display: flex;
+  align-items: center;
+}
+.card-pop .info .main {
+  margin-right: 14px;
+}
+.card-pop .info .main p {
+  margin-top: -15px;
+  color: #7C7A80;
+}
+.card-pop .info h2 {
+  font-weight: 600;
+  font-size: 20px;
+  background: linear-gradient(94.68deg, #712DE0 2.88%, #EB2F93 102.54%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.card-pop .info h2 span {
+  font-weight: 600;
+  font-size: 20px;
+}/*# sourceMappingURL=popular-item-api.component.css.map */

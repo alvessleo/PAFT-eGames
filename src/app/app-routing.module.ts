@@ -6,6 +6,7 @@ import { GroupCreatePageComponent } from './pages/group-create-page/group-create
 import { GroupPageComponent } from './pages/group-page/group-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { NoticiasApiPageComponent } from './pages/noticias-api-page/noticias-api-page.component';
 import { ProfileContentComponent } from './pages/profile-content/profile-content.component';
 import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
 
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'group', component: GroupPageComponent},
   {path: 'login', component: LoginPageComponent},
   {path: 'cadastro', component: CadastroPageComponent},
-  {path: 'new-group', component: GroupCreatePageComponent}
+  {path: 'new-group', component: GroupCreatePageComponent},
+  {path: 'news', component: NoticiasApiPageComponent}
 
 ];
 

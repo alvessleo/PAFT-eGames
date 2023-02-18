@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/interface/Usuario';
 
+
 @Component({
   selector: 'app-cadastro-page',
   templateUrl: './cadastro-page.component.html',

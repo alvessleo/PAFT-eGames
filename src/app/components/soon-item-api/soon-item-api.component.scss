@@ -1,0 +1,29 @@
+.item-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    .logo-game{
+        width: 120px;
+        height: 120px;
+        margin-right: 1em;
+        object-fit: cover;
+    }
+
+    .info{
+        span{
+            background: linear-gradient(94.68deg, #712DE0 2.88%, #EB2F93 102.54%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p{
+            margin-top: -15px;
+            color: #7C7A80;
+        }
+    }
+}
+
+.hr{
+    width: 70%;
+}

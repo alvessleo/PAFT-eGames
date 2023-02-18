@@ -1,0 +1,33 @@
+.card-pop{
+    margin-right: 1em;
+    .img-pop{
+        height: 250px;
+        width: 190px;
+        object-fit: cover;
+    }
+    .info{
+        display: flex;
+        align-items: center;
+        .main{
+            margin-right: 14px;
+            p{
+                margin-top: -15px;
+                color: #7C7A80;
+            }
+
+        }
+
+
+        h2{
+            font-weight: 600;
+            font-size: 20px;
+            background: linear-gradient(94.68deg, #712DE0 2.88%, #EB2F93 102.54%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            span{
+                font-weight: 600;
+                font-size: 20px;
+            }
+        }
+    }
+}

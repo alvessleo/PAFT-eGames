@@ -91,5 +91,21 @@
 @media only screen and (min-width: 1160px){
     .noticias-container{
         margin: 0 auto;
+        .secondary{
+            .newest{
+                max-width: 300px;
+                margin-right: 1em;
+            }
+
+            .soon{
+                margin-right: 1em;
+                max-width: 300px;
+            }
+
+            .anticipated{
+                margin-right: 1em;
+                max-width: 300px;
+            }
+        }
     }
 }

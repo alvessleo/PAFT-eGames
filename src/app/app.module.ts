@@ -42,7 +42,9 @@ import { PopularItemApiComponent } from './components/popular-item-api/popular-i
 import { NewestItemApiComponent } from './components/newest-item-api/newest-item-api.component';
 import { SoonItemApiComponent } from './components/soon-item-api/soon-item-api.component';
 import { AnticipatedItemApiComponent } from './components/anticipated-item-api/anticipated-item-api.component';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { PopCreatePostComponent } from './components/pop-create-post/pop-create-post.component';
+ 
 
 
 @NgModule({
@@ -71,7 +73,8 @@ import { AnticipatedItemApiComponent } from './components/anticipated-item-api/a
     PopularItemApiComponent,
     NewestItemApiComponent,
     SoonItemApiComponent,
-    AnticipatedItemApiComponent
+    AnticipatedItemApiComponent,
+    PopCreatePostComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +94,8 @@ import { AnticipatedItemApiComponent } from './components/anticipated-item-api/a
     MatMenuModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

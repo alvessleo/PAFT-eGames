@@ -75,4 +75,16 @@
   .noticias-container {
     margin: 0 auto;
   }
+  .noticias-container .secondary .newest {
+    max-width: 300px;
+    margin-right: 1em;
+  }
+  .noticias-container .secondary .soon {
+    margin-right: 1em;
+    max-width: 300px;
+  }
+  .noticias-container .secondary .anticipated {
+    margin-right: 1em;
+    max-width: 300px;
+  }
 }/*# sourceMappingURL=noticias-api-page.component.css.map */

@@ -14,6 +14,7 @@ export class CadastroPageComponent implements OnInit {
   inputType: string = "password"
   showPass: boolean = false
   visibility: string = "visibility"
+  today = new Date()
 
   constructor(private router: Router) {
 
@@ -51,15 +52,30 @@ export class CadastroPageComponent implements OnInit {
 
 
   submitCadastro() {
-    if (this.confirmPassword!.value !== this.password!.value) {
+    console.log(this.birthdate!.value)
+    // Validação DATA DE NASCIMENTO
+    if (this.today.getFullYear() - this.birthdate!.value.slice(0,4) < 10 ) { // Se o usuário tem menos de 10 anos
+      this.birthdate!.setErrors({'age': true});
+    } else {
+      this.birthdate!.setErrors({'age': false});
+      this.birthdate?.updateValueAndValidity();
+    }
+    // Validação CONFIRMAÇÃO DE SENHA
+    if (this.confirmPassword!.value !== this.password!.value) { // Se a confirmação de senha não é igual a senha
       this.confirmPassword!.setErrors({'nomatch': true});
     } else {
       this.confirmPassword!.setErrors({'nomatch': false});
-      // TODO: Lógica cadastrar usuário no banco (usar um Service)
-      if(this.dataSource.valid) {
-        this.router.navigate(['/login'])
-      }
+      this.confirmPassword?.updateValueAndValidity();
     }
+    if(this.dataSource.valid) { // Se o formulário for válido
+      this.usuario!.nome = this.fullname!.value;
+      this.usuario!.username = this.username!.value;
+      this.usuario!.dataNasc = this.birthdate!.value;
+      this.usuario!.senha = this.password!.value;
+      // TODO: Lógica chamar service cadastro para cadastrar usuário no banco
+      this.router.navigate(['/login'])
+    }
+
   }
 
   togglePass() {

@@ -24,6 +24,9 @@
                     <label for="date">Data de nascimento</label>
                     <input type="date" name="date" class="input" formControlName="birthdate">
                     <span *ngIf="birthdate?.errors?.['required'] && formCadastro.submitted" class="alert-cadastro">Insira sua data de nascimento</span>
+                    <span *ngIf="birthdate?.errors?.['age'] && formCadastro.submitted" class="alert-cadastro">O usuário deve possuir mais de 10 anos</span>
+                    <span *ngIf="birthdate?.errors?.['year'] && formCadastro.submitted" class="alert-cadastro">Insira uma data válida</span>
+
                 </p>
                 <p>
                     <label for="password">Senha</label>

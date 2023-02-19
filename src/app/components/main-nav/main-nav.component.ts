@@ -2,6 +2,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { PopCreatePostComponent } from '../pop-create-post/pop-create-post.component';
 
 @Component({
   selector: 'app-main-nav',
@@ -17,7 +19,11 @@ export class MainNavComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
-  
+  constructor(private breakpointObserver: BreakpointObserver, private dialogRef : MatDialog) {
 
+  }
+  
+  openDialog(){
+    this.dialogRef.open(PopCreatePostComponent);
+  }
 }

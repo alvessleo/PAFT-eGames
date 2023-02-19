@@ -1,0 +1,21 @@
+<div class="dialog">
+    <h3>Crie uma publicação</h3>
+    <div class="hr"></div>
+
+    <form>
+        <p>
+            <label for="title">Insira um título</label>
+            <input type="text" name="title" id="title" placeholder="Digite aqui">
+        </p>
+        <p>
+            <label for="select">Selecione uma foto</label>
+            <img [src]="url">
+            <input type="file" name="file-publi" id="file-publi" (change)="onSelectFile($event)" >
+            <label id="label" for="file-publi"></label>
+        </p>
+        <div class="buttons">
+            <button>Publicar</button>
+            <div (click)="closeDialog()"><p>Cancelar</p></div>
+        </div>
+    </form>
+</div>

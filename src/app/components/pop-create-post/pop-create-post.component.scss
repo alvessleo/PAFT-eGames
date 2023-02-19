@@ -1,0 +1,119 @@
+.dialog{
+    background-color: #1F1F23;
+    padding: 2em;
+
+    h3{
+        color: #fff;
+        font-weight: 300;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        p{
+            display: flex;
+            flex-direction: column;
+            label{
+                color: #fff;
+                font-weight: 300;
+                margin-bottom: 10px;
+            }
+
+            input{
+                background-color: #2F2F2F;
+                border-radius: 5px;
+                border: none;
+                height: 45px;
+
+                padding: 0 10px;
+                color: #B7B7B7;
+
+                &:focus{
+                    outline: #e71cc7 solid 2px;
+                }
+            }
+
+            #file-publi{
+                visibility: hidden;
+            }
+
+            img{
+                object-fit: cover;
+                height: 200px;
+            }
+
+            #label{
+                position: absolute;
+                width: 100%;
+                height: 200px;
+                margin: 0 auto;
+                transform: translateY(28px);
+            }
+        }
+
+        .buttons{
+            transform: translateY(-30px);
+            button{
+                width: 100%;
+                background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+                border-radius: 5px;
+                height: 45px;
+                color: white;
+                border: none;
+                font-size: 18px;
+                margin-top: 1em;
+                cursor: pointer;
+
+                &:hover{
+                    background: linear-gradient(93.99deg, #411a82 -5.78%, #8b1b57 113.82%);
+                }
+            }
+
+            div{
+                width: 100%;
+                text-align: center;
+                background-color: #403C47;
+                border-radius: 5px;
+                height: 45px;
+                color: white;
+                border: none;
+                font-size: 18px;
+                margin-top: 1em;
+                cursor: pointer;
+
+                p{
+                    transform: translateY(12px);
+                    font-size: 300;
+                }
+
+                &:hover{
+                    background-color: #2d2b34;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .dialog{
+        form{
+            p{
+                img{
+                    width: 563.26px;
+                }
+            }
+            .buttons{
+                display: flex;
+                flex-direction: row;
+
+                div{
+                    margin-left: 1em;
+                    p{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

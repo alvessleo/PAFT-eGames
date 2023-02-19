@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/interface/Usuario';
 import { UserService } from 'src/app/services/user.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -88,8 +88,6 @@ export class CadastroPageComponent implements OnInit {
             }, 5000);
           }
       })
-      // TODO: Exibir mensagem ou pop-up de confirmacao de cadastro
-      //this.router.navigate(['/login'])
     }
 
   }

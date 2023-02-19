@@ -12,11 +12,11 @@ def is_logged(session):
     login = db.is_login(session)
     return {'login': login}, 200
 
-@app.route('/login', methods=['POST', 'GET'])
+@app.route('/login', methods=['POST'])
 def login():
-    email = request.json['email']
+    username = request.json['username']
     senha = request.json['senha']
-    login = db.login(email, senha)
+    login = db.login(username, senha)
     return jsonify(login)
 
 @app.route('/logout/<int:session>', methods=['GET'])

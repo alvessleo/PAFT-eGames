@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { SessionService } from 'src/app/services/session.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login-page',
@@ -10,13 +11,13 @@ import { SessionService } from 'src/app/services/session.service';
 })
 
 export class LoginPageComponent {
-
+  login: any;
   dataSource!: FormGroup
   inputType: string = "password"
   showPass: boolean = false
   visibility: string = "visibility"
 
-  constructor(private router: Router, private sessionService: SessionService) {
+  constructor(private router: Router, private sessionService: SessionService, private _snackBar: MatSnackBar) {
 
   }
 
@@ -29,10 +30,26 @@ export class LoginPageComponent {
   }
 
   submitLogin(event: any) {
-    // TODO: Chamar user service para fazer uma pesquisa para conferir se existe esse username com essa senha no banco.
     if (this.dataSource.valid) {
-      this.sessionService.logarUsuario(this.dataSource);
-      this.router.navigate(['/feed']) 
+      this.sessionService.logarUsuario(this.dataSource).subscribe(login => {
+        this.login = login;
+        if (!this.login['sucess']){
+          if (this.login['error'] == 1){
+            this.username!.setErrors({'Unknown': true});
+          }
+          if (this.login['error'] == 2){
+            this.password!.setErrors({'InvalidPass': true});
+          }
+        } else {
+          sessionStorage.setItem('sessionId', this.login['sessionId']);
+          this._snackBar.open("Login sucedido", "", {
+            duration: 5000
+          });
+          setTimeout(() => {
+            this.router.navigate(['/feed']);
+          }, 5000);
+        }
+      });
     } else {
       console.log("nao logou")
     }

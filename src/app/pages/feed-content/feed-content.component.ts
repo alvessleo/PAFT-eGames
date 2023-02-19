@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./feed-content.component.scss']
 })
 export class FeedContentComponent {
+  sessionId: any;
+
+  ngOnInit(){
+    this.sessionId = sessionStorage.getItem("sessionId");
+  }
 
 }

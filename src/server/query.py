@@ -25,17 +25,17 @@ def login(username, senha):
     conn.close()
     for user in usuarios:
         if user['username'] == username:
-            if user['username'] == f_senha:
+            if user['senha'] == f_senha:
                 session = str(randint(0,100))+str(randint(0,100))+str(randint(0,100))
                 conn = get_db_connection()
                 cur = conn.cursor()
-                cur.execute(f"UPDATE session SET login = 'True', idUser = {user['id']}, idSession = {session}")
+                cur.execute(f"INSERT INTO session values ({session}, {user['idUsuario']}, 'True');")
                 conn.commit()
                 conn.close()
-                return {"sucess": True, "message": "Login sucedido"}
+                return {"sucess": True, "message": "Login sucedido", "sessionId": session}
             else:
-                return {"sucess": False, "message": "Senha inválida"}
-    return {"sucess": False, "message": "Usuário não encontrado"}
+                return {"sucess": False, "error": 2, "message": "Senha inválida"}
+    return {"sucess": False, "error": 1, "message": "Usuário não encontrado"}
 
 def logout(session):
     conn = get_db_connection()

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/interface/Usuario';
 import { UserService } from 'src/app/services/user.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 @Component({
@@ -17,8 +18,9 @@ export class CadastroPageComponent implements OnInit {
   showPass: boolean = false
   visibility: string = "visibility"
   today = new Date()
+  resultado: any;
 
-  constructor(private router: Router, private userService: UserService) {
+  constructor(private router: Router, private userService: UserService, private _snackBar: MatSnackBar) {
 
   }
 
@@ -71,11 +73,23 @@ export class CadastroPageComponent implements OnInit {
       this.confirmPassword?.updateValueAndValidity();
     }
     if(this.dataSource.valid) { // Se o formulário for válido
-      this.userService.cadastrarUsuario(this.dataSource)
-      
-      // TODO: Tornar metodo cadastrarUsuario do service observable e adicionar o .subscribe aqui na chamada desse método 
+      this.userService.cadastrarUsuario(this.dataSource).subscribe(result => {
+          this.resultado = result;
+          if (!this.resultado['sucess']){
+            if (this.resultado['error'] == 1){
+              this.username!.setErrors({'twoUser': true});
+            }
+          } else{
+            this._snackBar.open("Cadastro sucedido", "", {
+              duration: 5000
+            });
+            setTimeout(() => {
+              this.router.navigate(['/login']);
+            }, 5000);
+          }
+      })
       // TODO: Exibir mensagem ou pop-up de confirmacao de cadastro
-      this.router.navigate(['/login'])
+      //this.router.navigate(['/login'])
     }
 
   }

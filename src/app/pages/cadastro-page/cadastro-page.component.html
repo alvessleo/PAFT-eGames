@@ -19,6 +19,7 @@
                     <input type="text" name="username" class="input" placeholder="Inseria seu username" formControlName="username">
                     <span *ngIf="username?.errors?.['required'] && formCadastro.submitted" class="alert-cadastro">Insira um username</span>
                     <span *ngIf="username?.errors?.['minlength'] && formCadastro.submitted" class="alert-cadastro">O username deve possuir pelo menos 4 caracteres</span>
+                    <span *ngIf="username?.errors?.['twoUser'] && formCadastro.submitted" class="alert-cadastro">Este username já esta sendo usado</span>
                 </p>
                 <p>
                     <label for="date">Data de nascimento</label>

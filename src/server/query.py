@@ -13,23 +13,23 @@ def get_db_connection():
 
 def is_login(session):
     conn = get_db_connection()
-    login = conn.execute(f'SELECT * FROM logged WHERE idSession = {session}').fetchall()
+    login = conn.execute(f'SELECT * FROM session WHERE idSession = {session}').fetchall()
     conn.close()
     return {'login': login[0]}
 
-def login(email, senha):
+def login(username, senha):
     f_senha = hashlib.sha1(senha.encode('utf-8')).hexdigest()
 
     conn = get_db_connection()
     usuarios = conn.execute('SELECT * FROM Usuario').fetchall()
     conn.close()
     for user in usuarios:
-        if user['email'] == email:
-            if user['senha'] == f_senha:
+        if user['username'] == username:
+            if user['username'] == f_senha:
                 session = str(randint(0,100))+str(randint(0,100))+str(randint(0,100))
                 conn = get_db_connection()
                 cur = conn.cursor()
-                cur.execute(f"UPDATE logged SET login = 'True', idUser = {user['id']}, idSession = {session}")
+                cur.execute(f"UPDATE session SET login = 'True', idUser = {user['id']}, idSession = {session}")
                 conn.commit()
                 conn.close()
                 return {"sucess": True, "message": "Login sucedido"}
@@ -40,7 +40,7 @@ def login(email, senha):
 def logout(session):
     conn = get_db_connection()
     cur = conn.cursor()
-    cur.execute(f"DELETE FROM logged WHERE idSession = {session}")
+    cur.execute(f"DELETE FROM session WHERE idSession = {session}")
     conn.commit()
     conn.close()
     return {"sucess": True, "message": "Logout sucedido"}
@@ -51,16 +51,16 @@ def new_user(nome, username, data_nasc, senha):
     usernames = conn.execute('SELECT username FROM Usuario').fetchall()
     conn.close()
     for name in usernames:
-        if name == username:
-            return {"sucess": False, "message": "Este username já esta sendo usado"}
+        if name['username'] == username:
+            return {"sucess": False, "error": 1,"message": "Este username já esta sendo usado"}
     #EDITE AQUI - Validação data de nascimento com datetime()
     hash_senha = hashlib.sha1(senha.encode('utf-8')).hexdigest()
     conn = get_db_connection()
     cur = conn.cursor()
-    cur.execute(f"INSERT INTO Usuario (nome, username, data_nasc, senha) VALUES ('{nome}', '{username}', '{data_nasc}', '{hash_senha}');")
+    cur.execute(f"INSERT INTO Usuario (nome, username, foto, data_nasc, senha, conquista) VALUES ('{nome}', '{username}', 'foto.png','{data_nasc}', '{hash_senha}', 0);")
     conn.commit()
     conn.close()
-    {"sucess": True, "message": "Cadastro sucedido"}
+    return {"sucess": True, "message": "Cadastro sucedido"}
 
 #Funções de postagem e comentário
 

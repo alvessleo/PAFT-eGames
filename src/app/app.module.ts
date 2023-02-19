@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FeedContentComponent } from './pages/feed-content/feed-content.component';
 import { StoryUserComponent } from './components/story-user/story-user.component';
 import { PublicationComponent } from './components/publication/publication.component';
@@ -44,6 +45,7 @@ import { SoonItemApiComponent } from './components/soon-item-api/soon-item-api.c
 import { AnticipatedItemApiComponent } from './components/anticipated-item-api/anticipated-item-api.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PopCreatePostComponent } from './components/pop-create-post/pop-create-post.component';
+import { HttpClientModule } from '@angular/common/http';
  
 
 
@@ -95,7 +97,9 @@ import { PopCreatePostComponent } from './components/pop-create-post/pop-create-
     MatCheckboxModule,
     ReactiveFormsModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   `idUsuario` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
   `nome` TEXT NOT NULL,
   `username` TEXT NOT NULL,
+  `foto` TEXT NOT NULL,
   `biografia` LONGTEXT NULL,
   `data_nasc` DATE NOT NULL,
   `senha` TEXT NOT NULL,

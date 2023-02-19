@@ -19,13 +19,13 @@
                     <h3>Imagem do grupo</h3>
                     <div class="hr"></div>
                     <div class="mock">
-                        <img src="../../../assets/group-image-mock.png" class="image">
+                        <img [src]="url" class="image">
                         <div class="submit-button">
                             <p>Selecione uma imagem com dimensões minimas de 180px x 180px</p>
                             <label for="file">
                                 Upload
                            </label>
-                           <input type="file" name="file" id="file" style="visibility: hidden;"/>
+                           <input type="file" name="file" id="file" style="visibility: hidden;" (change)="onSelectFile($event)"/>
                         </div>
                     </div>
                 </div>

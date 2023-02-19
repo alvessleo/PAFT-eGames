@@ -7,7 +7,9 @@
                 <div class="photo-name">
                     <a>
                         <div class="div-photo">
-                            <img src="../../../assets/abstract-user-flat-4.webp" class="profile-image">
+                            <input type="file" name="file" id="file" (change)="onSelectFile($event)"/>
+                            <label for="file"></label>
+                            <img [src]="url" class="profile-image">
                         </div>
                     </a>
 

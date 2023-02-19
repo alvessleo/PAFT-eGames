@@ -73,6 +73,42 @@
                         position: absolute;
                         animation: antRoll infinite 2s ease-in-out;
                     }
+
+                    label{
+                        z-index: 99;
+                        animation: antRoll infinite 2s ease-in-out;
+                        width: 160px;
+                        min-width: 160px;
+                        min-height: 160px;
+                        height: 160px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        margin: 0 auto;
+                        position: absolute;
+                        
+
+                        &:hover{
+                            background-image: url(../../../assets/user-edit.svg);
+                            object-fit: cover;
+                        }
+                    }
+
+                    #file{
+                        width: 160px;
+                        height: 160px;
+                        cursor: pointer;
+                        animation: antRoll infinite 2s ease-in-out;
+                        z-index: 99;
+                        opacity: 0;
+                        border-radius: 50%;
+                        visibility: hidden;
+
+                        background-image: url(../../../assets/group-image-mock.png);
+                        object-fit: cover;
+                        &:hover{
+                            opacity: 100%;
+                        }
+                    }
                 }
 
                 h2{

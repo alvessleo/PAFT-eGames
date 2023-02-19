@@ -2,17 +2,20 @@
     <div class="new-group">
         <div class="content">
             <h1>Novo grupo</h1>
-            <form>
+            <form [formGroup]="dataSource" #novoGrupoForm="ngForm" (ngSubmit)="onSubmit()">
                 <div class="geral-container">
                     <h3>Geral</h3>
                     <div class="hr"></div>
                     <p>
                         <label for="group-name">Nome do grupo</label>
-                        <input type="text" name="group-name" placeholder="Insira o nome aqui">
+                        <input type="text" name="group-name" placeholder="Insira o nome aqui" formControlName="groupName">
+                        <span *ngIf="groupName?.errors?.['required'] && novoGrupoForm.submitted" class="alert-cadastro">Insira um nome</span>
+                        <span *ngIf="groupName?.errors?.['minlength'] && novoGrupoForm.submitted" class="alert-cadastro">O nome deve possuir pelo menos 3 caracteres</span>
                     </p>
                     <p>
                         <label for="group-desc">Descrição</label>
-                        <input type="text" name="group-desc" placeholder="Insira a descrição do grupo">
+                        <input type="text" name="group-desc" placeholder="Insira a descrição do grupo" formControlName="groupDescription">
+                        <span *ngIf="groupDescription?.errors?.['required'] && novoGrupoForm.submitted" class="alert-cadastro">Insira uma descrição para o grupo</span>
                     </p>
                 </div>
                 <div class="image-container">
@@ -25,7 +28,9 @@
                             <label for="file">
                                 Upload
                            </label>
-                           <input type="file" name="file" id="file" style="visibility: hidden;" (change)="onSelectFile($event)"/>
+                           <input type="file" name="file" id="file" style="visibility: hidden;" (change)="onSelectFile($event)" formControlName="groupImage"/>
+                           <span *ngIf="groupImage?.errors?.['required'] && novoGrupoForm.submitted" class="alert-cadastro">Insira uma imagem para o grupo</span>
+
                         </div>
                     </div>
                 </div>
@@ -34,10 +39,11 @@
                     <div class="hr"></div>
                     <p>
                         <label for="group-type">Selecione o tipo do grupo</label>
-                        <select name="group-type" id="group-type">
+                        <select name="group-type" id="group-type" formControlName="groupType">
                             <option value="Público">Público</option>
                             <option value="Privado">Privado</option>
                         </select>
+                        <span *ngIf="groupType?.errors?.['required'] && novoGrupoForm.submitted" class="alert-cadastro">Selecione um tipo para o grupo</span>
                     </p>
                     <div class="buttons">
                         <button class="save">Salvar informações</button>

@@ -1,10 +1,11 @@
 export interface Usuario {
-    id: number;
+    id?: number;
     nome: string;
     username: string;
-    biografia: string;
+    biografia?: string;
     dataNasc: Date;
     senha: string;
-    jogoFavorito: string;
-    conquista: number;
+    confirmSenha?: string;
+    jogoFavorito?: string;
+    conquista?: number;
 }

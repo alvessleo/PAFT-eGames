@@ -44,32 +44,39 @@
         <div class="main-content">
             <h3 class="main-topic">Geral</h3>
             <div class="hr"></div>  
-            <form>
+            <form [formGroup]="dataSource" #formEdicao="ngForm" (ngSubmit)="submitEdit()">
                 <p>
                     <label for="nome">Nome real</label>
-                    <input type="text" name="nome" placeholder="User's name">
+                    <input type="text" name="nome" placeholder="Insira o nome" formControlName="fullname">
+                    <span *ngIf="fullname?.errors?.['required'] && formEdicao.submitted" class="alert-cadastro">Insira seu nome</span>
+                    <span *ngIf="fullname?.errors?.['minlength'] && formEdicao.submitted && !fullname?.errors?.['pattern']" class="alert-cadastro">O nome deve possuir pelo menos 7 letras</span>
+                    <span *ngIf="fullname?.errors?.['pattern'] && formEdicao.submitted" class="alert-cadastro">O nome deve possuir apenas letras</span>
                 </p>
                 <p>
                     <label for="username">Username</label>
-                    <input type="text" name="nome" placeholder="@user">
+                    <input type="text" name="nome" placeholder="Insira o novo username" formControlName="username">
+                    <span *ngIf="username?.errors?.['required'] && formEdicao.submitted" class="alert-cadastro">Insira um username</span>
+                    <span *ngIf="username?.errors?.['minlength'] && formEdicao.submitted" class="alert-cadastro">O username deve possuir pelo menos 4 caracteres</span>
                 </p>
                 <p>
                     <label for="data">Data de nascimento</label>
-                    <input type="date" name="data">
+                    <input type="date" name="data" formControlName="birthdate">
+                    <span *ngIf="birthdate?.errors?.['required'] && formEdicao.submitted" class="alert-cadastro">Insira sua data de nascimento</span>
+                    <span *ngIf="birthdate?.errors?.['age'] && formEdicao.submitted" class="alert-cadastro">O usuário deve possuir mais de 10 anos</span>
                 </p>
     
                 <h3>Resumo</h3>
                 <div class="hr"></div>
                 <p>
                     <label for="bio">Biografia</label>
-                    <input type="text" name="bio" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
+                    <input type="text" name="bio" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit." formControlName="bio">
                 </p>
     
                 <h3>Jogo preferido</h3>
                 <div class="hr"></div>
                 <p>
                     <label for="jogo">Selecione o jogo</label>
-                    <select name="jogo" id="jogo">
+                    <select name="jogo" id="jogo" formControlName="game">
                         <option value="CS:GO">CS:GO</option>
                     </select>
                 </p>

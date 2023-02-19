@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { SessionService } from 'src/app/services/session.service';
 
 @Component({
   selector: 'app-login-page',
@@ -15,7 +16,7 @@ export class LoginPageComponent {
   showPass: boolean = false
   visibility: string = "visibility"
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private sessionService: SessionService) {
 
   }
 
@@ -28,8 +29,10 @@ export class LoginPageComponent {
   }
 
   submitLogin(event: any) {
+    // TODO: Chamar user service para fazer uma pesquisa para conferir se existe esse username com essa senha no banco.
     if (this.dataSource.valid) {
-      this.router.navigate(['/feed']) // EDITE AQUI - Navegar para /feed
+      this.sessionService.logarUsuario(this.dataSource);
+      this.router.navigate(['/feed']) 
     } else {
       console.log("nao logou")
     }

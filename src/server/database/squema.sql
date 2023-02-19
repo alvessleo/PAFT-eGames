@@ -49,11 +49,11 @@ CREATE TABLE IF NOT EXISTS `Usuario_has_grupo` (
     ON UPDATE NO ACTION);
 
 -- -----------------------------------------------------
--- Table `logged`
+-- Table `session`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `logged` ;
+DROP TABLE IF EXISTS `session` ;
 
-CREATE TABLE IF NOT EXISTS `logged` (
+CREATE TABLE IF NOT EXISTS `session` (
   `idSession` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
   `idUser` INTEGER NOT NULL,
   `login` BOOLEAN NOT NULL,

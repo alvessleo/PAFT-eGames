@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/interface/Usuario';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class CadastroPageComponent implements OnInit {
   visibility: string = "visibility"
   today = new Date()
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private userService: UserService) {
 
   }
 
@@ -53,7 +54,8 @@ export class CadastroPageComponent implements OnInit {
 
 
   submitCadastro() {
-    console.log(this.birthdate!.value)
+    // TODO: Validação username já presente na base de dados
+
     // Validação DATA DE NASCIMENTO
     if (this.today.getFullYear() - this.birthdate!.value.slice(0,4) < 10 ) { // Se o usuário tem menos de 10 anos
       this.birthdate!.setErrors({'age': true});
@@ -69,11 +71,10 @@ export class CadastroPageComponent implements OnInit {
       this.confirmPassword?.updateValueAndValidity();
     }
     if(this.dataSource.valid) { // Se o formulário for válido
-      this.usuario!.nome = this.fullname!.value;
-      this.usuario!.username = this.username!.value;
-      this.usuario!.dataNasc = this.birthdate!.value;
-      this.usuario!.senha = this.password!.value;
-      // TODO: Lógica chamar service cadastro para cadastrar usuário no banco
+      this.userService.cadastrarUsuario(this.dataSource)
+      
+      // TODO: Tornar metodo cadastrarUsuario do service observable e adicionar o .subscribe aqui na chamada desse método 
+      // TODO: Exibir mensagem ou pop-up de confirmacao de cadastro
       this.router.navigate(['/login'])
     }
 

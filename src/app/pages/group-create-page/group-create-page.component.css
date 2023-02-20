@@ -2,6 +2,12 @@ p, h1, h3, a {
   color: white;
 }
 
+span.alert-cadastro {
+  color: #f24747;
+  font-weight: 300;
+  font-size: 14px;
+}
+
 .new-group {
   display: flex;
   flex-direction: column;

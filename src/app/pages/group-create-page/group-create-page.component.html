@@ -46,8 +46,8 @@
                         <span *ngIf="groupType?.errors?.['required'] && novoGrupoForm.submitted" class="alert-cadastro">Selecione um tipo para o grupo</span>
                     </p>
                     <div class="buttons">
-                        <button class="save">Salvar informações</button>
-                        <button class="cancel">Cancelar</button>
+                        <button class="save" type="submit">Salvar informações</button>
+                        <button class="cancel" type="button" (click)="openCancelDialog()">Cancelar</button>
                     </div>
                 </div>
             </form>

@@ -69,6 +69,7 @@
 }
 .tool-bar .logo {
   width: 200px;
+  cursor: pointer;
 }
 
 .hidden {
@@ -93,6 +94,27 @@
   justify-content: center;
   align-items: center;
   padding: 1em;
+}
+.links-desk #com {
+  position: relative;
+}
+.links-desk #com .community-content {
+  position: absolute;
+  display: none;
+}
+.links-desk #com:hover .community-content {
+  display: block;
+  background-color: #1F1F23;
+  padding: 0.7em 0;
+  border-radius: 10px;
+  transform: translateX(-10px);
+}
+.links-desk #com:hover .community-content a {
+  padding: 10px 30px;
+  margin-right: 0;
+}
+.links-desk #com:hover .community-content a:hover {
+  background-color: #313134;
 }
 .links-desk a {
   font-weight: 300;

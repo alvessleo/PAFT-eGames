@@ -1,0 +1,52 @@
+.cancel-dialog {
+  background-color: #1F1F23;
+  padding: 2em;
+}
+.cancel-dialog h3 {
+  margin-top: 0em;
+}
+.cancel-dialog h3, .cancel-dialog p {
+  color: #fff;
+  font-weight: 300;
+}
+.cancel-dialog .buttons .save {
+  width: 100%;
+  background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+  border-radius: 5px;
+  height: 45px;
+  color: white;
+  border: none;
+  font-size: 18px;
+  margin-top: 1em;
+  cursor: pointer;
+}
+.cancel-dialog .buttons .save:hover {
+  background: linear-gradient(93.99deg, #411a82 -5.78%, #8b1b57 113.82%);
+}
+.cancel-dialog .buttons .cancel {
+  width: 100%;
+  background-color: #403C47;
+  border-radius: 5px;
+  height: 45px;
+  color: white;
+  border: none;
+  font-size: 18px;
+  margin-top: 1em;
+  cursor: pointer;
+}
+.cancel-dialog .buttons .cancel:hover {
+  background-color: #2d2b34;
+}
+
+@media only screen and (min-width: 768px) {
+  .cancel-dialog .buttons {
+    display: flex;
+    flex-direction: row;
+  }
+  .cancel-dialog .buttons button {
+    min-width: 280px;
+  }
+  .cancel-dialog .buttons .save {
+    margin-right: 1em;
+  }
+}/*# sourceMappingURL=pop-cancel-action.component.css.map */

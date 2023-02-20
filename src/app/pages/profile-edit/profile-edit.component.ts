@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Route, Router } from '@angular/router';
+import { PopCancelActionComponent } from 'src/app/components/pop-cancel-action/pop-cancel-action.component';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -13,7 +15,7 @@ export class ProfileEditComponent implements OnInit{
   dataSource!: FormGroup
   today: Date = new Date();
 
-  constructor(private router: Router, private userService: UserService) {
+  constructor(private router: Router, private userService: UserService, private dialogRef : MatDialog) {
 
   }
 
@@ -70,5 +72,9 @@ export class ProfileEditComponent implements OnInit{
         this.url = event.target.result;
       }
     }
+  }
+
+  openCancelDialog(){
+    this.dialogRef.open(PopCancelActionComponent);
   }
 }

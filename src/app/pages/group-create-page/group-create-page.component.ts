@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { PopCancelActionComponent } from 'src/app/components/pop-cancel-action/pop-cancel-action.component';
 
 @Component({
   selector: 'app-group-create-page',
@@ -11,6 +13,10 @@ export class GroupCreatePageComponent implements OnInit{
   
   dataSource!: FormGroup;
   
+  constructor(private dialogRef : MatDialog){
+
+  }
+
   ngOnInit(): void {
     this.dataSource = new FormGroup({
       groupName: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -56,5 +62,9 @@ export class GroupCreatePageComponent implements OnInit{
         this.url = event.target.result;
       }
     }
+  }
+
+  openCancelDialog(){
+    this.dialogRef.open(PopCancelActionComponent);
   }
 }

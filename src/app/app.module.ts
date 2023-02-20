@@ -46,6 +46,7 @@ import { AnticipatedItemApiComponent } from './components/anticipated-item-api/a
 import { MatDialogModule } from '@angular/material/dialog';
 import { PopCreatePostComponent } from './components/pop-create-post/pop-create-post.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PopCancelActionComponent } from './components/pop-cancel-action/pop-cancel-action.component';
  
 
 
@@ -76,7 +77,8 @@ import { HttpClientModule } from '@angular/common/http';
     NewestItemApiComponent,
     SoonItemApiComponent,
     AnticipatedItemApiComponent,
-    PopCreatePostComponent
+    PopCreatePostComponent,
+    PopCancelActionComponent
   ],
   imports: [
     BrowserModule,

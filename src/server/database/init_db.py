@@ -1,6 +1,6 @@
 import sqlite3
 
-connection = sqlite3.connect('eGames.db')
+connection = sqlite3.connect("src\server\database\eGames.db")
 
 
 with open('squema.sql') as f:

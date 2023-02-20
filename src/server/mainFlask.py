@@ -33,6 +33,15 @@ def cadastro():
     data_nasc = request.json['data_nasc']
     senha = request.json['senha']
     result = db.new_user(name, username, data_nasc, senha)
-    return jsonify(result)
+    response = jsonify(result)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
+
+
+@app.route('/get-user-by-session/<int:session>', methods=['GET'])
+def usuarioDaSessao(session):
+    usuarioDaSessao = db.get_user_by_session(session)
+    return jsonify(usuarioDaSessao)
+
 
 app.run(debug=True)

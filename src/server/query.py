@@ -62,6 +62,27 @@ def new_user(nome, username, data_nasc, senha):
     conn.close()
     return {"sucess": True, "message": "Cadastro sucedido"}
 
+
+def get_user_by_session(session):
+    conn = get_db_connection()
+    sessao = conn.execute(f'SELECT * FROM session WHERE idSession = {session}').fetchall()
+    idUsuario = sessao[0]['idUser']
+    usuario = conn.execute(f'SELECT * FROM usuario WHERE idUsuario = {idUsuario}').fetchall()
+    conn.commit()
+    conn.close()
+    return {"usuario": {
+                        'nome' : usuario[0]['nome'],
+                        'username' : usuario[0]['username'],
+                        'foto' : usuario[0]['foto'],
+                        'biografia' : usuario[0]['biografia'],
+                        'data_nasc' : usuario[0]['data_nasc'],
+                        'jogo_favorito' : usuario[0]['jogo_favorito'],
+                        'conquista' : usuario[0]['conquista'],
+                        }}
+                                    
+
+
+
 #Funções de postagem e comentário
 
 #Funções de grupo

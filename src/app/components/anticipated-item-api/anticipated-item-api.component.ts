@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-anticipated-item-api',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./anticipated-item-api.component.scss']
 })
 export class AnticipatedItemApiComponent {
+  @Input() review: any;
+  text: any;
+  author: any;
+  imgCover: any;
 
+  ngOnInit(){
+    this.text = this.review['review'];
+    this.imgCover = this.review['imgCover'];
+    this.author = this.review['author']['steamid'];
+  }
 }

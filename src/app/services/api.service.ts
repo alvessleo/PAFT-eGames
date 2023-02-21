@@ -38,9 +38,7 @@ export class ApiService {
         'X-RapidAPI-Host': 'steam2.p.rapidapi.com'
       })
     };
-    let reviewsId = [730, 1172470, 1962663, 1506830, 1672970]
-    let index = Math.floor(Math.random() * 5);
-    return this.http.get(`https://steam2.p.rapidapi.com/appReviews/${reviewsId[index]}/limit/5/*`, this.header)
+    return this.http.get("https://steam2.p.rapidapi.com/appReviews/1672970/limit/5/*", this.header)
   }
 
 }

@@ -42,9 +42,9 @@
                 <div class="hr"></div>
 
                 <div class="games-lower">
-                    <app-anticipated-item-api></app-anticipated-item-api>
-                    <app-anticipated-item-api></app-anticipated-item-api>
-                    <app-anticipated-item-api></app-anticipated-item-api>
+                    <app-anticipated-item-api
+                    *ngFor="let review of reviews"
+                    [review]="review"></app-anticipated-item-api>
                 </div>
             </div>
         </div>

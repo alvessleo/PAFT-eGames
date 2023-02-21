@@ -52,7 +52,9 @@ export class NoticiasApiPageComponent {
       this.apiService.getreviews().subscribe(reviews => {
         this.reviews = reviews;
         this.reviews = this.reviews['reviews'];
-        console.log(this.reviews);
+        for (let y = 0; y < 5; y++){
+          this.reviews[y]['imgCover'] = "https://images.igdb.com/igdb/image/upload/t_cover_big/co49x5.jpg";
+        }
       })
       
     })

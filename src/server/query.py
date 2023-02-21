@@ -5,7 +5,7 @@ import json
 from random import randint
 
 def get_db_connection():
-    conn = sqlite3.connect('database/eGames.db')
+    conn = sqlite3.connect("src/server/database/eGames.db")
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -62,6 +62,44 @@ def new_user(nome, username, data_nasc, senha):
     conn.close()
     return {"sucess": True, "message": "Cadastro sucedido"}
 
+
+def get_user_by_session(session):
+    conn = get_db_connection()
+    sessao = conn.execute(f'SELECT * FROM session WHERE idSession = {session}').fetchall()
+    idUsuario = sessao[0]['idUser']
+    usuario = conn.execute(f'SELECT * FROM usuario WHERE idUsuario = {idUsuario}').fetchall()
+    conn.commit()
+    conn.close()
+    return {"usuario": {
+                        'nome' : usuario[0]['nome'],
+                        'username' : usuario[0]['username'],
+                        'foto' : usuario[0]['foto'],
+                        'biografia' : usuario[0]['biografia'],
+                        'data_nasc' : usuario[0]['data_nasc'],
+                        'jogo_favorito' : usuario[0]['jogo_favorito'],
+                        'conquista' : usuario[0]['conquista'],
+                        }}
+                                    
+
+
+
 #Funções de postagem e comentário
 
 #Funções de grupo
+
+#Função de API
+popularGames = [
+    {"name": "League of Legends", "rating": 76, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co49wj.png", "genres": ["RPG", "Strategy", "MOBA"]},
+    {"name": "Minecraft", "rating": 84, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co49x5.jpg", "genres": ["Adventure", "Simulator"]},
+    {"name": "World of Warcraft", "rating": 85, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg", "genres": ["RPG", "Adventure"]},
+    {"name": "Counter-Strike: Global Offensive", "rating": 82, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co610k.jpg", "genres": ["Shooter", "Tactical"]},
+    {"name": "Fortnite", "rating": 69, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2ekt.jpg", "genres": ["RPG", "Strategy", "Shooter", "Adventure"]},
+    {"name": "PUBG: BATTLEGROUNDS", "rating": 73, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4c1x.jpg", "genres": ["Shooter"]},
+    {"name": "Apex Legends", "rating": 77, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wzo.jpg", "genres": ["Shooter"]},
+    {"name": "VALORANT", "rating": 72, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2mvt.jpg", "genres": ["Shooter", "Tactical"]},
+    {"name": "Call of Duty: Warzone", "rating": 72, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co20o8.jpg", "genres": ["Shooter"]},
+    {"name": "FIFA 22", "rating": 77, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3dsm.jpg", "genres": ["Simulator", "Sport"]}
+]
+
+def getPopularGames():
+    return popularGames

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
@@ -10,8 +10,8 @@ import { PopCreatePostComponent } from '../pop-create-post/pop-create-post.compo
   templateUrl: './main-nav.component.html',
   styleUrls: ['./main-nav.component.scss']
 })
-export class MainNavComponent {
-
+export class MainNavComponent implements OnInit{
+  @Input() username!: string;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -22,6 +22,11 @@ export class MainNavComponent {
   constructor(private breakpointObserver: BreakpointObserver, private dialogRef : MatDialog) {
 
   }
+
+  ngOnInit(): void {
+    
+  }
+  
   
   openDialog(){
     this.dialogRef.open(PopCreatePostComponent);

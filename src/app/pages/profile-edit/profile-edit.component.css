@@ -52,8 +52,7 @@
   border-radius: 50%;
   margin-inline: -5px;
   margin-top: 3em;
-  -webkit-animation: roll infinite 2s ease-in-out;
-          animation: roll infinite 2s ease-in-out;
+  animation: roll infinite 2s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,13 +67,11 @@
   border-radius: 50%;
   border: #101110 solid 2px;
   position: absolute;
-  -webkit-animation: antRoll infinite 2s ease-in-out;
-          animation: antRoll infinite 2s ease-in-out;
+  animation: antRoll infinite 2s ease-in-out;
 }
 .profile-content .user-information .user-card .photo-name .div-photo label {
   z-index: 99;
-  -webkit-animation: antRoll infinite 2s ease-in-out;
-          animation: antRoll infinite 2s ease-in-out;
+  animation: antRoll infinite 2s ease-in-out;
   width: 160px;
   min-width: 160px;
   min-height: 160px;
@@ -93,8 +90,7 @@
   width: 160px;
   height: 160px;
   cursor: pointer;
-  -webkit-animation: antRoll infinite 2s ease-in-out;
-          animation: antRoll infinite 2s ease-in-out;
+  animation: antRoll infinite 2s ease-in-out;
   z-index: 99;
   opacity: 0;
   border-radius: 50%;
@@ -246,28 +242,12 @@
     width: 730px;
   }
 }
-@-webkit-keyframes roll {
-  0% {
-    rotate: 0deg;
-  }
-  100% {
-    rotate: 360deg;
-  }
-}
 @keyframes roll {
   0% {
     rotate: 0deg;
   }
   100% {
     rotate: 360deg;
-  }
-}
-@-webkit-keyframes antRoll {
-  0% {
-    rotate: 0deg;
-  }
-  100% {
-    rotate: -360deg;
   }
 }
 @keyframes antRoll {

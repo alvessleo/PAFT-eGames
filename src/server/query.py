@@ -5,7 +5,7 @@ import json
 from random import randint
 
 def get_db_connection():
-    conn = sqlite3.connect("src\server\database\eGames.db")
+    conn = sqlite3.connect("src/server/database/eGames.db")
     conn.row_factory = sqlite3.Row
     return conn
 

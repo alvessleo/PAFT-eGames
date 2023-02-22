@@ -12,5 +12,5 @@
     <button mat-menu-item routerLink="/profile"><mat-icon>person</mat-icon>Meu perfil</button>
     <button mat-menu-item routerLink="/profile-edit"><mat-icon class="edit">edit</mat-icon>Editar perfil</button>
     <hr id="hrmenufodase">
-    <button mat-menu-item routerLink="/login"><mat-icon>logout</mat-icon>Sair</button>
+    <button mat-menu-item (click)="onClickLogout()"><mat-icon>logout</mat-icon>Sair</button>
 </mat-menu>

@@ -1,4 +1,6 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
+import { SessionService } from 'src/app/services/session.service';
 
 @Component({
   selector: 'app-user-menu-nav',
@@ -8,4 +10,18 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 })
 export class UserMenuNavComponent {
   @Input() username!: string;
+
+  constructor(private sessionService: SessionService, private router: Router) {
+
+  }
+
+  onClickLogout() {
+    var sessionId = sessionStorage.getItem("sessionId");
+    this.sessionService.logout(sessionId).subscribe(logout => {
+      sessionStorage.removeItem("sessionId")
+      this.router.navigate(['/login'])
+    })
+    
+
+  }
 }

@@ -15,20 +15,45 @@ export class ProfileEditComponent implements OnInit{
   dataSource!: FormGroup
   today: Date = new Date();
 
+  sessionId: any;
+  fetchName!: string;
+  fetchUsername!: string;
+  fetchBirthdate!: string;
+  fetchBio!: string;
+  fetchGame!: string;
+
   constructor(private router: Router, private userService: UserService, private dialogRef : MatDialog) {
 
   }
 
 
   ngOnInit(): void {
-    this.dataSource = new FormGroup({
-      // TODO: Preencher inputs com os dados do banco
-      fullname: new FormControl('', [Validators.required, Validators.minLength(7),  Validators.pattern(/^[a-záàâãéèêíïóôõöúçñ ]+$/i)]), 
-      username: new FormControl('', [Validators.required, Validators.minLength(4)]),
-      birthdate: new FormControl('', [Validators.required]),
-      bio: new FormControl(''),
-      game: new FormControl('')
+    this.sessionId = sessionStorage.getItem("sessionId");
+    this.userService.usuarioDaSessao(this.sessionId).subscribe(usuario => {
+      var jsonResult = JSON.parse(JSON.stringify(usuario))
+      this.fetchName = jsonResult['usuario']['nome']
+      this.fetchUsername = jsonResult['usuario']['username']
+      this.fetchBirthdate = jsonResult['usuario']['data_nasc']
+      this.fetchBio = jsonResult['usuario']['biografia']
+      this.fetchGame = jsonResult['usuario']['jogo_favorito']
     })
+    
+    this.dataSource = new FormGroup({
+      fullname: new FormControl(this.fetchName,[Validators.required, Validators.minLength(7),  Validators.pattern(/^[a-záàâãéèêíïóôõöúçñ ]+$/i)]), 
+      username: new FormControl(this.fetchUsername, [Validators.required, Validators.minLength(4)]),
+      birthdate: new FormControl(this.fetchBirthdate, {validators:[Validators.required], nonNullable: true}),
+      bio: new FormControl(this.fetchBio),
+      game: new FormControl(this.fetchGame)
+    })
+    setTimeout(()=> {
+      this.dataSource.patchValue({
+        fullname: this.fetchName,
+        username: this.fetchUsername,
+        birthdate: this.fetchBirthdate,
+        bio: this.fetchBio,
+        game: this.fetchGame
+      })
+    }, 50)
   }
 
   get fullname(){
@@ -45,7 +70,10 @@ export class ProfileEditComponent implements OnInit{
 
   submitEdit() {
     // TODO: Validação username já presente na base de dados
-
+    if (this.fullname!.value === this.fetchName) {
+      this.fullname!.setErrors({'required': false});
+    }
+    this.fullname?.updateValueAndValidity();
     // Validação DATA DE NASCIMENTO
     if (this.today.getFullYear() - this.birthdate!.value.slice(0,4) < 10 ) { // Se o usuário tem menos de 10 anos
       this.birthdate!.setErrors({'age': true});
@@ -55,7 +83,9 @@ export class ProfileEditComponent implements OnInit{
     }
 
     if(this.dataSource.valid) { // Se o formulário for válido
-      this.userService.editarUsuario(this.dataSource);
+      this.userService.editarUsuario(this.dataSource, this.sessionId).subscribe(usuario => {
+        console.log(usuario)
+      });
       // TODO: Tornar metodo editarUsuario do service observable e adicionar o .subscribe aqui na chamada desse método 
       // TODO: Exibir mensagem ou pop-up de confirmacao de edicao de perfil
 

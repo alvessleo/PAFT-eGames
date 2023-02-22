@@ -13,8 +13,8 @@
                         </div>
                     </a>
 
-                    <h2>Username</h2>
-                    <p class="user">@user</p>
+                    <h2>{{fetchName}}</h2>
+                    <p class="user">@{{fetchUsername}}</p>
                 </div>
     
                 <button type="button" id="back" routerLink="/profile">Voltar ao perfil</button>
@@ -36,7 +36,10 @@
     
                 <div class="about">
                     <h4>Sobre</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p *ngIf="fetchBio !== '' and fetchBio !== 'None'; else noBio">{{fetchBio}}</p>
+                    <ng-template #noBio>
+                        Não há nada aqui.
+                    </ng-template>
                 </div>
             </div>
         </div>

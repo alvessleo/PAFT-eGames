@@ -8,17 +8,19 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class FeedContentComponent {
   sessionId: any;
+  nome!: string;
   username!: string;
 
-  constructor(private userService: UserService) {
-  }
+    constructor(private userService: UserService) {
+    }
 
-  ngOnInit(){
-    this.sessionId = sessionStorage.getItem("sessionId");
-    this.userService.usuarioDaSessao(this.sessionId).subscribe(usuario => {
-      var jsonResult = JSON.parse(JSON.stringify(usuario))
-      this.username = jsonResult['usuario']['username']
-    })
-  }
+    ngOnInit(){
+      this.sessionId = sessionStorage.getItem("sessionId");
+      this.userService.usuarioDaSessao(this.sessionId).subscribe(usuario => {
+        var jsonResult = JSON.parse(JSON.stringify(usuario))
+        this.nome = jsonResult['usuario']['nome']
+        this.username = jsonResult['usuario']['username']
+      })
+    }
 
 }

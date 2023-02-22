@@ -19,7 +19,7 @@ def login():
     login = db.login(username, senha)
     return jsonify(login)
 
-@app.route('/logout/<int:session>', methods=['GET'])
+@app.route('/logout/<int:session>', methods=['DELETE'])
 def logout(session):
     logout = db.logout(session)
     return jsonify(logout)
@@ -38,10 +38,28 @@ def cadastro():
     return response
 
 
+@app.route('/get-all-users', methods=['GET'])
+def recuperarTodosUsuarios():
+    usuarios = db.get_all_users()
+    return "oi"
+
+
 @app.route('/get-user-by-session/<int:session>', methods=['GET'])
 def usuarioDaSessao(session):
     usuarioDaSessao = db.get_user_by_session(session)
     return jsonify(usuarioDaSessao)
 
+
+@app.route('/edit-user/<int:session>', methods=['PUT'])
+def editarUsuario(session):
+    nome = request.json['name']
+    username = request.json['username']
+    data_nasc = request.json['data_nasc']
+    bio = request.json['bio']
+    jogo_favorito = request.json['jogo_favorito']
+    result = db.edit_user(nome, username, data_nasc, bio, jogo_favorito, session)
+    response = jsonify(result)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 app.run(debug=True)

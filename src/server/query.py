@@ -63,6 +63,14 @@ def new_user(nome, username, data_nasc, senha):
     return {"sucess": True, "message": "Cadastro sucedido"}
 
 
+def get_all_users():
+    conn = get_db_connection()
+    usuariosQuery = conn.execute(f'SELECT * FROM usuario')
+    for usuario in usuariosQuery:
+        print(usuario[0], usuario[1], usuario[2], usuario[3], usuario[4], usuario[5], usuario[6])
+    return "oi"
+
+
 def get_user_by_session(session):
     conn = get_db_connection()
     sessao = conn.execute(f'SELECT * FROM session WHERE idSession = {session}').fetchall()
@@ -79,7 +87,17 @@ def get_user_by_session(session):
                         'jogo_favorito' : usuario[0]['jogo_favorito'],
                         'conquista' : usuario[0]['conquista'],
                         }}
-                                    
+
+def edit_user(nome, username, data_nasc, bio, jogo_favorito, session): 
+    conn = get_db_connection()
+    sessao = conn.execute(f'SELECT * FROM session WHERE idSession = {session}').fetchall()
+    idUsuario = sessao[0]['idUser']
+    cur = conn.cursor()
+    cur.execute(f"UPDATE Usuario SET nome='{nome}', username='{username}', data_nasc='{data_nasc}', biografia='{bio}', jogo_favorito='{jogo_favorito}' WHERE idUsuario={idUsuario};")
+    conn.commit()
+    conn.close()
+    return {"sucess": True, "message": "Informações alteradas"}
+                   
 
 
 

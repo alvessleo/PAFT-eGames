@@ -47,6 +47,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { PopCreatePostComponent } from './components/pop-create-post/pop-create-post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PopCancelActionComponent } from './components/pop-cancel-action/pop-cancel-action.component';
+import { SearchGroupComponent } from './components/search-group/search-group.component';
  
 
 
@@ -78,7 +79,8 @@ import { PopCancelActionComponent } from './components/pop-cancel-action/pop-can
     SoonItemApiComponent,
     AnticipatedItemApiComponent,
     PopCreatePostComponent,
-    PopCancelActionComponent
+    PopCancelActionComponent,
+    SearchGroupComponent
   ],
   imports: [
     BrowserModule,

@@ -44,8 +44,13 @@
   width: 100%;
   height: 200px;
   margin: 0 auto;
-  transform: translateY(28px);
+  transform: translateY(29.5px);
   cursor: pointer;
+}
+.dialog form p #label:hover {
+  background-image: url(../../../assets/save-image-hover.svg);
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .dialog form .buttons {
   transform: translateY(-30px);

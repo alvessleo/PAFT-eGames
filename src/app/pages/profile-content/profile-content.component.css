@@ -61,6 +61,14 @@
   border-radius: 50%;
   margin-right: 10px;
 }
+.profile-content .user-information .user-card .photo-name {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.profile-content .user-information .user-card .photo-name a {
+  margin: 0 auto;
+}
 .profile-content .user-information .user-card .photo-name .div-photo {
   background: linear-gradient(45deg, #712DE0, #EB2F93);
   position: relative;
@@ -104,6 +112,7 @@
   border-radius: 5px;
   height: 45px;
   max-width: 320px;
+  min-width: 320px;
   color: white;
   border: none;
   font-size: 18px;
@@ -119,6 +128,7 @@
   border-radius: 5px;
   height: 45px;
   max-width: 320px;
+  min-width: 320px;
   color: white;
   border: none;
   font-size: 18px;

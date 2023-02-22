@@ -30,6 +30,11 @@
   display: flex;
   flex-direction: column;
   margin: 1em 0 0 1em;
+  align-items: center;
+  transform: translateX(-12px);
+}
+.mobile-menu .space {
+  margin: 0.5em 0;
 }
 .mobile-menu a {
   color: aliceblue;
@@ -52,12 +57,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0.5em;
 }
 .mobile-menu .signin mat-icon {
   margin-right: 5px;
 }
 .mobile-menu .signup {
   background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+  width: 150px;
 }
 .mobile-menu .signup:hover {
   background: linear-gradient(93.99deg, #4e1e9b -5.78%, #9c1f61 113.82%);
@@ -87,6 +94,11 @@
 .mat-toolbar a {
   text-decoration: none;
   cursor: pointer;
+}
+.mat-toolbar .logo-mobile img {
+  margin: 0;
+  width: 150px;
+  transform: translateX(-15px);
 }
 
 .links-desk {

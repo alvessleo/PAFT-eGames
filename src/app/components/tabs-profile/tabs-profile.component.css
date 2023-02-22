@@ -53,4 +53,9 @@ mat-tab-group {
   z-index: 9999;
   transform: translateY(-3px);
   left: 0;
+}
+
+#games-label {
+  margin-top: 8em;
+  text-align: center;
 }/*# sourceMappingURL=tabs-profile.component.css.map */

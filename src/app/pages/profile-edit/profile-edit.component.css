@@ -44,6 +44,14 @@
   flex-direction: column;
   align-items: center;
 }
+.profile-content .user-information .user-card .photo-name {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.profile-content .user-information .user-card .photo-name a {
+  margin: 0 auto;
+}
 .profile-content .user-information .user-card .photo-name .div-photo {
   background: linear-gradient(45deg, #712DE0, #EB2F93);
   position: relative;
@@ -183,6 +191,11 @@
 .profile-content .main-content form p input:focus, .profile-content .main-content form p select:focus {
   outline: #e71cc7 solid 2px;
 }
+.profile-content .main-content form p span {
+  color: #f24747;
+  font-weight: 300;
+  font-size: 14px;
+}
 .profile-content .main-content form .buttons {
   margin-bottom: 4em;
 }
@@ -235,6 +248,9 @@
     flex-direction: row;
     max-width: 1140px;
     margin: 0 auto;
+  }
+  .profile-content .user-information .user-card #back {
+    min-width: 320px;
   }
   .profile-content .main-content {
     max-width: 730px;

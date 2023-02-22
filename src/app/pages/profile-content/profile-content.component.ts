@@ -12,7 +12,7 @@ export class ProfileContentComponent {
   username!: string;
   bio!: string;
 
-  
+  follow = true
 
     constructor(private userService: UserService) {
 

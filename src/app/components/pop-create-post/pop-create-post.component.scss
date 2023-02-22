@@ -48,8 +48,13 @@
                 width: 100%;
                 height: 200px;
                 margin: 0 auto;
-                transform: translateY(28px);
+                transform: translateY(29.5px);
                 cursor: pointer;
+
+                &:hover{
+                    background-image: url(../../../assets/save-image-hover.svg);
+                    object-fit: cover;
+                }
             }
         }
 

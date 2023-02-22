@@ -13,6 +13,8 @@ import { PopCreatePostComponent } from '../pop-create-post/pop-create-post.compo
 export class MainNavComponent implements OnInit{
   @Input() username!: string;
 
+  public menuOpened = false;
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
@@ -27,6 +29,10 @@ export class MainNavComponent implements OnInit{
     
   }
   
+  public onClick(event: MouseEvent) {
+    event.stopPropagation();
+    this.menuOpened = false;
+  }
   
   openDialog(){
     this.dialogRef.open(PopCreatePostComponent);

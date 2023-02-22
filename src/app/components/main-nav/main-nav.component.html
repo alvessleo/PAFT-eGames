@@ -4,24 +4,17 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar><div class="logo-mobile"><img src="../../../assets/eg-positivo.svg"></div></mat-toolbar>
     <mat-nav-list class="mobile-menu">
-      <a routerLink="/feed">Home</a>
-      <a routerLink="/profile">Comunidade</a>
-      <a routerLink="/news">Notícias</a>
+      <a class="space" routerLink="/feed">Home</a>
+      <a class="space" routerLink="/profile">Comunidade</a>
+      <a class="space" routerLink="/news">Notícias</a>
       <a (click)="openDialog()">
         <img src="../../../assets/create.svg">
         <p>Criar</p>
       </a>
       <div class="user-menu">
-        <div class="div-photo">
-          <a>
-            <img class="user-photo" src="../../../assets/abstract-user-flat-4.webp">
-          </a>
-        </div>
-        <a>
-          <p id="username">Username</p>
-        </a>
+        <app-user-menu-nav [username]="username"></app-user-menu-nav>
       </div>
     </mat-nav-list>
   </mat-sidenav>
@@ -47,7 +40,14 @@
         <a routerLink="/news">Notícias</a>
         <div class="search">
           <img class="search-icon" src="../../../assets/search.svg">
-          <input type="text">
+          <input type="text" (click)="menuOpened = true">
+          <div class="group-list" [ngClass]="{ 'menu-opened': menuOpened }" (mouseleave)="menuOpened = false">
+            <p>Grupos</p>
+            <div class="hr"></div>
+            <app-search-group></app-search-group>
+            <app-search-group></app-search-group>
+          </div>
+
         </div>
       </div>
       <div class="actions">

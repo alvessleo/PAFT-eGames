@@ -49,6 +49,13 @@
             align-items: center;
 
             .photo-name{
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+
+                a{
+                    margin: 0 auto;
+                }
                 .div-photo{
                     background: linear-gradient(45deg, #712DE0, #EB2F93);
                     position: relative;
@@ -279,6 +286,14 @@
         flex-direction: row;
         max-width: 1140px;
         margin: 0 auto;
+
+        .user-information{
+            .user-card{
+                #back{
+                    min-width: 320px;
+                }
+            }
+        }
 
         .main-content{
             max-width: 730px;

@@ -1,3 +1,7 @@
+.mat-drawer-backdrop.mat-drawer-shown {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 .mat-drawer-container {
   background-color: #101114;
 }
@@ -27,7 +31,12 @@
 .mobile-menu {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 1em 0 0 1em;
+  transform: translateX(-15px);
+}
+.mobile-menu .space {
+  margin: 0.5em 0;
 }
 .mobile-menu a {
   color: aliceblue;
@@ -89,6 +98,12 @@
   cursor: pointer;
 }
 
+.logo-mobile img {
+  margin: 0;
+  width: 150px;
+  transform: translateX(-15px);
+}
+
 .links-desk {
   display: none;
   justify-content: center;
@@ -106,7 +121,7 @@
   display: block;
   background-color: #1F1F23;
   padding: 0.7em 0;
-  border-radius: 10px;
+  border-radius: 4px;
   transform: translateX(-10px);
 }
 .links-desk #com:hover .community-content a {
@@ -128,6 +143,32 @@
   align-items: center;
   position: relative;
 }
+.links-desk .search .group-list {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  transform: translate(-15px, 105px);
+  background-color: #1F1F23;
+  padding: 0.1em 0 0.4em 0;
+  border-radius: 4px;
+}
+.links-desk .search .group-list p {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 10px;
+  margin-top: 3px;
+}
+.links-desk .search .group-list .hr {
+  width: 90%;
+  margin: 0 auto;
+}
+.links-desk .search .menu-opened {
+  display: flex;
+}
 .links-desk .search .search-icon {
   z-index: 2;
   position: absolute;
@@ -145,6 +186,9 @@
   padding-left: 25px;
   font-weight: 200;
   font-size: 16px;
+}
+.links-desk .search input:focus .group-list {
+  background-color: red;
 }
 
 .actions {

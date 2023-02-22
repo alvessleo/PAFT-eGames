@@ -1,0 +1,35 @@
+.group-list-item{
+    display: flex;
+    align-items: center;
+    width: 150px;
+    margin: 7px 0;
+    padding: 0 .6em;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #303037;
+    }
+
+    img{
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+    .info{
+        p{
+            margin: 0;
+            padding: 0;
+        }
+
+        .name{
+            font-size: 15px;
+        }
+
+        .type{
+            font-size: 12px;
+            font-weight: 300;
+            color: #B3B0B8;
+            margin-top: -15px;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-<app-main-nav>
+<app-main-nav [username]="username">
     <div class="profile-content">
 
         <div class="user-information">
@@ -20,8 +20,8 @@
                     <p class="user">@{{username}}</p>
                 </div>
     
-                <button type="button" class="btn btn-primary">Seguir</button>
-                <button type="button" id="edit" routerLink="/profile-edit">Enviar Mensagem</button>
+                <button type="button" class="btn btn-primary" *ngIf="follow">Seguir</button>
+                <button type="button" id="edit" routerLink="/profile-edit">Editar perfil</button>
     
                 <div class="stats">
                     <div class="type">

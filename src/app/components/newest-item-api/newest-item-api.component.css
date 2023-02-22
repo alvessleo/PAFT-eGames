@@ -16,6 +16,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.item-container .info h3 {
+  font-size: 11pt;
+}
 .item-container .info p {
   margin-top: -15px;
   color: #7C7A80;

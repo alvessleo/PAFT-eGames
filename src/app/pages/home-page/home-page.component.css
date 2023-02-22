@@ -190,7 +190,6 @@ app-nav-home {
   display: flex;
   align-items: center;
   background-color: #212328;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 30px;
@@ -235,7 +234,6 @@ app-nav-home {
   background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
   font-size: 11px;
   font-weight: 300;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 2px 10px;
@@ -267,7 +265,6 @@ app-nav-home {
   font-size: 9px;
   font-weight: 300;
   border: 0.5px solid rgb(90, 90, 90);
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 20px;

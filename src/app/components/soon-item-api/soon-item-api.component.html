@@ -1,10 +1,12 @@
 <div class="item-container">
-    <img src="../../../assets/cs-background.png" class="logo-game">
+    <img src="{{ imgCover }}" class="logo-game">
     <div class="info">
-        <span>Feb 16, 2023</span>
-        <h3>Game name</h3>
-        <p>category</p>
+        <span>{{ date | date: 'dd MMM, HH:SS'}}</span>
+        <h3>{{ title }}</h3>
+        <a href="{{ url }}" target="_blank">Read more</a>
+        <p>Autor: {{ author }}</p>
     </div>
+
 </div>
 
 <div class="hr"></div>

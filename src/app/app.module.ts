@@ -48,6 +48,7 @@ import { PopCreatePostComponent } from './components/pop-create-post/pop-create-
 import { HttpClientModule } from '@angular/common/http';
 import { PopCancelActionComponent } from './components/pop-cancel-action/pop-cancel-action.component';
 import { SearchGroupComponent } from './components/search-group/search-group.component';
+import { MaxLenghtPipe } from './pipes/max-lenght.pipe';
  
 
 
@@ -80,7 +81,8 @@ import { SearchGroupComponent } from './components/search-group/search-group.com
     AnticipatedItemApiComponent,
     PopCreatePostComponent,
     PopCancelActionComponent,
-    SearchGroupComponent
+    SearchGroupComponent,
+    MaxLenghtPipe
   ],
   imports: [
     BrowserModule,

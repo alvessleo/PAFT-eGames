@@ -1,7 +1,6 @@
 .each-user-story {
   display: flex;
   flex-direction: column;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   align-items: center;

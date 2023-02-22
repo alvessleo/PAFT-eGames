@@ -28,11 +28,14 @@ export class MainNavComponent implements OnInit{
   ngOnInit(): void {
     
   }
-  
+
+<<<<<<< HEAD
   public onClick(event: MouseEvent) {
     event.stopPropagation();
     this.menuOpened = false;
   }
+=======
+>>>>>>> leo-salgado-branch
   
   openDialog(){
     this.dialogRef.open(PopCreatePostComponent);

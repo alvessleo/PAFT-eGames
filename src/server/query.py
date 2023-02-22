@@ -104,3 +104,20 @@ def edit_user(nome, username, data_nasc, bio, jogo_favorito, session):
 #Funções de postagem e comentário
 
 #Funções de grupo
+
+#Função de API
+popularGames = [
+    {"name": "League of Legends", "rating": 76, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co49wj.png", "genres": ["RPG", "Strategy", "MOBA"]},
+    {"name": "Minecraft", "rating": 84, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co49x5.jpg", "genres": ["Adventure", "Simulator"]},
+    {"name": "World of Warcraft", "rating": 85, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg", "genres": ["RPG", "Adventure"]},
+    {"name": "Counter-Strike: Global Offensive", "rating": 82, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co610k.jpg", "genres": ["Shooter", "Tactical"]},
+    {"name": "Fortnite", "rating": 69, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2ekt.jpg", "genres": ["RPG", "Strategy", "Shooter", "Adventure"]},
+    {"name": "PUBG: BATTLEGROUNDS", "rating": 73, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4c1x.jpg", "genres": ["Shooter"]},
+    {"name": "Apex Legends", "rating": 77, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wzo.jpg", "genres": ["Shooter"]},
+    {"name": "VALORANT", "rating": 72, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2mvt.jpg", "genres": ["Shooter", "Tactical"]},
+    {"name": "Call of Duty: Warzone", "rating": 72, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co20o8.jpg", "genres": ["Shooter"]},
+    {"name": "FIFA 22", "rating": 77, "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3dsm.jpg", "genres": ["Simulator", "Sport"]}
+]
+
+def getPopularGames():
+    return popularGames

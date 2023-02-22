@@ -1,9 +1,8 @@
 <div class="item-container">
-    <img src="../../../assets/cs-background.png" class="logo-game">
+    <img src="{{ imgCover }}" class="logo-game">
     <div class="info">
-        <span>Feb 16, 2023</span>
-        <h3>Game name</h3>
-        <p>category</p>
+        <p>{{ text | maxLenght}}</p>
+        <span>User{{ author }}</span>
     </div>
 </div>
 <div class="hr"></div>

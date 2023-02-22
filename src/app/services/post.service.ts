@@ -21,4 +21,9 @@ export class PostService {
   getPosts(){
     return this.http.get(`${this.database}get-posts`);
   }
+
+  getMyPosts(){
+    let idUser = sessionStorage.getItem("idUsuario");
+    return this.http.get(`${this.database}get-my-posts/${idUser}`);
+  }
 }

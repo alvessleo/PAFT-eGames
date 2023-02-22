@@ -37,7 +37,7 @@ export class UserService {
     return this.http.post(`${this.database}new-user`, this.body, options)
   }
 
-  editarUsuario(dataSource: FormGroup, session: any) {
+  editarUsuario(dataSource: FormGroup, session: any, img: any) {
     var name = dataSource.get('fullname');
     var username = dataSource.get('username');
     var data_nasc = dataSource.get('birthdate');
@@ -47,7 +47,7 @@ export class UserService {
       'Access-Control-Allow-Origin' : '*'
     })
     let options = {headers:this.headers};
-    this.body = {name: name!['value'], username: username!['value'], data_nasc: data_nasc!['value'], bio: bio!['value'], jogo_favorito: jogo_favorito!['value'], session: session};
+    this.body = {name: name!['value'], username: username!['value'], data_nasc: data_nasc!['value'], bio: bio!['value'], jogo_favorito: jogo_favorito!['value'], session: session, img: img};
     return this.http.put(`${this.database}edit-user/${session}`, this.body, options)
   }
 

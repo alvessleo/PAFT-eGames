@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./profile-edit.component.scss']
 })
 export class ProfileEditComponent implements OnInit{
-  url = '../../../assets/abstract-user-flat-4.webp';
+  url: any;
   dataSource!: FormGroup
   today: Date = new Date();
 
@@ -31,11 +31,12 @@ export class ProfileEditComponent implements OnInit{
     this.sessionId = sessionStorage.getItem("sessionId");
     this.userService.usuarioDaSessao(this.sessionId).subscribe(usuario => {
       var jsonResult = JSON.parse(JSON.stringify(usuario))
-      this.fetchName = jsonResult['usuario']['nome']
-      this.fetchUsername = jsonResult['usuario']['username']
-      this.fetchBirthdate = jsonResult['usuario']['data_nasc']
-      this.fetchBio = jsonResult['usuario']['biografia']
-      this.fetchGame = jsonResult['usuario']['jogo_favorito']
+      this.fetchName = jsonResult['usuario']['nome'];
+      this.fetchUsername = jsonResult['usuario']['username'];
+      this.fetchBirthdate = jsonResult['usuario']['data_nasc'];
+      this.fetchBio = jsonResult['usuario']['biografia'];
+      this.fetchGame = jsonResult['usuario']['jogo_favorito'];
+      this.url = jsonResult['usuario']['foto'];
     })
     
     this.dataSource = new FormGroup({
@@ -53,7 +54,7 @@ export class ProfileEditComponent implements OnInit{
         bio: this.fetchBio,
         game: this.fetchGame
       })
-    }, 50)
+    }, 200)
   }
 
   get fullname(){
@@ -83,10 +84,9 @@ export class ProfileEditComponent implements OnInit{
     }
 
     if(this.dataSource.valid) { // Se o formulário for válido
-      this.userService.editarUsuario(this.dataSource, this.sessionId).subscribe(usuario => {
+      this.userService.editarUsuario(this.dataSource, this.sessionId, this.url).subscribe(usuario => {
         console.log(usuario)
       });
-      // TODO: Tornar metodo editarUsuario do service observable e adicionar o .subscribe aqui na chamada desse método 
       // TODO: Exibir mensagem ou pop-up de confirmacao de edicao de perfil
 
       this.router.navigate(['/profile'])

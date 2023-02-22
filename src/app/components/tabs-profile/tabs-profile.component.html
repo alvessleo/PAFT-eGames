@@ -1,7 +1,8 @@
 <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
     <mat-tab label="Posts">
-        <app-publication></app-publication>
-        <app-publication></app-publication>
+        <app-publication
+        *ngFor="let post of publications"
+        [post]="post"></app-publication>
     </mat-tab>
     <mat-tab label="Grupos">
         <app-item-group></app-item-group>

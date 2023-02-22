@@ -67,7 +67,8 @@ def get_all_users():
     conn = get_db_connection()
     usuariosQuery = conn.execute(f'SELECT * FROM usuario')
     for usuario in usuariosQuery:
-        print(usuario[0], usuario[1], usuario[2], usuario[3], usuario[4], usuario[5], usuario[6])
+        print(usuario[2])
+    conn.close()
     return "oi"
 
 
@@ -89,12 +90,12 @@ def get_user_by_session(session):
                         'conquista' : usuario[0]['conquista'],
                         }}
 
-def edit_user(nome, username, data_nasc, bio, jogo_favorito, session): 
+def edit_user(nome, username, data_nasc, bio, jogo_favorito, session, profileImg): 
     conn = get_db_connection()
     sessao = conn.execute(f'SELECT * FROM session WHERE idSession = {session}').fetchall()
     idUsuario = sessao[0]['idUser']
     cur = conn.cursor()
-    cur.execute(f"UPDATE Usuario SET nome='{nome}', username='{username}', data_nasc='{data_nasc}', biografia='{bio}', jogo_favorito='{jogo_favorito}' WHERE idUsuario={idUsuario};")
+    cur.execute(f"UPDATE Usuario SET nome='{nome}', username='{username}', data_nasc='{data_nasc}', biografia='{bio}', jogo_favorito='{jogo_favorito}', foto='{profileImg}' WHERE idUsuario={idUsuario};")
     conn.commit()
     conn.close()
     return {"sucess": True, "message": "Informações alteradas"}
@@ -134,6 +135,27 @@ def get_posts():
         post_list.append(dict)
     return post_list
 
+def get_my_posts(idUsuario):
+    post_list = []
+    conn = get_db_connection()
+    posts = conn.execute(f'SELECT * FROM post WHERE idUser = {idUsuario} ORDER BY idpost DESC').fetchall()
+    conn.close()
+    for post in posts:
+        idUser = post['idUser']
+        conn = get_db_connection()
+        user = conn.execute(f'SELECT * FROM Usuario WHERE idUsuario = {idUser}').fetchall()
+        conn.close()
+        dict = {
+            "idpost": post['idpost'],
+            "title": post['legenda'],
+            "img": post['foto'],
+            "data": post['data'],
+            "num_curtidas": post['num_curtidas'],
+            "nomeUser": user[0]['username'],
+            "fotoUser": user[0]['foto']
+        }
+        post_list.append(dict)
+    return post_list
 #Funções de grupo
 
 #Função de API

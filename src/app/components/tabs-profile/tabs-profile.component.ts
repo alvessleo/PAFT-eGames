@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-tabs-profile',
@@ -7,5 +8,14 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class TabsProfileComponent {
+  publications: any;
+
+  constructor(private postService: PostService){ }
+
+  ngOnInit(){
+    this.postService.getMyPosts().subscribe(posts => {
+      this.publications = posts;
+    })
+  }
 
 }

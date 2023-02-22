@@ -57,7 +57,8 @@ def editarUsuario(session):
     data_nasc = request.json['data_nasc']
     bio = request.json['bio']
     jogo_favorito = request.json['jogo_favorito']
-    result = db.edit_user(nome, username, data_nasc, bio, jogo_favorito, session)
+    profileImg = request.json['img']
+    result = db.edit_user(nome, username, data_nasc, bio, jogo_favorito, session, profileImg)
     response = jsonify(result)
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
@@ -74,6 +75,11 @@ def newPost():
 @app.route('/get-posts', methods=['GET'])
 def getPosts():
     post_list = db.get_posts()
+    return post_list
+
+@app.route('/get-my-posts/<int:idUser>', methods=['GET'])
+def getMyPosts(idUser):
+    post_list = db.get_my_posts(idUser)
     return post_list
 
 #Função de API

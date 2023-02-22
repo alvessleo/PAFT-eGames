@@ -11,6 +11,7 @@ export class PublicationComponent {
   title: any;
   date: any;
   username: any;
+  userFoto: any;
   num_curtidas: any;
 
   ngOnInit(){
@@ -19,5 +20,6 @@ export class PublicationComponent {
     this.date = this.post['data'];
     this.username = this.post['nomeUser'];
     this.num_curtidas = this.post['num_curtidas'];
+    this.userFoto = this.post['fotoUser'];
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-profile-content',
@@ -11,10 +12,11 @@ export class ProfileContentComponent {
   nome!: string;
   username!: string;
   bio!: string;
+  fotoUrl: any;
 
   follow = true
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService, private postService: PostService) {
 
     }
 
@@ -25,6 +27,9 @@ export class ProfileContentComponent {
         this.nome = jsonResult['usuario']['nome']
         this.username = jsonResult['usuario']['username']
         this.bio = jsonResult['usuario']['biografia']
+        this.fotoUrl = jsonResult['usuario']['foto']
+
+        
       })
     }
 }

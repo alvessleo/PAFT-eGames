@@ -1,6 +1,6 @@
 .dialog{
     background-color: #1F1F23;
-    padding: 2em;
+    padding: 2rem;
 
     h3{
         color: #fff;
@@ -17,14 +17,14 @@
             label{
                 color: #fff;
                 font-weight: 300;
-                margin-bottom: 10px;
+                margin-bottom: 5px;
             }
 
             input{
                 background-color: #2F2F2F;
                 border-radius: 5px;
                 border: none;
-                height: 45px;
+                height: 40px;
 
                 padding: 0 10px;
                 color: #B7B7B7;
@@ -32,6 +32,13 @@
                 &:focus{
                     outline: #e71cc7 solid 2px;
                 }
+            }
+            span {
+                margin-top: 5px;
+                color: #f24747;
+                font-weight: 300;
+                font-size: 14px;
+                transform: translateY(-5px);
             }
 
             #file-publi{
@@ -64,7 +71,7 @@
                 width: 100%;
                 background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
                 border-radius: 5px;
-                height: 45px;
+                height: 40px;
                 color: white;
                 border: none;
                 font-size: 18px;

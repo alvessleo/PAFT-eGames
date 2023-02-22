@@ -18,8 +18,13 @@
         }
 
         p{
-            margin-top: -15px;
+            font-size: 11pt;
+            text-align: justify;
             color: #7C7A80;
+
+            &::first-letter{
+                text-transform: uppercase;
+            }
         }
     }
 }

@@ -31,14 +31,14 @@ export class ApiService {
     return this.http.get(`https://steam2.p.rapidapi.com/newsForApp/${newsId[index]}/limit/10/300`, this.header)
   }
 
-  getreviews(){
+  getreviews(id: number){
     this.header = {
       headers: new HttpHeaders({
         'X-RapidAPI-Key':  'c800e1fba0msh26c976a5bba296ap100f36jsnc32868188206',
         'X-RapidAPI-Host': 'steam2.p.rapidapi.com'
       })
     };
-    return this.http.get("https://steam2.p.rapidapi.com/appReviews/1672970/limit/5/*", this.header)
+    return this.http.get(`https://steam2.p.rapidapi.com/appReviews/${id}/limit/5/*`, this.header)
   }
 
 }

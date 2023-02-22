@@ -10,7 +10,9 @@
             </div>
             <div class="hr"></div>
             <h3>Publicações</h3>
-            <app-publication></app-publication>
+            <app-publication
+            *ngFor="let post of publications"
+            [post]="post"></app-publication>
             <app-publication></app-publication>
         </div>
         <div class="suggest">

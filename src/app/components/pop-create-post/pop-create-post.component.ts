@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-pop-create-post',
@@ -12,14 +13,14 @@ export class PopCreatePostComponent {
   url = '../../../assets/publication-image-mock.svg';
   dataSource!: FormGroup
 
-  constructor(private dialogRef : MatDialog){
+  constructor(private dialogRef : MatDialog, private postService: PostService){
 
   }
 
   ngOnInit():void {
     this.dataSource = new FormGroup({
       title: new FormControl("", [Validators.required]),
-      img: new FormControl("", [Validators.required])
+      img: new FormControl("", [Validators.required]),
     })
   }
 
@@ -48,9 +49,9 @@ export class PopCreatePostComponent {
   createPost(evento: Event){
       evento.preventDefault();
       if (this.dataSource.valid) {
-        let title = this.dataSource.get("title");
-        let img = this.dataSource.get("img");
-        console.log(title);
+        this.postService.publishPost(this.dataSource, this.url).subscribe(result => {
+          console.log(result);
+        });
       } else {
         console.log("Não criou a publicação");
       }

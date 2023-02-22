@@ -79,6 +79,7 @@ def get_user_by_session(session):
     conn.commit()
     conn.close()
     return {"usuario": {
+                        'idUsuario': usuario[0]['idUsuario'],
                         'nome' : usuario[0]['nome'],
                         'username' : usuario[0]['username'],
                         'foto' : usuario[0]['foto'],
@@ -102,6 +103,36 @@ def edit_user(nome, username, data_nasc, bio, jogo_favorito, session):
 
 
 #Funções de postagem e comentário
+def new_post(title, img, idUser):
+    data = datetime.datetime.now()
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute(f"INSERT INTO post (tipo, idUser, foto, legenda, data, num_curtidas) values ('post', '{idUser}', '{img}', '{title}', '{data}', 0);")
+    conn.commit()
+    conn.close()
+    return {"sucess": True, "message": "Publicação criada"}
+
+def get_posts():
+    post_list = []
+    conn = get_db_connection()
+    posts = conn.execute('SELECT * FROM post').fetchall()
+    conn.close()
+    for post in posts:
+        idUser = post['idUser']
+        conn = get_db_connection()
+        user = conn.execute(f'SELECT * FROM Usuario WHERE idUsuario = {idUser}').fetchall()
+        conn.close()
+        dict = {
+            "idpost": post['idpost'],
+            "title": post['legenda'],
+            "img": post['foto'],
+            "data": post['data'],
+            "num_curtidas": post['num_curtidas'],
+            "nomeUser": user[0]['username'],
+            "fotoUser": user[0]['foto']
+        }
+        post_list.append(dict)
+    return post_list
 
 #Funções de grupo
 

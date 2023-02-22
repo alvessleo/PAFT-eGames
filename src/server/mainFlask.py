@@ -62,6 +62,20 @@ def editarUsuario(session):
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
+#Função de post
+@app.route('/new-post', methods=['POST'])
+def newPost():
+    title = request.json['title']
+    img = request.json['img']
+    idUser = request.json['idUser']
+    result = db.new_post(title, img, idUser)
+    return result
+
+@app.route('/get-posts', methods=['GET'])
+def getPosts():
+    post_list = db.get_posts()
+    return post_list
+
 #Função de API
 @app.route('/get-popular-games', methods=['GET'])
 def getPopularGames():

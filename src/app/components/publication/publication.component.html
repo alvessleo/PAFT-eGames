@@ -2,14 +2,13 @@
     <div class="user-photo-game">
         <img class="user-photo" src="../../../assets/abstract-user-flat-4.webp">
         <div class="user-game">
-            <p class="username">@user</p>
+            <p class="username">@{{ username }}</p>
             <div class="game">
-                <img src="../../../assets/valorant-logo.webp" class="game-logo">
-                <p>Name of the game</p>
+                <p>{{ date | date: "MMM dd, YYYY" }}</p>
             </div>
         </div>
     </div>
-    <img class="main-image" src="../../../assets/Rectangle 27.png">
+    <img class="main-image" src="{{ postImg }}">
     <div class="footer-content">
         <div class="stats">
             <div class="main-stats">
@@ -23,10 +22,10 @@
                 </div>
                 <img class="share-icon" src="../../../assets/share-icon.svg">
             </div>
-            <p class="time">Há <span>0</span></p>
+            <p class="time"><span>{{ date | date: "HH:SS" }}</span></p>
         </div>
         <div class="title">
-            <p>Title here</p>
+            <p>{{ title }}</p>
         </div>
         <div class="post-comments">
             <p>Ver todos os <span>X</span> comentários</p>

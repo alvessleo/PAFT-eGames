@@ -20,4 +20,8 @@ export class SessionService {
     return this.http.post(`${this.database}login`, this.body)
   }
 
+  deslogarUsuario(sessionId: number){
+    
+  }
+
 }

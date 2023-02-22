@@ -49,11 +49,29 @@ export class NoticiasApiPageComponent {
         }
       }
 
-      this.apiService.getreviews().subscribe(reviews => {
+      let reviewsId = [730, 1172470, 1962663, 1506830, 1672970];
+      let index = Math.floor(Math.random() * 5);
+      this.apiService.getreviews(reviewsId[index]).subscribe(reviews => {
         this.reviews = reviews;
         this.reviews = this.reviews['reviews'];
         for (let y = 0; y < 5; y++){
-          this.reviews[y]['imgCover'] = "https://images.igdb.com/igdb/image/upload/t_cover_big/co49x5.jpg";
+          switch(reviewsId[index]){
+            case(730):
+              this.reviews[y]['imgCover'] = "https://images.igdb.com/igdb/image/upload/t_cover_big/co610k.jpg"
+            break;
+            case(1172470):
+              this.reviews[y]['imgCover'] = "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wzo.jpg"
+            break;
+            case(1962663):
+              this.reviews[y]['imgCover'] = "https://images.igdb.com/igdb/image/upload/t_cover_big/co20o8.jpg"
+            break;
+            case(1672970):
+              this.reviews[y]['imgCover'] = "https://images.igdb.com/igdb/image/upload/t_cover_big/co49x5.jpg"
+            break;
+            case(1506830):
+              this.reviews[y]['imgCover'] = "https://images.igdb.com/igdb/image/upload/t_cover_big/co3dsm.jpg"
+            break;
+          }
         }
       })
       

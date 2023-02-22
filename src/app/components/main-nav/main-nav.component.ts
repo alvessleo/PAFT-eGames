@@ -29,13 +29,11 @@ export class MainNavComponent implements OnInit{
     
   }
 
-<<<<<<< HEAD
   public onClick(event: MouseEvent) {
     event.stopPropagation();
     this.menuOpened = false;
   }
-=======
->>>>>>> leo-salgado-branch
+
   
   openDialog(){
     this.dialogRef.open(PopCreatePostComponent);

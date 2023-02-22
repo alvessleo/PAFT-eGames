@@ -62,12 +62,6 @@ def editarUsuario(session):
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
-
-@app.route('/get-user-by-session/<int:session>', methods=['GET'])
-def usuarioDaSessao(session):
-    usuarioDaSessao = db.get_user_by_session(session)
-    return jsonify(usuarioDaSessao)
-
 #Função de API
 @app.route('/get-popular-games', methods=['GET'])
 def getPopularGames():

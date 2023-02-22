@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { Router, RouterLink } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
+import { GlobalEventEmitterService } from 'src/app/services/global-event-emitter.service';
 
 @Component({
   selector: 'app-feed-content',
@@ -32,8 +33,15 @@ export class FeedContentComponent {
 
     this.postService.getPosts().subscribe(posts => {
       this.publications = posts;
-      console.log(this.publications);
+    })
+
+    GlobalEventEmitterService.get('novoPost').subscribe(data => {
+      this.postService.getPosts().subscribe(posts => {
+        this.publications = posts;
+      })
     })
   }
+
+  
 
 }

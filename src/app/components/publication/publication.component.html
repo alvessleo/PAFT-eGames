@@ -14,15 +14,15 @@
             <div class="main-stats">
                 <div class="like">
                     <img class="like-icon" src="../../../assets/hearth.svg">
-                    <p>000</p>
+                    <p>{{ num_curtidas }}</p>
                 </div>
                 <div class="comments">
                     <img class="comment-icon" src="../../../assets/conversation-icon.svg">
-                    <p>000</p>
+                    <p>0</p>
                 </div>
                 <img class="share-icon" src="../../../assets/share-icon.svg">
             </div>
-            <p class="time"><span>{{ date | date: "HH:SS" }}</span></p>
+            <p class="time"><span>{{ date | date: "HH:mm" }}</span></p>
         </div>
         <div class="title">
             <p>{{ title }}</p>

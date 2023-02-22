@@ -11,11 +11,13 @@ export class PublicationComponent {
   title: any;
   date: any;
   username: any;
+  num_curtidas: any;
 
   ngOnInit(){
     this.title = this.post['title'];
     this.postImg = this.post['img'];
     this.date = this.post['data'];
     this.username = this.post['nomeUser'];
+    this.num_curtidas = this.post['num_curtidas'];
   }
 }

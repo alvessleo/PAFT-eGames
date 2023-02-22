@@ -115,7 +115,7 @@ def new_post(title, img, idUser):
 def get_posts():
     post_list = []
     conn = get_db_connection()
-    posts = conn.execute('SELECT * FROM post').fetchall()
+    posts = conn.execute('SELECT * FROM post ORDER BY idpost DESC').fetchall()
     conn.close()
     for post in posts:
         idUser = post['idUser']

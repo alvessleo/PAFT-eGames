@@ -1,7 +1,8 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { PostService } from 'src/app/services/post.service';
+import { GlobalEventEmitterService } from 'src/app/services/global-event-emitter.service';
 
 @Component({
   selector: 'app-pop-create-post',
@@ -10,6 +11,7 @@ import { PostService } from 'src/app/services/post.service';
   encapsulation: ViewEncapsulation.None
 })
 export class PopCreatePostComponent {
+
   url = '../../../assets/publication-image-mock.svg';
   dataSource!: FormGroup
 
@@ -51,6 +53,8 @@ export class PopCreatePostComponent {
       if (this.dataSource.valid) {
         this.postService.publishPost(this.dataSource, this.url).subscribe(result => {
           console.log(result);
+          GlobalEventEmitterService.get('novoPost').emit();
+          this.closeDialog();
         });
       } else {
         console.log("Não criou a publicação");

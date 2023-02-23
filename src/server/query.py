@@ -182,8 +182,16 @@ def new_group(name, description, type, img):
     cur = conn.cursor()
     cur.execute(f"INSERT INTO grupo (nome, foto, status, descricao) values ('{name}', '{img}', '{type}', '{description}');")
     conn.commit()
+    grupo_criado = conn.execute(f"SELECT * FROM grupo WHERE nome='{name}' AND foto='{img}' AND status='{type}' AND descricao='{description}'").fetchall()
     conn.close()
-    return {"sucess": True, "message": "Grupo criado"}
+    groupData = {
+            "idgrupo": grupo_criado[0]['idgrupo'],
+            "nome": grupo_criado[0]['nome'],
+            "foto": grupo_criado[0]['foto'],
+            "status": grupo_criado[0]['status'],
+            "descricao": grupo_criado[0]['descricao'],
+        }
+    return {"sucess": True, "grupo": groupData}
 
 
 def get_all_groups():

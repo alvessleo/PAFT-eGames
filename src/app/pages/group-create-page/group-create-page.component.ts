@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { PopCancelActionComponent } from 'src/app/components/pop-cancel-action/pop-cancel-action.component';
 import { GroupService } from 'src/app/services/group.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-group-create-page',
@@ -14,8 +15,9 @@ export class GroupCreatePageComponent implements OnInit{
   url='../../../assets/group-image-mock.png';
   
   dataSource!: FormGroup;
-  
-  constructor(private dialogRef : MatDialog, private groupService: GroupService, private router: Router){
+  group: any;
+
+  constructor(private dialogRef : MatDialog, private groupService: GroupService, private router: Router, private userService: UserService){
 
   }
 
@@ -45,11 +47,22 @@ export class GroupCreatePageComponent implements OnInit{
   }
 
   onSubmit() {
+    let idusuario = sessionStorage.getItem('idUsuario')
     if (this.dataSource.valid) {
       this.groupService.createGroup(this.dataSource, this.url).subscribe(result => {
         console.log(result)
+        var jsonResult = JSON.parse(JSON.stringify(result))
+        this.group = jsonResult['grupo']
+        
+        console.log("Usuario " + idusuario + " criando o grupo")
+        this.userService.entrarNoGrupo(idusuario, this.group['idgrupo']).subscribe(result => {
+          console.log(result)
+          this.router.navigate(['/feed'])
+        })
       })
-      this.router.navigate(['/feed'])
+      
+     
+
     }
 
   }

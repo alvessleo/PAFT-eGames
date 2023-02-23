@@ -21,6 +21,7 @@ export class ProfileEditComponent implements OnInit{
   fetchBirthdate!: string;
   fetchBio!: string;
   fetchGame!: string;
+  usuario: any;
 
   constructor(private router: Router, private userService: UserService, private dialogRef : MatDialog) {
 
@@ -31,6 +32,7 @@ export class ProfileEditComponent implements OnInit{
     this.sessionId = sessionStorage.getItem("sessionId");
     this.userService.usuarioDaSessao(this.sessionId).subscribe(usuario => {
       var jsonResult = JSON.parse(JSON.stringify(usuario))
+      this.usuario = jsonResult['usuario'];
       this.fetchName = jsonResult['usuario']['nome'];
       this.fetchUsername = jsonResult['usuario']['username'];
       this.fetchBirthdate = jsonResult['usuario']['data_nasc'];

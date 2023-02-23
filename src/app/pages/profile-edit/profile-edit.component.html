@@ -1,4 +1,4 @@
-<app-main-nav [username]="fetchUsername">
+<app-main-nav [usuario]="usuario">
     <div class="profile-content">
 
         <div class="user-information">
@@ -9,7 +9,8 @@
                         <div class="div-photo">
                             <input type="file" name="file" id="file" (change)="onSelectFile($event)"/>
                             <label for="file"></label>
-                            <img [src]="url" class="profile-image">
+                            <img *ngIf="url !== 'foto.png'" src="{{ url }}" class="profile-image">
+                            <img *ngIf="url === 'foto.png'" src="../../../assets/abstract-user-flat-4.webp" class="profile-image">
                         </div>
                     </a>
 
@@ -36,7 +37,7 @@
     
                 <div class="about">
                     <h4>Sobre</h4>
-                    <p *ngIf="fetchBio !== '' and fetchBio !== 'None'; else noBio">{{fetchBio}}</p>
+                    <p *ngIf="fetchBio !== '' && fetchBio !== null && fetchBio !== 'None'; else noBio">{{fetchBio}}</p>
                     <ng-template #noBio>
                         Não há nada aqui.
                     </ng-template>

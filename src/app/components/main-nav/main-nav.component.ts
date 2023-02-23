@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./main-nav.component.scss']
 })
 export class MainNavComponent implements OnInit{
-  @Input() username!: string;
+  @Input() usuario!: any;
   grupos: any;
 
   public menuOpened = false;

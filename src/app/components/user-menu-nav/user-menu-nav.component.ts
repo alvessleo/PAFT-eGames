@@ -9,7 +9,7 @@ import { SessionService } from 'src/app/services/session.service';
   encapsulation: ViewEncapsulation.None
 })
 export class UserMenuNavComponent {
-  @Input() username!: string;
+  @Input() usuario!: any;
 
   constructor(private sessionService: SessionService, private router: Router) {
 

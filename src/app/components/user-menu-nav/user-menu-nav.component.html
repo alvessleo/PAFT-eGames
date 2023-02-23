@@ -1,11 +1,12 @@
 <div mat-button [matMenuTriggerFor]="belowMenu" class="user-menu" >
     <div class="div-photo">
       <a>
-        <img class="user-photo" src="../../../assets/abstract-user-flat-4.webp">
+        <img *ngIf="usuario['foto'] !== 'foto.png'" class="user-photo" src="{{ usuario['foto'] }}">
+        <img *ngIf="usuario['foto'] === 'foto.png'" class="user-photo" src="../../../assets/abstract-user-flat-4.webp">
       </a>
     </div>
     <a>
-      <p id="username">{{username}}</p>
+      <p id="username">{{ usuario['username'] }}</p>
     </a>
 </div>
 <mat-menu #belowMenu="matMenu" yPosition="below" class="mat-menu">

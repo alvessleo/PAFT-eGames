@@ -1,4 +1,4 @@
-<app-main-nav [username]="username">
+<app-main-nav [usuario]="usuario">
     <div class="profile-content">
 
         <div class="user-information">
@@ -12,7 +12,8 @@
                 <div class="photo-name">
                     <a>
                         <div class="div-photo">
-                            <img src="{{ fotoUrl }}" class="profile-image">
+                            <img *ngIf="fotoUrl !== 'foto.png'" src="{{ fotoUrl }}" class="profile-image">
+                            <img *ngIf="fotoUrl === 'foto.png'" src="../../../assets/abstract-user-flat-4.webp" class="profile-image">
                         </div>
                     </a>
 
@@ -40,7 +41,7 @@
     
                 <div class="about">
                     <h4>Sobre</h4>
-                    <p *ngIf="bio !== '' and bio !== 'None'; else noBio">{{bio}}</p>
+                    <div *ngIf="bio !== '' && bio !== null && bio !== 'None'; else noBio">{{bio}}</div>
                     <ng-template #noBio>
                         Não há nada aqui.
                     </ng-template>

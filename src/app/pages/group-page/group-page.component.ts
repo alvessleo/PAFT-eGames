@@ -30,7 +30,6 @@ export class GroupPageComponent implements OnInit{
 
     this.userService.usuarioNoGrupo(this.idUsuario, this.groupId).subscribe(result => {
       var jsonResult = JSON.parse(JSON.stringify(result))
-      console.log("AAAAAA" + jsonResult)
       if (jsonResult['userInGroup'] === 'true') {
         this.userInGroup = true
         this.exitGroup = true
@@ -38,7 +37,6 @@ export class GroupPageComponent implements OnInit{
         this.joinGroup = false
       } else {
         this.userInGroup = false
-        console.log("CCCCCC" + jsonResult)
         this.exitGroup = false
       }
     })

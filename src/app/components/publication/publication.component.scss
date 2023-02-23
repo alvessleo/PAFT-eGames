@@ -3,7 +3,6 @@ p{
 }
 
 .publication{
-    width: 100%;
     display: grid;
     margin: 0 auto;
     grid-template-areas: 
@@ -55,8 +54,8 @@ p{
     .main-image{
         width: 100%;
         max-width: 450px;
-        // width: 350px;
-        // height: 230px;
+        width: 350px;
+        height: 230px;
         object-fit: cover;
         grid-area: image;
     }
@@ -108,8 +107,12 @@ p{
         }
 
         .title{
-            margin: 1.7em 0;
-            text-align: justify;
+            margin: 1em 0;
+            text-align: left;
+
+            p{
+                width: 340px;
+            }
         }
 
         .post-comments{

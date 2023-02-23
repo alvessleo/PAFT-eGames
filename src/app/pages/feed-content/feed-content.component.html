@@ -3,10 +3,12 @@
         <div class="main-content">
             <h3>Stories</h3>
             <div class="stories">
-                <app-story-user></app-story-user>
-                <app-story-user></app-story-user>
-                <app-story-user></app-story-user>
-                <app-story-user></app-story-user>
+                <app-story-user *ngFor="let person of story">
+                    <div class="gradient">
+                        <img [src]="person.photo" class="inside">
+                    </div>
+                    <label>{{person.name | userNameMax}}</label>
+                </app-story-user>
             </div>
             <div class="hr"></div>
             <h3>Publicações</h3>

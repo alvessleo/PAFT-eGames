@@ -49,6 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PopCancelActionComponent } from './components/pop-cancel-action/pop-cancel-action.component';
 import { SearchGroupComponent } from './components/search-group/search-group.component';
 import { MaxLenghtPipe } from './pipes/max-lenght.pipe';
+import { UserNameMaxPipe } from './pipes/user-name-max.pipe';
  
 
 
@@ -82,7 +83,8 @@ import { MaxLenghtPipe } from './pipes/max-lenght.pipe';
     PopCreatePostComponent,
     PopCancelActionComponent,
     SearchGroupComponent,
-    MaxLenghtPipe
+    MaxLenghtPipe,
+    UserNameMaxPipe
   ],
   imports: [
     BrowserModule,

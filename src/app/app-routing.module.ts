@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'feed', component: FeedContentComponent},
   {path: 'profile', component: ProfileContentComponent},
   {path: 'profile-edit', component: ProfileEditComponent},
-  {path: 'group', component: GroupPageComponent},
+  {path: 'group/:idgrupo', component: GroupPageComponent},
   {path: 'login', component: LoginPageComponent},
   {path: 'cadastro', component: CadastroPageComponent},
   {path: 'new-group', component: GroupCreatePageComponent},

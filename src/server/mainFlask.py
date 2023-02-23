@@ -89,4 +89,28 @@ def getPopularGames():
     return jsonify(popularGames)
 
 
+#Funções de Grupo
+@app.route('/new-group', methods=['POST'])
+def newGroup():
+    name = request.json['name']
+    description = request.json['description']
+    type = request.json['type']
+    img = request.json['img']
+    result = db.new_group(name, description, type, img)
+    response = jsonify(result)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
+
+
+@app.route('/get-all-groups', methods=['GET'])
+def getAllGroups():
+    grupos = db.get_all_groups()
+    return grupos
+
+
+@app.route('/get-group/<int:idgrupo>', methods=['GET'])
+def getGroup(idgrupo):
+    grupo = db.get_group(idgrupo)
+    return grupo
+    
 app.run(debug=True)

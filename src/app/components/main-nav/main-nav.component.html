@@ -34,7 +34,7 @@
         <a routerLink="/feed">Home</a>
         <a id="com">Comunidade
           <div class="community-content">
-            <a routerLink="/profile">Grupos</a>
+            <a routerLink="/new-group">Grupos</a>
           </div>
         </a>
         <a routerLink="/news">Notícias</a>
@@ -44,8 +44,7 @@
           <div class="group-list" [ngClass]="{ 'menu-opened': menuOpened }" (mouseleave)="menuOpened = false">
             <p>Grupos</p>
             <div class="hr"></div>
-            <app-search-group></app-search-group>
-            <app-search-group></app-search-group>
+            <app-search-group *ngFor="let grupo of grupos" [grupo]="grupo"></app-search-group>
           </div>
 
         </div>

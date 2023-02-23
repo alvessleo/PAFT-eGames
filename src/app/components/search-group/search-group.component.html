@@ -1,8 +1,8 @@
-<div class="group-list-item">
-    <img src="../../../assets/loud-example.png">
+<div class="group-list-item" (click)="abrirGrupo()">
+    <img src="{{ groupImg }}">
     <div class="info">
-        <p class="name">LOUD</p>
-        <p class="type">privado</p>
+        <p class="name">{{ groupName }}</p>
+        <p class="type">{{ groupType }}</p>
     </div>
 </div>
 <div class="hr"></div>

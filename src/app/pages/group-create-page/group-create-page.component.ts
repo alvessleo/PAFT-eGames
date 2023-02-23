@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { PopCancelActionComponent } from 'src/app/components/pop-cancel-action/pop-cancel-action.component';
+import { GroupService } from 'src/app/services/group.service';
 
 @Component({
   selector: 'app-group-create-page',
@@ -13,7 +15,7 @@ export class GroupCreatePageComponent implements OnInit{
   
   dataSource!: FormGroup;
   
-  constructor(private dialogRef : MatDialog){
+  constructor(private dialogRef : MatDialog, private groupService: GroupService, private router: Router){
 
   }
 
@@ -44,12 +46,10 @@ export class GroupCreatePageComponent implements OnInit{
 
   onSubmit() {
     if (this.dataSource.valid) {
-      const formData = new FormData()
-      formData.append('groupName', this.groupName!.value)
-      formData.append('groupDescription', this.groupName!.value)
-      formData.append('groupImage', this.groupImage!.value)
-      formData.append('groupType', this.groupType!.value)
-
+      this.groupService.createGroup(this.dataSource, this.url).subscribe(result => {
+        console.log(result)
+      })
+      this.router.navigate(['/feed'])
     }
 
   }

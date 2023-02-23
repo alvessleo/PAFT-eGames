@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { PopCreatePostComponent } from '../pop-create-post/pop-create-post.component';
+import { GroupService } from 'src/app/services/group.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-nav',
@@ -12,8 +14,10 @@ import { PopCreatePostComponent } from '../pop-create-post/pop-create-post.compo
 })
 export class MainNavComponent implements OnInit{
   @Input() username!: string;
+  grupos: any;
 
   public menuOpened = false;
+
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -21,12 +25,14 @@ export class MainNavComponent implements OnInit{
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private dialogRef : MatDialog) {
+  constructor(private breakpointObserver: BreakpointObserver, private dialogRef : MatDialog, private groupService: GroupService, private router:Router) {
 
   }
 
   ngOnInit(): void {
-    
+    this.groupService.getAllGroups().subscribe(grupos => {
+      this.grupos = grupos
+    })
   }
 
   public onClick(event: MouseEvent) {
@@ -38,4 +44,6 @@ export class MainNavComponent implements OnInit{
   openDialog(){
     this.dialogRef.open(PopCreatePostComponent);
   }
+
+  
 }

@@ -2,7 +2,7 @@
     <mat-tab label="Visão geral">
         <div class="content-geral">
             <div class="group-name">
-                <h1>Sobre GROUP NAME</h1>
+                <h1>Sobre {{ groupData['nome'] }}</h1>
                 <div class="situation">
                     <div class="ball"></div>
                     <p><span>00</span> Jogadores online</p>
@@ -10,7 +10,7 @@
 
             </div>
             <div class="about">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus asperiores blanditiis odit.
+                {{ groupData['descricao'] }}
             </div>
             <div class="members">
                 <h3>Membros <span id="total-members">(00)</span></h3>

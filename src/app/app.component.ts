@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GroupService } from './services/group.service';
 import { UserService } from './services/user.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserService } from './services/user.service';
 export class AppComponent implements OnInit{
   title = 'eGames-angular';
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private groupService: GroupService) {
 
   }
 
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit{
     this.userService.recuperarTodosUsuarios().subscribe(usuarios => {
       console.log('usuarios recuperados')
     })
+    
   }
 
 }

@@ -174,3 +174,45 @@ popularGames = [
 
 def getPopularGames():
     return popularGames
+
+
+#Funções de Grupo
+def new_group(name, description, type, img):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute(f"INSERT INTO grupo (nome, foto, status, descricao) values ('{name}', '{img}', '{type}', '{description}');")
+    conn.commit()
+    conn.close()
+    return {"sucess": True, "message": "Grupo criado"}
+
+
+def get_all_groups():
+    grouplist = []
+    conn = get_db_connection()
+    grupos = conn.execute(f'SELECT * FROM grupo')
+    for grupo in grupos:
+        #if grupo['idgrupo'] != 1:
+        print("GRUPO: " + grupo[1])
+        groupData = {
+            "idgrupo": grupo['idgrupo'],
+            "nome": grupo['nome'],
+            "foto": grupo['foto'],
+            "status": grupo['status'],
+            "descricao": grupo['descricao'],
+        }
+        grouplist.append(groupData)
+    conn.close()
+    return grouplist
+
+
+def get_group(idgrupo):
+    conn = get_db_connection()
+    grupo = conn.execute(f'SELECT * FROM grupo WHERE idgrupo={idgrupo}').fetchall()
+    conn.close()
+    return {
+        "idgrupo": grupo[0]['idgrupo'],
+        "nome": grupo[0]['nome'],
+        "foto": grupo[0]['foto'],
+        "status": grupo[0]['status'],
+        "descricao": grupo[0]['descricao'],
+    }

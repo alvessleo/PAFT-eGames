@@ -3,11 +3,11 @@
         <div class="content">
             <h1>Grupo</h1>
             <div class="group-apresentation">
-                <img src="../../../assets/loud-example.png" class="logo-group">
+                <img src="{{ groupData['foto'] }}" class="logo-group">
                 <div class="info-group">
-                    <h1>GROUP NAME</h1>
-                    <p class="stat">Grupo privado</p>
-                    <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <h1>{{ groupData['nome'] }}</h1>
+                    <p class="stat">Grupo {{ groupData['status'] }}</p>
+                    <p class="bio">{{groupData['descricao'] }}</p>
                     <p class="adm">Administradores</p>
                     <div class="people">
                         <div class="div-photo">
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <app-tabs-group></app-tabs-group>
+        <app-tabs-group [groupData]="groupData"></app-tabs-group>
         
     </div>
 </app-main-nav>

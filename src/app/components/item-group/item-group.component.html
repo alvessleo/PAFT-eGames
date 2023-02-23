@@ -1,12 +1,12 @@
-<div class="group-item">
-    <img src="../../../assets/loud-example.png" class="group-photo">
+<div class="group-item" (click)="acessarGrupo()" [ngStyle]="{'cursor': 'pointer'}">
+    <img src="{{ group['foto'] }}" class="group-photo">
     <div class="group-info">
         <div class="title-stat">
-            <h2>GROUP NAME</h2>
-            <p>Grupo privado</p>
+            <h2>{{ group['nome'] }}</h2>
+            <p>{{ group['status'] }}</p>
         </div>
         <p class="desc">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            {{ group['descricao'] }}
         </p>
         <div class="members">
             <p class="members-label"><span>00</span> Membros | <span>00</span> Online</p>

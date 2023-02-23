@@ -5,8 +5,7 @@
         [post]="post"></app-publication>
     </mat-tab>
     <mat-tab label="Grupos">
-        <app-item-group></app-item-group>
-        <app-item-group></app-item-group>
+        <app-item-group *ngFor="let group of groups" [group]="group"></app-item-group>
         <a id="create-link" routerLink="/new-group">
             <div class="new-group">
                 <svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg">

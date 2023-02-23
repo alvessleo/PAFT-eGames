@@ -216,3 +216,48 @@ def get_group(idgrupo):
         "status": grupo[0]['status'],
         "descricao": grupo[0]['descricao'],
     }
+
+#Funções usuário-grupo
+def join_group(idusuario, idgrupo):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute(f"INSERT INTO usuario_has_grupo (Usuario_idUsuario, grupo_idgrupo) VALUES ('{idusuario}', '{idgrupo}');")
+    conn.commit()
+    usuariosEGrupos = conn.execute(f"SELECT * FROM usuario_has_grupo").fetchall()
+    conn.close()
+    for usuarioGrupo in usuariosEGrupos:
+        print(f"Usuário {str(usuarioGrupo['Usuario_idUsuario'])} ||| Grupo {str(usuarioGrupo['grupo_idgrupo'])}")
+    return {"sucess": True, "message": f"Usuário {idusuario} entrou no grupo {idgrupo}"}
+
+
+def user_in_group(idusuario, idgrupo):
+    conn = get_db_connection()
+    usuarioGrupo = conn.execute(f'SELECT * FROM usuario_has_grupo WHERE Usuario_idUsuario={idusuario} AND grupo_idgrupo={idgrupo}').fetchall()
+    conn.close()
+    if len(usuarioGrupo) > 0:
+        print("TRUEEE")
+        return {"userInGroup": "true"}
+    else:
+        print("FALSEEE")
+        return {"userInGroup": "false"}
+
+
+def get_my_groups(idUsuario):
+    group_list = []
+    conn = get_db_connection()
+    user_groups = conn.execute(f'SELECT * FROM usuario_has_grupo WHERE Usuario_idUsuario = {idUsuario} ORDER BY grupo_idgrupo DESC').fetchall()
+    conn.close()
+    for group in user_groups:
+        id_group = group['grupo_idgrupo']
+        conn = get_db_connection()
+        grupo = conn.execute(f'SELECT * FROM grupo WHERE idgrupo = {id_group}').fetchall()
+        conn.close()
+        group_data = {
+            "idgrupo": grupo[0]['idgrupo'],
+            "nome": grupo[0]['nome'],
+            "foto": grupo[0]['foto'],
+            "status": grupo[0]['status'],
+            "descricao": grupo[0]['descricao'],
+        }
+        group_list.append(group_data)
+    return group_list

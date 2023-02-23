@@ -112,5 +112,28 @@ def getAllGroups():
 def getGroup(idgrupo):
     grupo = db.get_group(idgrupo)
     return grupo
-    
+
+
+# Funções usuário-grupo
+@app.route('/join-group', methods=['POST'])
+def joinGroup():
+    idusuario = request.json['idusuario']
+    idgrupo = request.json['idgrupo']
+    join = db.join_group(idusuario, idgrupo)
+    return jsonify(join)
+
+
+@app.route('/user-in-group', methods=['POST'])
+def userInGroup():
+    idusuario = request.json['idusuario']
+    idgrupo = request.json['idgrupo']
+    userInGroup = db.user_in_group(idusuario, idgrupo)
+    return jsonify(userInGroup)
+
+
+@app.route('/get-my-groups/<int:idUser>', methods=['GET'])
+def getMyGroups(idUser):
+    group_list = db.get_my_groups(idUser)
+    return group_list
+
 app.run(debug=True)

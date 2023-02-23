@@ -25,7 +25,6 @@ export class SearchGroupComponent implements OnInit{
     this.groupDescription = this.grupo['descricao']
     this.groupImg = this.grupo['foto']
     this.groupType = this.grupo['status']
-
   }
   
   abrirGrupo(){

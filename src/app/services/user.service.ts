@@ -51,4 +51,23 @@ export class UserService {
     return this.http.put(`${this.database}edit-user/${session}`, this.body, options)
   }
 
+  entrarNoGrupo(idusuario: any, idgrupo: any) {
+    this.body = {idusuario: idusuario, idgrupo: idgrupo};
+    this.headers = new HttpHeaders({
+      'Access-Control-Allow-Origin' : '*'
+    })
+    let options = {headers:this.headers};
+    return this.http.post(`${this.database}join-group`, this.body, options)
+  }
+
+  usuarioNoGrupo(idusuario: any, idgrupo: any) {
+    this.body = {idusuario: idusuario, idgrupo: idgrupo};
+    return this.http.post(`${this.database}user-in-group`, this.body)
+  }
+
+  getMyGroups() {
+    let idUser = sessionStorage.getItem("idUsuario");
+    return this.http.get(`${this.database}get-my-groups/${idUser}`);
+  }
+
 }

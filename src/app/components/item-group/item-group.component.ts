@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-item-group',
@@ -7,5 +8,14 @@ import { Component } from '@angular/core';
 })
 export class ItemGroupComponent {
   button = false;
+  @Input() group: any;
+
+  constructor(private router: Router) {
+
+  }
+
+  acessarGrupo(){
+    this.router.navigate([`/group/${this.group['idgrupo']}`])
+  }
 
 }

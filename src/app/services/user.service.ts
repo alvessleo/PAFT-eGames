@@ -60,6 +60,15 @@ export class UserService {
     return this.http.post(`${this.database}join-group`, this.body, options)
   }
 
+  sairDoGrupo(idusuario: any, idgrupo: any) {
+    this.body = {idusuario: idusuario, idgrupo: idgrupo};
+    this.headers = new HttpHeaders({
+      'Access-Control-Allow-Origin' : '*'
+    })
+    let options = {headers:this.headers};
+    return this.http.post(`${this.database}leave-group`, this.body, options)
+  }
+
   usuarioNoGrupo(idusuario: any, idgrupo: any) {
     this.body = {idusuario: idusuario, idgrupo: idgrupo};
     return this.http.post(`${this.database}user-in-group`, this.body)

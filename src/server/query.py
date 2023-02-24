@@ -288,6 +288,13 @@ def join_group(idusuario, idgrupo):
         print(f"Usuário {str(usuarioGrupo['Usuario_idUsuario'])} ||| Grupo {str(usuarioGrupo['grupo_idgrupo'])}")
     return {"sucess": True, "message": f"Usuário {idusuario} entrou no grupo {idgrupo}"}
 
+def leave_group(idusuario, idgrupo):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute(f"DELETE FROM usuario_has_grupo WHERE Usuario_idUsuario={idusuario} AND grupo_idgrupo={idgrupo}")
+    conn.commit()
+    conn.close()
+    return {"sucess": True, "message": f"Usuário {idusuario} saiu do grupo {idgrupo}"}
 
 def user_in_group(idusuario, idgrupo):
     conn = get_db_connection()

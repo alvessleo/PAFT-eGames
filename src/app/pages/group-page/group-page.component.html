@@ -18,7 +18,7 @@
                 <div class="buttons">
                     <button class="btn" (click)="entrarNoGrupo()" *ngIf="joinGroup" >Entrar no grupo</button>
                     <button class="btn" *ngIf="solicitation">Solicitar participação</button>
-                    <button class="btn-exit" *ngIf="exitGroup">Sair do grupo</button>
+                    <button class="btn-exit" (click)="sairDoGrupo()" *ngIf="exitGroup">Sair do grupo</button>
                 </div>
             </div>
         </div>

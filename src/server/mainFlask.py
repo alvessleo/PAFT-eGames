@@ -133,6 +133,14 @@ def joinGroup():
     return jsonify(join)
 
 
+@app.route('/leave-group', methods=['POST'])
+def leaveGroup():
+    idusuario = request.json['idusuario']
+    idgrupo = request.json['idgrupo']
+    leave = db.leave_group(idusuario, idgrupo)
+    return jsonify(leave)
+
+
 @app.route('/user-in-group', methods=['POST'])
 def userInGroup():
     idusuario = request.json['idusuario']
@@ -145,5 +153,7 @@ def userInGroup():
 def getMyGroups(idUser):
     group_list = db.get_my_groups(idUser)
     return group_list
+
+
 
 app.run(debug=True)

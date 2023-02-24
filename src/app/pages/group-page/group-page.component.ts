@@ -69,4 +69,16 @@ export class GroupPageComponent implements OnInit{
       }
     })
   }
+
+  sairDoGrupo() {
+    this.idUsuario = sessionStorage.getItem('idUsuario')
+    this.userService.sairDoGrupo(this.idUsuario, this.groupId).subscribe(result => {
+      console.log(result)
+      var jsonResult = JSON.parse(JSON.stringify(result))
+      if (jsonResult['sucess']) {
+        this.joinGroup = true
+        this.exitGroup = false
+      }
+    })
+  }
 }

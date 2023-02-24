@@ -67,7 +67,7 @@ def get_all_users():
     conn = get_db_connection()
     usuariosQuery = conn.execute(f'SELECT * FROM usuario')
     for usuario in usuariosQuery:
-        print(usuario[2])
+        print(usuario[0], usuario[2])
     conn.close()
     return "oi"
 

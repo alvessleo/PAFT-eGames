@@ -21,9 +21,9 @@
                 <h3>Sugestões de jogos</h3>
                 <p>Ver todos</p>
             </div>
-            <app-item-suggest></app-item-suggest>
-            <app-item-suggest></app-item-suggest>
-            <app-item-suggest></app-item-suggest>
+            <app-item-suggest
+            *ngFor="let game of games"
+            [game]="game"></app-item-suggest>
         </div>
     </div>
 </app-main-nav>

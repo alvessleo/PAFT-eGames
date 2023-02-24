@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { PostService } from 'src/app/services/post.service';
+import { GlobalEventEmitterService } from 'src/app/services/global-event-emitter.service';
 
 @Component({
   selector: 'app-publication',
@@ -7,12 +9,15 @@ import { Component, Input } from '@angular/core';
 })
 export class PublicationComponent {
   @Input() post: any;
+  idPost: any;
   postImg: any;
   title: any;
   date: any;
   username: any;
   userFoto: any;
   num_curtidas: any;
+
+  constructor(private postService: PostService){}
 
   ngOnInit(){
     this.title = this.post['title'];
@@ -21,5 +26,13 @@ export class PublicationComponent {
     this.username = this.post['nomeUser'];
     this.num_curtidas = this.post['num_curtidas'];
     this.userFoto = this.post['fotoUser'];
+    this.idPost = this.post['idpost'];
+  }
+
+  likeThisPost(){
+    this.postService.likePosts(this.idPost).subscribe(result => {
+      console.log(result);
+      GlobalEventEmitterService.get('likedPost').emit();
+    })
   }
 }

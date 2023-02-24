@@ -77,6 +77,11 @@ def getPosts():
     post_list = db.get_posts()
     return post_list
 
+@app.route('/like-post/<int:idPost>', methods=['GET'])
+def likePost(idPost):
+    result = db.likePost(idPost)
+    return result
+
 @app.route('/get-my-posts/<int:idUser>', methods=['GET'])
 def getMyPosts(idUser):
     post_list = db.get_my_posts(idUser)
@@ -87,6 +92,11 @@ def getMyPosts(idUser):
 def getPopularGames():
     popularGames = db.getPopularGames()
     return jsonify(popularGames)
+
+@app.route('/get-feed-games', methods=['GET'])
+def getFeedGames():
+    feedGames = db.getFeedGames()
+    return jsonify(feedGames)
 
 
 #Funções de Grupo

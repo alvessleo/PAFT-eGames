@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { Router, RouterLink } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
+import { ApiService } from 'src/app/services/api.service';
 import { GlobalEventEmitterService } from 'src/app/services/global-event-emitter.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class FeedContentComponent {
   username!: string;
   usuario!: any;
   publications: any;
+  games: any;
 
 
   story: any[] = [
@@ -61,7 +63,7 @@ export class FeedContentComponent {
   ]
 
 
-    constructor(private userService: UserService, private router: Router, private postService: PostService) {
+    constructor(private userService: UserService, private router: Router, private postService: PostService, private apiService: ApiService) {
     }
 
   ngOnInit(){
@@ -82,7 +84,17 @@ export class FeedContentComponent {
       this.publications = posts;
     })
 
+    this.apiService.getJogosFeed().subscribe(feedGames => {
+      this.games = feedGames
+    })
+
     GlobalEventEmitterService.get('novoPost').subscribe(data => {
+      this.postService.getPosts().subscribe(posts => {
+        this.publications = posts;
+      })
+    })
+
+    GlobalEventEmitterService.get('likedPost').subscribe(data => {
       this.postService.getPosts().subscribe(posts => {
         this.publications = posts;
       })

@@ -22,6 +22,10 @@ export class PostService {
     return this.http.get(`${this.database}get-posts`);
   }
 
+  likePosts(idPost: number){
+    return this.http.get(`${this.database}like-post/${idPost}`);
+  }
+
   getMyPosts(){
     let idUser = sessionStorage.getItem("idUsuario");
     return this.http.get(`${this.database}get-my-posts/${idUser}`);

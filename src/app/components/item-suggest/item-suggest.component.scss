@@ -20,11 +20,20 @@ p{
         display: flex;
         flex-direction: column;
         margin-right: 8em;
-        .category{
-            font-size: 14px;
-            font-weight: 300;
-            color: #B3B0B8;
+
+        .genres{
+            display: flex;
+            flex-wrap: wrap;
+
+            .category{
+                font-size: 14px;
+                font-weight: 300;
+                color: #B3B0B8;
+                margin-left: 4px;
+            }
+
         }
+        
     }
 }
 

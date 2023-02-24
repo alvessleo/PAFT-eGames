@@ -135,6 +135,15 @@ def get_posts():
         post_list.append(dict)
     return post_list
 
+def likePost(idPost):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute(f"UPDATE post SET num_curtidas = num_curtidas + 1 WHERE idpost = {idPost}")
+    conn.commit()
+    conn.close()
+    return {"sucess": True, "message": "Post curtido"}
+
+
 def get_my_posts(idUsuario):
     post_list = []
     conn = get_db_connection()
@@ -175,6 +184,10 @@ popularGames = [
 def getPopularGames():
     return popularGames
 
+def getFeedGames():
+    index = randint(0,9)
+    feedGames = [popularGames[index-1], popularGames[index], popularGames[index-2]]
+    return feedGames
 
 #Funções de Grupo
 def new_group(name, description, type, img):

@@ -16,7 +16,7 @@ export class ApiService {
   getNews(){
     this.header = {
       headers: new HttpHeaders({
-        'X-RapidAPI-Key':  'dbd286fde9mshab576be9ea6360ep16605djsna3f548be04536',
+        'X-RapidAPI-Key':  'b3abc7ee7amsh5814b3ab4b64f42p1206e3jsn334f3d6e0512',
         'X-RapidAPI-Host': 'steam2.p.rapidapi.com'
       })
     };
@@ -34,11 +34,15 @@ export class ApiService {
   getreviews(id: number){
     this.header = {
       headers: new HttpHeaders({
-        'X-RapidAPI-Key':  'c800e1fba0msh26c976a5bba296ap100f36jsnc32868188206',
+        'X-RapidAPI-Key':  'b3abc7ee7amsh5814b3ab4b64f42p1206e3jsn334f3d6e0512',
         'X-RapidAPI-Host': 'steam2.p.rapidapi.com'
       })
     };
     return this.http.get(`https://steam2.p.rapidapi.com/appReviews/${id}/limit/5/*`, this.header)
+  }
+
+  getJogosFeed(){
+    return this.http.get("http://127.0.0.1:5000/get-feed-games")
   }
 
 }

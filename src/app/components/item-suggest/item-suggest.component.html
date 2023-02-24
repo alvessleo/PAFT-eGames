@@ -1,8 +1,11 @@
 <div class="item">
-    <img src="../../../assets/valorant-logo.webp" class="logo-suggest">
+    <img src="{{ cover }}" class="logo-suggest">
     <div class="name-category">
-        <p>Name of the game</p>
-        <p class="category">category</p>
+        <p>{{ nome }}</p>
+        <div class="genres">
+            <p class="category"
+            *ngFor="let category of categoria">{{ category }}</p>
+        </div>
     </div>
     <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0.916687 1.00003L5.91669 6.00003L0.916687 11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

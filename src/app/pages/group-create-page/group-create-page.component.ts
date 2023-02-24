@@ -22,6 +22,10 @@ export class GroupCreatePageComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    let sessionId = sessionStorage.getItem("sessionId");
+    if (sessionId === null){
+      this.router.navigate(['/']);
+    }
     this.dataSource = new FormGroup({
       groupName: new FormControl('', [Validators.required, Validators.minLength(3)]),
       groupDescription: new FormControl('', [Validators.required]),

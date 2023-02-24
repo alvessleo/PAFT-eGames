@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { flush } from '@angular/core/testing';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GroupService } from 'src/app/services/group.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -20,11 +20,15 @@ export class GroupPageComponent implements OnInit{
   idUsuario: any;
   userInGroup: any;
 
-  constructor(private groupService: GroupService, private route: ActivatedRoute, private userService: UserService) {
+  constructor(private groupService: GroupService, private route: ActivatedRoute, private userService: UserService, private router: Router) {
 
   }
 
   ngOnInit():void {
+    let sessionId = sessionStorage.getItem("sessionId");
+    if (sessionId === null){
+      this.router.navigate(['/']);
+    }
     this.groupId = this.route.snapshot.paramMap.get('idgrupo')
     this.idUsuario = sessionStorage.getItem('idUsuario')
 

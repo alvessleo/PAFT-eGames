@@ -68,7 +68,7 @@ export class FeedContentComponent {
 
   ngOnInit(){
     this.sessionId = sessionStorage.getItem("sessionId");
-    if (this.sessionId == "unset"){
+    if (this.sessionId === null){
       this.router.navigate(['/']);
     }
     this.userService.usuarioDaSessao(this.sessionId).subscribe(usuario => {

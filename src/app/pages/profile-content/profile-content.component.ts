@@ -34,8 +34,6 @@ export class ProfileContentComponent {
         this.username = jsonResult['usuario']['username']
         this.bio = jsonResult['usuario']['biografia']
         this.fotoUrl = jsonResult['usuario']['foto']
-
-        
       })
     }
 }

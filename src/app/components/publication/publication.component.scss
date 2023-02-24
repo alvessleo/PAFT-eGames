@@ -16,6 +16,7 @@ p{
         align-items: center;
         margin-bottom: 1em;
         grid-area: username;
+        justify-self: flex-start;
         .user-photo{
             width: 43px;
             height: 43px;
@@ -24,6 +25,7 @@ p{
             padding: 2px;
             margin-right: 15px;
             object-fit: cover;
+            position: relative;
         }
         .user-game{
             display: flex;

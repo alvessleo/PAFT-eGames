@@ -16,6 +16,8 @@ export class PublicationComponent {
   username: any;
   userFoto: any;
   num_curtidas: any;
+  num_comments: any;
+  comentarios: any;
 
   constructor(private postService: PostService){}
 
@@ -27,6 +29,8 @@ export class PublicationComponent {
     this.num_curtidas = this.post['num_curtidas'];
     this.userFoto = this.post['fotoUser'];
     this.idPost = this.post['idpost'];
+    this.num_comments = this.post['num_comments'];
+    this.comentarios = this.post['comentarios']
   }
 
   likeThisPost(){

@@ -18,7 +18,7 @@
                 </div>
                 <div class="comments">
                     <img class="comment-icon" src="../../../assets/conversation-icon.svg">
-                    <p>0</p>
+                    <p>{{ num_comments }}</p>
                 </div>
                 <img class="share-icon" src="../../../assets/share-icon.svg">
             </div>
@@ -28,9 +28,10 @@
             <p>{{ title | maxLenght}}</p>
         </div>
         <div class="post-comments">
-            <p>Ver todos os <span>X</span> comentários</p>
-            <app-comment></app-comment>
-            <app-comment></app-comment>
+            <p>Ver todos os <span>{{ num_comments }}</span> comentários</p>
+            <app-comment
+            *ngFor="let comment of comentarios"
+            [comentario]="comment"></app-comment>
         </div>
     </div>
 

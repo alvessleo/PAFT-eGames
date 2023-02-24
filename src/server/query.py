@@ -119,18 +119,37 @@ def get_posts():
     posts = conn.execute('SELECT * FROM post ORDER BY idpost DESC').fetchall()
     conn.close()
     for post in posts:
+        comentarios = []
         idUser = post['idUser']
+        idPost = post['idpost']
         conn = get_db_connection()
         user = conn.execute(f'SELECT * FROM Usuario WHERE idUsuario = {idUser}').fetchall()
         conn.close()
+        conn = get_db_connection()
+        comments = conn.execute(f'SELECT * FROM comentario WHERE idPost = {idPost}').fetchall()
+        conn.close()
+        for comment in comments:
+            userFalou = comment['idUser']
+            conn = get_db_connection()
+            userComment = conn.execute(f'SELECT * FROM Usuario WHERE idUsuario = {userFalou}').fetchall()
+            conn.close()
+            comentario = {
+                "texto": comment['texto'],
+                "user": userComment[0]['username'],
+                "foto": userComment[0]['foto'],
+                "data": comment['data']
+            }
+            comentarios.append(comentario)
         dict = {
             "idpost": post['idpost'],
             "title": post['legenda'],
             "img": post['foto'],
             "data": post['data'],
             "num_curtidas": post['num_curtidas'],
+            "num_comments": len(comentarios),
             "nomeUser": user[0]['username'],
-            "fotoUser": user[0]['foto']
+            "fotoUser": user[0]['foto'],
+            "comentarios": comentarios
         }
         post_list.append(dict)
     return post_list
@@ -150,18 +169,37 @@ def get_my_posts(idUsuario):
     posts = conn.execute(f'SELECT * FROM post WHERE idUser = {idUsuario} ORDER BY idpost DESC').fetchall()
     conn.close()
     for post in posts:
+        comentarios = []
         idUser = post['idUser']
+        idPost = post['idpost']
         conn = get_db_connection()
         user = conn.execute(f'SELECT * FROM Usuario WHERE idUsuario = {idUser}').fetchall()
         conn.close()
+        conn = get_db_connection()
+        comments = conn.execute(f'SELECT * FROM comentario WHERE idPost = {idPost}').fetchall()
+        conn.close()
+        for comment in comments:
+            userFalou = comment['idUser']
+            conn = get_db_connection()
+            userComment = conn.execute(f'SELECT * FROM Usuario WHERE idUsuario = {userFalou}').fetchall()
+            conn.close()
+            comentario = {
+                "texto": comment['texto'],
+                "user": userComment[0]['username'],
+                "foto": userComment[0]['foto'],
+                "data": comment['data']
+            }
+            comentarios.append(comentario)
         dict = {
             "idpost": post['idpost'],
             "title": post['legenda'],
             "img": post['foto'],
             "data": post['data'],
             "num_curtidas": post['num_curtidas'],
+            "num_comments": len(comentarios),
             "nomeUser": user[0]['username'],
-            "fotoUser": user[0]['foto']
+            "fotoUser": user[0]['foto'],
+            "comentarios": comentarios
         }
         post_list.append(dict)
     return post_list

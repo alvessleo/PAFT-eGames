@@ -123,10 +123,24 @@ p{
         }
 
         .post-comments{
+            height: 75px;
+            width: 100%;
+            overflow-y: scroll;
             p{
                 font-size: 14px;
                 font-weight: 300;
                 color: #7C7A80;
+            }
+
+            &::-webkit-scrollbar{
+                width: 8px;
+            }
+            &::-webkit-scrollbar-track{
+                background-color: transparent;
+            }
+            &::-webkit-scrollbar-thumb{
+                background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+                border-radius: 10px;
             }
         }
     }

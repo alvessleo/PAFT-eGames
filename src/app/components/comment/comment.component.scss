@@ -2,3 +2,46 @@
     margin: 0;
     padding: 0;
 }
+.comment{
+    position: relative;
+    padding: 5px;
+
+    .user-photo-game{
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5em;
+        justify-self: flex-start;
+        .user-photo{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid rgb(116, 116, 116);
+            padding: 2px;
+            margin-right: 5px;
+            object-fit: cover;
+            position: relative;
+        }
+        .user-game{
+            display: flex;
+    
+            .username{
+                color: #B3B0B8;
+                font-size: smaller;
+                margin-right: 15px;
+                margin-bottom: 5px;
+            }
+            .data{
+                color: #B3B0B8;
+                font-size: smaller;
+                float: right;
+            }
+        }
+    }
+    
+    .texto{
+        position: absolute;
+        text-align: center;
+        font-size: small;
+        bottom: 5px;
+    }
+}

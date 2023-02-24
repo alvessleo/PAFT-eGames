@@ -1,1 +1,11 @@
-<p>comment works!</p>
+<div class="comment">
+    <div class="user-photo-game">
+        <img class="user-photo" src="{{ userFoto }}">
+        <div class="user-game">
+            <p class="username">@{{ username }}</p>
+            <p class="data">{{ data | date: "HH:mm MMM dd, yyyy" }}</p>
+        </div>
+    </div>
+    <p  class="texto">{{ texto }}</p>
+</div>
+<mat-divider></mat-divider>

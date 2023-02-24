@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { PopCancelActionComponent } from 'src/app/components/pop-cancel-action/pop-cancel-action.component';
 import { GroupService } from 'src/app/services/group.service';
@@ -17,7 +18,7 @@ export class GroupCreatePageComponent implements OnInit{
   dataSource!: FormGroup;
   group: any;
 
-  constructor(private dialogRef : MatDialog, private groupService: GroupService, private router: Router, private userService: UserService){
+  constructor(private dialogRef : MatDialog, private groupService: GroupService, private router: Router, private userService: UserService, private _snackBar: MatSnackBar){
 
   }
 
@@ -61,7 +62,11 @@ export class GroupCreatePageComponent implements OnInit{
         console.log("Usuario " + idusuario + " criando o grupo")
         this.userService.entrarNoGrupo(idusuario, this.group['idgrupo']).subscribe(result => {
           console.log(result)
-          this.router.navigate(['/feed'])
+          this._snackBar.open("Grupo criado com sucesso!", "", {
+            duration: 1500
+          });
+          this.router.navigate([`/group/${this.group['idgrupo']}`])
+          
         })
       })
       

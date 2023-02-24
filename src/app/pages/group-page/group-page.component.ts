@@ -47,7 +47,7 @@ export class GroupPageComponent implements OnInit{
 
     this.groupService.getGroup(this.groupId).subscribe(group => {
       this.groupData = group
-      if (this.groupData['status'] === "Privado") {
+      if (this.groupData['status'] === "Privado" && !this.userInGroup) {
         this.solicitation = true
         this.joinGroup = false
       } else if (this.groupData['status'] === "Público" && !this.userInGroup) {
@@ -64,6 +64,7 @@ export class GroupPageComponent implements OnInit{
       console.log(result)
       var jsonResult = JSON.parse(JSON.stringify(result))
       if (jsonResult['sucess']) {
+        this.solicitation = false
         this.joinGroup = false
         this.exitGroup = true
       }

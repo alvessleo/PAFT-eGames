@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Route, Router } from '@angular/router';
 import { PopCancelActionComponent } from 'src/app/components/pop-cancel-action/pop-cancel-action.component';
 import { UserService } from 'src/app/services/user.service';
@@ -23,7 +24,7 @@ export class ProfileEditComponent implements OnInit{
   fetchGame!: string;
   usuario: any;
 
-  constructor(private router: Router, private userService: UserService, private dialogRef : MatDialog) {
+  constructor(private router: Router, private userService: UserService, private dialogRef : MatDialog, private _snackBar: MatSnackBar) {
 
   }
 
@@ -90,8 +91,12 @@ export class ProfileEditComponent implements OnInit{
         console.log(usuario)
       });
       // TODO: Exibir mensagem ou pop-up de confirmacao de edicao de perfil
-
       this.router.navigate(['/profile'])
+      this._snackBar.open("Perfil editado com sucesso!", "", {
+        duration: 1500
+      });
+      
+      
     }
 
   }

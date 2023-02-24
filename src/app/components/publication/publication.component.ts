@@ -19,6 +19,8 @@ export class PublicationComponent {
   num_comments: any;
   comentarios: any;
 
+  urlLike = '../../../assets/hearth.svg';
+
   constructor(private postService: PostService){}
 
   ngOnInit(){
@@ -34,8 +36,10 @@ export class PublicationComponent {
   }
 
   likeThisPost(){
+
     this.postService.likePosts(this.idPost).subscribe(result => {
       console.log(result);
+      this.urlLike = '../../../assets/liked-icon.svg';
       GlobalEventEmitterService.get('likedPost').emit();
     })
   }

@@ -9,6 +9,7 @@ p{
     margin-bottom: 1em;
     margin-top: 1em;
     min-width: 350px;
+    position: relative;
     .logo-suggest{
         width: 40px;
         height: 40px;
@@ -20,6 +21,7 @@ p{
         display: flex;
         flex-direction: column;
         margin-right: 8em;
+        width: 180px;
 
         .genres{
             display: flex;
@@ -29,11 +31,16 @@ p{
                 font-size: 14px;
                 font-weight: 300;
                 color: #B3B0B8;
-                margin-left: 4px;
             }
 
         }
         
+    }
+
+    svg{
+        position: absolute;
+        right: 0;
+        transform: translateX(-25px);
     }
 }
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -13,9 +14,15 @@ export class NoticiasApiPageComponent {
   general: any = [];
   reviews: any;
 
-  constructor(private apiService: ApiService){}
+  constructor(private apiService: ApiService, private router: Router){
+    
+  }
 
   ngOnInit(){
+    let sessionId = sessionStorage.getItem("sessionId");
+    if (sessionId === null){
+      this.router.navigate(['/']);
+    }
      this.apiService.getPopularGames().subscribe(popularGames => {
       this.popularGames = popularGames;
     }) 

@@ -29,6 +29,7 @@ export class ProfileEditComponent implements OnInit{
     this.userService.usuarioDaSessao(this.sessionId).subscribe(usuario => {
       var jsonResult = JSON.parse(JSON.stringify(usuario))
       this.usuario = jsonResult['usuario'];
+      this.url = this.usuario['foto']
     })
     
     this.dataSource = new FormGroup({

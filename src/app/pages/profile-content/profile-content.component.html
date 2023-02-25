@@ -41,7 +41,7 @@
     
                 <div class="about">
                     <h4>Sobre</h4>
-                    <div *ngIf="usuario['bio'] !== '' && usuario['bio'] !== null && usuario['bio'] !== 'None'; else noBio">{{ usuario['biografia'] }}</div>
+                    <div *ngIf="usuario['biografia'] !== '' && usuario['biografia'] !== null && usuario['biografia'] !== 'None'; else noBio">{{ usuario['biografia'] }}</div>
                     <ng-template #noBio>
                         Não há nada aqui.
                     </ng-template>

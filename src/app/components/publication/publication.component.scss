@@ -121,6 +121,13 @@ p{
             }
         }
 
+        .see-comment{
+            font-size: 14px;
+            font-weight: 300;
+            color: #B3B0B8;
+            padding-bottom: 10px;
+        }
+
         .post-comments{
             height: 75px;
             width: 100%;
@@ -132,13 +139,13 @@ p{
             }
 
             &::-webkit-scrollbar{
-                width: 8px;
+                width: 4px;
             }
             &::-webkit-scrollbar-track{
                 background-color: transparent;
             }
             &::-webkit-scrollbar-thumb{
-                background: linear-gradient(93.99deg, #712DE0 -5.78%, #EB2F93 113.82%);
+                background: #7C7A80;
                 border-radius: 10px;
             }
         }

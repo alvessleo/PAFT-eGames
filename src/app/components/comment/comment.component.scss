@@ -23,17 +23,19 @@
         }
         .user-game{
             display: flex;
-    
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
             .username{
                 color: #B3B0B8;
                 font-size: smaller;
-                margin-right: 15px;
-                margin-bottom: 5px;
+                margin-right: 20px;
             }
             .data{
                 color: #B3B0B8;
-                font-size: smaller;
+                font-size: 9px;
                 float: right;
+
             }
         }
     }
@@ -42,6 +44,8 @@
         position: absolute;
         text-align: center;
         font-size: small;
-        bottom: 5px;
+        bottom: 7px;
+        padding-bottom: 2px;
+        font-weight: 300;
     }
 }

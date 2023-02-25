@@ -27,8 +27,9 @@
         <div class="title">
             <p>{{ title | maxLenght}}</p>
         </div>
+        <p class="see-comment">Ver todos os <span>{{ num_comments }}</span> comentários</p>
         <div class="post-comments">
-            <p>Ver todos os <span>{{ num_comments }}</span> comentários</p>
+
             <app-comment
             *ngFor="let comment of comentarios"
             [comentario]="comment"></app-comment>

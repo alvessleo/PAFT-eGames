@@ -33,8 +33,4 @@ export class SessionService {
     return this.http.delete(`${this.database}logout/${session}`, options)  
   }
 
-  deslogarUsuario(sessionId: number){
-    
-  }
-
 }

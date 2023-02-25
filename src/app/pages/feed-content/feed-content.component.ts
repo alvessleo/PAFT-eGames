@@ -12,8 +12,6 @@ import { GlobalEventEmitterService } from 'src/app/services/global-event-emitter
 })
 export class FeedContentComponent {
   sessionId: any;
-  nome!: string;
-  username!: string;
   usuario!: any;
   publications: any;
   games: any;
@@ -74,8 +72,6 @@ export class FeedContentComponent {
     this.userService.usuarioDaSessao(this.sessionId).subscribe(usuario => {
       var jsonResult = JSON.parse(JSON.stringify(usuario))
       this.usuario = jsonResult['usuario'];
-      this.nome = jsonResult['usuario']['nome'];
-      this.username = jsonResult['usuario']['username'];
       let userId = jsonResult['usuario']['idUsuario'];
       sessionStorage.setItem("idUsuario", userId);
     })

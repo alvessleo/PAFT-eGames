@@ -17,11 +17,6 @@ export class ProfileEditComponent implements OnInit{
   today: Date = new Date();
 
   sessionId: any;
-  fetchName!: string;
-  fetchUsername!: string;
-  fetchBirthdate!: string;
-  fetchBio!: string;
-  fetchGame!: string;
   usuario: any;
 
   constructor(private router: Router, private userService: UserService, private dialogRef : MatDialog, private _snackBar: MatSnackBar) {
@@ -34,28 +29,22 @@ export class ProfileEditComponent implements OnInit{
     this.userService.usuarioDaSessao(this.sessionId).subscribe(usuario => {
       var jsonResult = JSON.parse(JSON.stringify(usuario))
       this.usuario = jsonResult['usuario'];
-      this.fetchName = jsonResult['usuario']['nome'];
-      this.fetchUsername = jsonResult['usuario']['username'];
-      this.fetchBirthdate = jsonResult['usuario']['data_nasc'];
-      this.fetchBio = jsonResult['usuario']['biografia'];
-      this.fetchGame = jsonResult['usuario']['jogo_favorito'];
-      this.url = jsonResult['usuario']['foto'];
     })
     
     this.dataSource = new FormGroup({
-      fullname: new FormControl(this.fetchName,[Validators.required, Validators.minLength(7),  Validators.pattern(/^[a-záàâãéèêíïóôõöúçñ ]+$/i)]), 
-      username: new FormControl(this.fetchUsername, [Validators.required, Validators.minLength(4)]),
-      birthdate: new FormControl(this.fetchBirthdate, {validators:[Validators.required], nonNullable: true}),
-      bio: new FormControl(this.fetchBio),
-      game: new FormControl(this.fetchGame)
+      fullname: new FormControl("",[Validators.required, Validators.minLength(7),  Validators.pattern(/^[a-záàâãéèêíïóôõöúçñ ]+$/i)]), 
+      username: new FormControl("", [Validators.required, Validators.minLength(4)]),
+      birthdate: new FormControl("", {validators:[Validators.required], nonNullable: true}),
+      bio: new FormControl(""),
+      game: new FormControl("")
     })
     setTimeout(()=> {
       this.dataSource.patchValue({
-        fullname: this.fetchName,
-        username: this.fetchUsername,
-        birthdate: this.fetchBirthdate,
-        bio: this.fetchBio,
-        game: this.fetchGame
+        fullname: this.usuario['nome'],
+        username: this.usuario['username'],
+        birthdate: this.usuario['data_nasc'],
+        bio: this.usuario['biografia'],
+        game: this.usuario['jogo_favorito']
       })
     }, 200)
   }
@@ -74,7 +63,7 @@ export class ProfileEditComponent implements OnInit{
 
   submitEdit() {
     // TODO: Validação username já presente na base de dados
-    if (this.fullname!.value === this.fetchName) {
+    if (this.fullname!.value === this.usuario['nome']) {
       this.fullname!.setErrors({'required': false});
     }
     this.fullname?.updateValueAndValidity();

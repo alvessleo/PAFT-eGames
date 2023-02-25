@@ -9,13 +9,13 @@
                         <div class="div-photo">
                             <input type="file" name="file" id="file" (change)="onSelectFile($event)"/>
                             <label for="file"></label>
-                            <img *ngIf="url !== 'foto.png'" src="{{ url }}" class="profile-image">
-                            <img *ngIf="url === 'foto.png'" src="../../../assets/abstract-user-flat-4.webp" class="profile-image">
+                            <img *ngIf="usuario['foto'] !== 'foto.png'" src="{{ usuario['foto'] }}" class="profile-image">
+                            <img *ngIf="usuario['foto'] === 'foto.png'" src="../../../assets/abstract-user-flat-4.webp" class="profile-image">
                         </div>
                     </a>
 
-                    <h2>{{fetchName}}</h2>
-                    <p class="user">@{{fetchUsername}}</p>
+                    <h2>{{ usuario['nome'] }}</h2>
+                    <p class="user">@{{ usuario['username'] }}</p>
                 </div>
     
                 <button type="button" id="back" routerLink="/profile">Voltar ao perfil</button>
@@ -37,7 +37,7 @@
     
                 <div class="about">
                     <h4>Sobre</h4>
-                    <p *ngIf="fetchBio !== '' && fetchBio !== null && fetchBio !== 'None'; else noBio">{{fetchBio}}</p>
+                    <p *ngIf="usuario['biografia'] !== '' && usuario['biografia'] !== null && usuario['biografia'] !== 'None'; else noBio">{{ usuario['biografia'] }}</p>
                     <ng-template #noBio>
                         Não há nada aqui.
                     </ng-template>

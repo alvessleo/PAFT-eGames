@@ -10,10 +10,6 @@ import { Router } from '@angular/router';
 })
 export class ProfileContentComponent {
   sessionId: any;
-  nome!: string;
-  username!: string;
-  bio!: string;
-  fotoUrl: any;
   usuario: any;
 
   follow = true
@@ -30,10 +26,6 @@ export class ProfileContentComponent {
       this.userService.usuarioDaSessao(this.sessionId).subscribe(usuario => {
         var jsonResult = JSON.parse(JSON.stringify(usuario))
         this.usuario = jsonResult['usuario']
-        this.nome = jsonResult['usuario']['nome']
-        this.username = jsonResult['usuario']['username']
-        this.bio = jsonResult['usuario']['biografia']
-        this.fotoUrl = jsonResult['usuario']['foto']
       })
     }
 }

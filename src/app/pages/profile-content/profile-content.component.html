@@ -12,13 +12,13 @@
                 <div class="photo-name">
                     <a>
                         <div class="div-photo">
-                            <img *ngIf="fotoUrl !== 'foto.png'" src="{{ fotoUrl }}" class="profile-image">
-                            <img *ngIf="fotoUrl === 'foto.png'" src="../../../assets/abstract-user-flat-4.webp" class="profile-image">
+                            <img *ngIf="usuario['foto'] !== 'foto.png'" src="{{ usuario['foto'] }}" class="profile-image">
+                            <img *ngIf="usuario['foto'] === 'foto.png'" src="../../../assets/abstract-user-flat-4.webp" class="profile-image">
                         </div>
                     </a>
 
-                    <h2>{{nome}}</h2>
-                    <p class="user">@{{username}}</p>
+                    <h2>{{ usuario['nome'] }}</h2>
+                    <p class="user">@{{ usuario['username'] }}</p>
                 </div>
     
                 <button type="button" class="btn btn-primary" *ngIf="follow">Seguir</button>
@@ -41,7 +41,7 @@
     
                 <div class="about">
                     <h4>Sobre</h4>
-                    <div *ngIf="bio !== '' && bio !== null && bio !== 'None'; else noBio">{{bio}}</div>
+                    <div *ngIf="usuario['bio'] !== '' && usuario['bio'] !== null && usuario['bio'] !== 'None'; else noBio">{{ usuario['biografia'] }}</div>
                     <ng-template #noBio>
                         Não há nada aqui.
                     </ng-template>

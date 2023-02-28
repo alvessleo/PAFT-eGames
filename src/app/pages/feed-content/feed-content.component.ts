@@ -95,6 +95,11 @@ export class FeedContentComponent {
         this.publications = posts;
       })
     })
+    GlobalEventEmitterService.get('comentou').subscribe(data => {
+      this.postService.getPosts().subscribe(posts => {
+        this.publications = posts;
+      })
+    })
   }
 
   

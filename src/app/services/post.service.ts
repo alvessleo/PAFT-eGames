@@ -26,6 +26,13 @@ export class PostService {
     return this.http.get(`${this.database}like-post/${idPost}`);
   }
 
+  commentPost(comment: any, idPost: number){
+    let idUser = sessionStorage.getItem("idUsuario");
+    let comentario = comment.get("comment");
+    this.body = {"idUser": idUser, "comment": comentario!['value']};
+    return this.http.post(`${this.database}comment-post/${idPost}`, this.body);
+  }
+
   getMyPosts(){
     let idUser = sessionStorage.getItem("idUsuario");
     return this.http.get(`${this.database}get-my-posts/${idUser}`);

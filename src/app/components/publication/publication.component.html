@@ -29,7 +29,10 @@
         </div>
         <p class="see-comment">Ver todos os <span>{{ num_comments }}</span> comentários</p>
         <div class="post-comments">
-
+            <form class="add-comment"  [formGroup]="dataSource" (ngSubmit)="addNewComment($event)" #formDir="ngForm">
+                <input type="text" class="new-comment" placeholder="Novo comentário..." formControlName="comment"/>
+                <button type="submit"> <mat-icon>add_comment</mat-icon> </button>
+            </form>
             <app-comment
             *ngFor="let comment of comentarios"
             [comentario]="comment"></app-comment>

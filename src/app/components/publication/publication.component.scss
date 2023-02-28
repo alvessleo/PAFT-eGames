@@ -128,8 +128,41 @@ p{
             padding-bottom: 10px;
         }
 
+        .add-comment{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .new-comment{
+                background-color: transparent;
+                width: 85%;
+                outline: none;
+                border: none;
+                padding: 2px;
+                color: #fff;
+
+                &:focus::placeholder{
+                    color: #d6d6d6;
+                }
+            }
+
+            button{
+                background-color: transparent;
+                border: none;
+                outline: none;
+                mat-icon{
+                    color: #B3B0B8;
+                }
+
+                &:hover{
+                    cursor: pointer;
+                    filter: brightness(150%);
+                }
+            }
+        }
+
         .post-comments{
-            height: 75px;
+            height: 95px;
             width: 100%;
             overflow-y: scroll;
             p{

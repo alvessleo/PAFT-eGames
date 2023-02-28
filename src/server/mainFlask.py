@@ -82,6 +82,13 @@ def likePost(idPost):
     result = db.likePost(idPost)
     return result
 
+@app.route('/comment-post/<int:idPost>', methods=['POST'])
+def commentPost(idPost):
+    comment = request.json['comment']
+    idUser = request.json['idUser']
+    result = db.commentPost(idPost, comment, idUser)
+    return result
+
 @app.route('/get-my-posts/<int:idUser>', methods=['GET'])
 def getMyPosts(idUser):
     post_list = db.get_my_posts(idUser)

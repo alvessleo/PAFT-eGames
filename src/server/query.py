@@ -126,7 +126,7 @@ def get_posts():
         user = conn.execute(f'SELECT * FROM Usuario WHERE idUsuario = {idUser}').fetchall()
         conn.close()
         conn = get_db_connection()
-        comments = conn.execute(f'SELECT * FROM comentario WHERE idPost = {idPost}').fetchall()
+        comments = conn.execute(f'SELECT * FROM comentario WHERE idPost = {idPost} ORDER BY idcomentario DESC').fetchall()
         conn.close()
         for comment in comments:
             userFalou = comment['idUser']
@@ -161,6 +161,16 @@ def likePost(idPost):
     conn.commit()
     conn.close()
     return {"sucess": True, "message": "Post curtido"}
+
+
+def commentPost(idPost, comment, idUser):
+    data = datetime.datetime.now()
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute(f"INSERT INTO comentario (idPost, idUser, texto, data) VALUES ({idPost}, {idUser}, '{comment}', '{data}');")
+    conn.commit()
+    conn.close()
+    return {"sucess": True, "message": "Comentário criado"}
 
 
 def get_my_posts(idUsuario):

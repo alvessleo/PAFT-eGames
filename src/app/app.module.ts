@@ -27,7 +27,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ItemGroupComponent } from './components/item-group/item-group.component';
 import { GroupPageComponent } from './pages/group-page/group-page.component';
 import { TabsGroupComponent } from './components/tabs-group/tabs-group.component';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { UserMenuNavComponent } from './components/user-menu-nav/user-menu-nav.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';

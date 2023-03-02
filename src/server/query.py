@@ -1,7 +1,6 @@
 import sqlite3
 import hashlib
 import datetime
-import json
 from random import randint
 
 def get_db_connection():
@@ -53,7 +52,6 @@ def new_user(nome, username, data_nasc, senha):
     for name in usernames:
         if name['username'] == username:
             return {"sucess": False, "error": 1,"message": "Este username já esta sendo usado"}
-    #EDITE AQUI - Validação data de nascimento com datetime()
     hash_senha = hashlib.sha1(senha.encode('utf-8')).hexdigest()
     conn = get_db_connection()
     cur = conn.cursor()
@@ -100,8 +98,6 @@ def edit_user(nome, username, data_nasc, bio, jogo_favorito, session, profileImg
     conn.close()
     return {"sucess": True, "message": "Informações alteradas"}
                    
-
-
 
 #Funções de postagem e comentário
 def new_post(title, img, idUser):
